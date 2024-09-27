@@ -1,0 +1,18 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+h1 {
+  color: var(--red);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  width: 100%;
+}
+

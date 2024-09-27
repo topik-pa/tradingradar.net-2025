@@ -1,0 +1,9 @@
+section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gallery img {
+  max-width: 12rem;
+  margin: 2rem;
+}

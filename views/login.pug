@@ -1,0 +1,21 @@
+extends layout.pug
+
+block append meta
+  title #{title} 
+  meta(name="description" content=description)
+  meta(name="keywords" content="login")
+  link(rel="canonical", href=href=proj_url + url)
+  link(rel="stylesheet", href="/styles/views/login.css")
+  script(src='/scripts/login.js', defer)
+
+block main
+  h1 #{title} - #{__('Hello')}
+  form(action="/login" method="post")
+    div(class="mb-3")
+      label(class="form-label", for="email") Email
+      input(class="form-control", type="email", id="email")
+    div(class="mb-3")
+      label(class="form-label", for="password") Password
+      input(class="form-control", type="password", id="password")
+    button(class="btn btn-primary", type="submit") Submit
+    div(class="errors")

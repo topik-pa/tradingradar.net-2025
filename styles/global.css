@@ -1,0 +1,81 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow:0 0 1px transparent;
+  text-rendering: optimizeLegibility;
+  letter-spacing: .03rem;
+  color: var(--primary);
+  background-color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  padding: var(--view-padding);
+  flex: auto;
+  line-height: 120%;
+}
+main section {
+  margin: var(--section-margin) 0;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  position: relative;
+}
+a:hover {
+  filter: brightness(80%);
+}
+a.ext::after {
+  content: '\21F1';
+  transform: rotate(90deg);
+  display: inline-block;
+  position: relative;
+  top: -3px;
+  font-size: 9px;
+  right: 0;
+}
+
+em, .em {
+  font-weight: 500;
+}
+
+p {
+  margin: var(--x-small-space) 0;
+}
+
+small {
+  font-size: var(--font-size-very-small);
+}
+
+ul, ol {
+  margin: var(--normal-space);
+  padding-left: var(--normal-space);
+  list-style: auto;
+}
+ul li, ol li {
+  margin: var(--small-space) 0;
+}
+
+.hide {
+  display: none!important;
+}
+.show {
+  display: block!important;
+}
+
+.green {
+  color: var(--green);
+}
+.red {
+  color: var(--red);
+}
+.blue {
+  color: var(--blue);
+}
