@@ -13,25 +13,35 @@ module.exports = app => {
   router.get('/login', ctrl.loginView);
   router.post('/login', ctrl.loginUser);
 
-  //home page
-  app.get('/', isAuthenticated, ctrl.hpView);
-
   //logout
   app.get('/logout', ctrl.logoutUser);
 
+  //home page
+  // app.get('/', isAuthenticated, ctrl.hpView);  
+  app.get('/', ctrl.hpView);
+
+  //stock list
+  app.get('/titoli', ctrl.stockListView);
+
+  //target price e raccommandazioni
+  app.get('/target-price-raccomandazioni', ctrl.targetPriceRaccView);
+
+  // dividendi
+  app.get('/dividendi', ctrl.dividendsView);
+
+  //contatti
+  app.get('/contatti', ctrl.contctsView);
+
+
+  
   // Sitemap.xml
   app.get('/sitemap.xml', function (req, res) {
-    res.sendFile('public/sitemap.xml', { root: '.' })
-  })
+    res.sendFile('public/sitemap.xml', { root: '.' });
+  });
   // Robots.txt
   app.get('/robots.txt', function (req, res) {
-    res.sendFile('public/robots.txt', { root: '.' })
-  })
-
-  //404
-  app.get('/404', ctrl.notFoundView);
-  //500
-  app.get('/500', ctrl.serverError);
+    res.sendFile('public/robots.txt', { root: '.' });
+  });
 
   app.use('/', router);
 };

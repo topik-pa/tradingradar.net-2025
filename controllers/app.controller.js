@@ -136,14 +136,40 @@ exports.loginView = async (req, res) => {
 };
 // home page view
 exports.hpView = async (req, res) => {
-  res.render('home', {title: 'Home page', user: req.session.user});
+  res.render('home', {
+    title: 'Home page', 
+    user: req.session.user
+  });
 };
-// 404 view
-exports.notFoundView = async (req, res) => {
-  res.render('404', {title: 'Not found'});
+// stock list view
+exports.stockListView = async (req, res) => {
+  res.render('stock-list', {
+    title: 'Tutti i titoli', 
+    description: 'Titoli...',
+    user: req.session.user
+  });
 };
-// 500 view
-exports.serverError = async (req, res) => {
-  res.render('500', {title: 'Server error'});
+//target price e raccommandazioni view
+exports.targetPriceRaccView = async (req, res) => {
+  res.render('target-price-racc', {
+    title: 'Target price e raccomandazioni', 
+    description: 'Descr...',
+    user: req.session.user
+  });
+};
+// dividendi view
+exports.dividendsView = async (req, res) => {
+  res.render('dividends', {
+    title: 'Tutti i dividendi', 
+    description: 'Descr...',
+    user: req.session.user
+  });
+};
+// contatti view
+exports.contctsView = async (req, res) => {
+  res.render('contacts', {
+    title: 'Contattaci', 
+    description: 'Descr...'
+  });
 };
 

@@ -1,29 +1,11 @@
 extends layout.pug
 
 block append meta
-  title Home Page
-  meta(name="description" content="Home page")
+  title #{title} 
+  meta(name="description" content=proj_description)
   meta(name="keywords" content="home")
   link(rel="stylesheet", href="/styles/views/home.css")
   script(src='/scripts/home.js', defer)
 
 block main
   h1 #{title}
-  section 
-    div 
-      h2 Meet Joana... 
-      div(class="gallery")
-        img(src="/assets/images/joana.jpeg", alt="")
-        img(src="http://redcarpeteveryday.files.wordpress.com/2015/03/527047_208630805965858_790195748_n.jpg", alt="")
-        img(src="http://www.tradingradar.net/assets/images/stocks/AMP-min.png", alt="")
-    div 
-      h2 Search
-      form(action="/" method="get")
-        div(class="mb-3")
-          label(class="form-label", for="search") Search
-          input(class="form-control", type="text", id="search")
-          input(id="hidden-input", type="hidden", name="q")
-        button(class="btn btn-primary", type="submit") Submit
-        div(class="feedback-html")
-        div(class="feedback-text")
-        div(class="errors")
