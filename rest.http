@@ -2,13 +2,13 @@
 GET https://localhost:8080
 
 ### Wrong url
-GET https://localhost:8080/wrong-url
+GET http://localhost:8080/wrong-url
 
 ### Wrong body
-POST https://localhost:8080/login
+POST http://localhost:8080/login
 
 ### User not found
-POST https://localhost:8080/login
+POST http://localhost:8080/login
 content-type: application/json
 
 {
@@ -18,7 +18,7 @@ content-type: application/json
 
 
 ### Wrong password
-POST https://localhost:8080/login
+POST http://localhost:8080/login
 content-type: application/json
 
 {
@@ -28,10 +28,17 @@ content-type: application/json
 
 
 ### User OK
-POST https://localhost:8080/login
+POST http://localhost:8080/login
 content-type: application/json
 
 {
     "email": "pippo.baudo@rai.it",
     "password": "123secretPWD"
 }
+
+
+### test
+POST http://localhost:8080/login
+content-type: application/x-www-form-urlencoded
+
+email=pippobaudo&password=123secretPWD

@@ -52,7 +52,6 @@ exports.loginUser = async (req, res, next) => {
       return user.email === email;
     });
   };
-
   // Validate request body
   if (
     !req.body || 
@@ -101,8 +100,8 @@ exports.loginUser = async (req, res, next) => {
   // load does not happen before session is saved
   req.session.save(function (error) {
     if (error) {return next(error);}
-    // res.redirect('/');
-    return res.status(200).send({});
+    return res.redirect('/');
+    // return res.status(200).send({});
   });
 
 };
@@ -119,7 +118,7 @@ exports.logoutUser = async (req, res, next) => {
     // guard against forms of session fixation
     req.session.regenerate(function (error) {
       if (error) next(error);
-      res.redirect('/');
+      res.redirect('/login');
     });
   });
 };
@@ -174,7 +173,8 @@ exports.contctsView = async (req, res) => {
   res.render('contacts', {
     id: 'contatti',
     title: 'Contattaci', 
-    description: 'Descr...'
+    description: 'Descr...',
+    user: req.session.user
   });
 };
 

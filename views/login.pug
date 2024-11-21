@@ -13,9 +13,9 @@ block main
   form(action="/login" method="post")
     div(class="mb-3")
       label(class="form-label", for="email") Email
-      input(class="form-control", type="email", id="email")
+      input(class="form-control", type="email", name="email")
     div(class="mb-3")
       label(class="form-label", for="password") Password
-      input(class="form-control", type="password", id="password")
+      input(class="form-control", type="password", name="password")
     button(class="btn btn-primary", type="submit") Submit
     div(class="errors")
