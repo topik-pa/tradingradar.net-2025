@@ -1,31 +1,39 @@
 module.exports = {
-  'env': {
-    'node': true,
-    'commonjs': true,
-    'es2021': true
+  env: {
+    browser: true,
+    es2021: true,
+    node: true
   },
-  'extends': 'eslint:recommended',
-  'parserOptions': {
-    'ecmaVersion': 12
+  extends: [
+    'standard',
+    'eslint:recommended'
+  ],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module'
   },
-  'rules': {
-    'indent': [
+  rules: {
+    /* 'no-console': 'warn', */
+    'no-debugger': 'warn',
+    indent: [
       'error',
       2
     ],
-    'linebreak-style': [
-      'error',
-      'unix'
+    'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
+    'max-len': [
+      'error', { code: 130 }
     ],
-    'quotes': [
+    'no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],
+    'no-multiple-empty-lines': ['error', { max: 1 }],
+    quotes: [
       'error',
       'single'
     ],
-    'semi': [
+    semi: [
       'error',
-      'always'
+      'never'
     ],
-    'eqeqeq': ['error', 'always'],
+    eqeqeq: ['error', 'always'],
     'comma-dangle': ['error', 'never']
   }
 };
