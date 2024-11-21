@@ -56,6 +56,8 @@ app.use((req, res, next) => {
   } else { return next(); }
 });
 
+app.use('/components', express.static(path.join(__dirname, 'components')));
+
 app.use('/views', express.static(path.join(__dirname, 'views')));
 app.use('/scripts', express.static(path.join(__dirname, 'scripts')));
 app.use('/styles', express.static(path.join(__dirname, 'styles')));

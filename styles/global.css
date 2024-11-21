@@ -9,8 +9,8 @@ body {
   text-shadow:0 0 1px transparent;
   text-rendering: optimizeLegibility;
   letter-spacing: .03rem;
-  color: var(--primary);
-  background-color: var(--secondary);
+  color: var(--secondary);
+  background-color: var(--primary);
   display: flex;
   flex-direction: column;
 }

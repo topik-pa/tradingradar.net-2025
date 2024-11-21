@@ -137,6 +137,7 @@ exports.loginView = async (req, res) => {
 // home page view
 exports.hpView = async (req, res) => {
   res.render('home', {
+    id: 'hp',
     title: 'Home page', 
     user: req.session.user
   });
@@ -144,6 +145,7 @@ exports.hpView = async (req, res) => {
 // stock list view
 exports.stockListView = async (req, res) => {
   res.render('stock-list', {
+    id: 'titoli',
     title: 'Tutti i titoli', 
     description: 'Titoli...',
     user: req.session.user
@@ -152,6 +154,7 @@ exports.stockListView = async (req, res) => {
 //target price e raccommandazioni view
 exports.targetPriceRaccView = async (req, res) => {
   res.render('target-price-racc', {
+    id: 'tpr',
     title: 'Target price e raccomandazioni', 
     description: 'Descr...',
     user: req.session.user
@@ -160,6 +163,7 @@ exports.targetPriceRaccView = async (req, res) => {
 // dividendi view
 exports.dividendsView = async (req, res) => {
   res.render('dividends', {
+    id: 'dividendi',
     title: 'Tutti i dividendi', 
     description: 'Descr...',
     user: req.session.user
@@ -168,6 +172,7 @@ exports.dividendsView = async (req, res) => {
 // contatti view
 exports.contctsView = async (req, res) => {
   res.render('contacts', {
+    id: 'contatti',
     title: 'Contattaci', 
     description: 'Descr...'
   });

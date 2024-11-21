@@ -14,8 +14,8 @@
   --red:  #c91e2c;
   --green:#3db818;
 
-  --primary: var(--darkest-gray);
-  --secondary: var(--white);
+  --primary: var(--white);
+  --secondary: var(--black);
   --tertiary: var(--blue);
 
   --error: var(--red);

@@ -10,10 +10,12 @@
 @import "./loading.css";
 @import "./responsive.css";
 
+@import "/components/shared/header/main-menu/main-menu.css";
+
 
 header, footer {
   padding: 0 1rem;
-  background: var(--black);
+  background: var(--secondary);
   color: #FFFFFF;
   font-weight: bold;
   text-align: center;

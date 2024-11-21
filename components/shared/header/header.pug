@@ -1,6 +1,13 @@
-if user
-  header 
-    p Hello, #{user.name} #{user.surname}!
-    a(href="/logout") Logout 
-else 
-  header Hello!
+//- if user
+//-   header 
+//-     p Hello, #{user.name} #{user.surname}!
+//-     a(href="/logout") Logout 
+//- else 
+//-   header Hello!
+header 
+  div 
+    if user
+      div Hello, #{user.name} #{user.surname}!
+    else 
+      p Hello!
+  include ./main-menu/main-menu.pug
