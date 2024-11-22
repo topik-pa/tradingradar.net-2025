@@ -11,6 +11,7 @@
 @import "./responsive.css";
 
 @import "/components/shared/header/main-menu/main-menu.css";
+@import "/components/stocks_list/stocks_list.css";
 
 
 header, footer {

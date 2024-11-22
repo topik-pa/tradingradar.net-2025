@@ -1,3 +1,5 @@
+const https = require('https')
+
 // Model (emulated)
 const Users = [
   {
@@ -29,6 +31,42 @@ const Users = [
     password: 'password'
   }
 ];
+
+//Get stocks
+let stocks = []
+function getStocks () {
+  const options = {
+    method: 'GET',
+    hostname: 'tradingradar-v3.herokuapp.com',
+    port: null,
+    path: '/api/stocks',
+    headers: {
+      'x-rapidapi-host': 'tradingradar-v3.herokuapp.com',
+      'x-rapidapi-key': 'a8e4f24d21msh497089d72e59bf3p1377e8jsn2be6a846ed17',
+      useQueryString: true
+    }
+  }
+  const request = https.request(options, function (response) {
+    const chunks = []
+    response.on('data', function (chunk) {
+      chunks.push(chunk)
+    })
+    response.on('end', function () {
+      const body = Buffer.concat(chunks).toString()
+      try {
+        stocks = JSON.parse(body)
+      } catch (error) {
+        console.error(error)
+      }
+    })
+  })
+  request.end()
+  request.on('error', error => {
+    console.error(error)
+  })
+}
+getStocks()
+//Get stocks
 
 // Regenerate session
 const regenerateSession = async (req) => {
@@ -135,9 +173,10 @@ exports.loginView = async (req, res) => {
 };
 // home page view
 exports.hpView = async (req, res) => {
+  res.locals.stocks = stocks
   res.render('home', {
     id: 'hp',
-    title: 'Home page', 
+    title: 'Segnali di analisi tecnica in tempo reale', 
     user: req.session.user
   });
 };
@@ -176,5 +215,41 @@ exports.contctsView = async (req, res) => {
     description: 'Descr...',
     user: req.session.user
   });
+};
+
+// stock view
+exports.stockView = async (req, res) => {
+  const getStockNameAndCode = (isin) => {
+    for (const stock of stocks) {
+      if (stock.isin === isin) {
+        return {
+          name: stock.name,
+          code: stock.code
+        }
+      }
+    }
+  }
+  if (!req.query.isin) {
+    return res.status(422).send({ 
+      error: 'Cannot find ISIN code',
+      code: 'noISIN'
+    });
+  }
+  if (!stocks.length) {
+    return res.status(500).send({ 
+      error: 'No stocks availables',
+      code: 'noStocks'
+    });
+  }
+  const {name, code} = getStockNameAndCode(req.query.isin);
+
+  res.render('stock', { 
+    id: 'stock', 
+    title: 'Analisi titolo ', 
+    description: 'Descr...',
+    user: req.session.user,
+    name,
+    code
+  })
 };
 

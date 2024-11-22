@@ -51,7 +51,7 @@ p {
 }
 
 small {
-  font-size: var(--font-size-very-small);
+  font-size: 75%;
 }
 
 ul, ol {

@@ -21,7 +21,7 @@ module.exports = app => {
   app.get('/', ctrl.hpView);
 
   //stock list
-  app.get('/titoli', ctrl.stockListView);
+  app.get('/titoli', isAuthenticated, ctrl.stockListView);
 
   //target price e raccommandazioni
   app.get('/target-price-raccomandazioni', ctrl.targetPriceRaccView);
@@ -31,6 +31,9 @@ module.exports = app => {
 
   //contatti
   app.get('/contatti', ctrl.contctsView);
+
+  //stock
+  app.get('/analisi/:stock', ctrl.stockView);  
 
 
   

@@ -1,11 +1,17 @@
 extends layout.pug
 
 block append meta
-  title #{title} 
+  title #{title  + ' - ' + proj_name} 
   meta(name="description" content=proj_description)
   meta(name="keywords" content="home")
   link(rel="stylesheet", href="/styles/views/home.css")
-  script(src='/scripts/home.js', defer)
+  script(src='/scripts/home.js', type='module', defer)
 
 block main
-  h1 #{title}
+  h1 #{title}#[br]
+    small Scopri i titoli azionari più interessanti attraverso i dati forniti dai principali media online del settore finanziario
+
+  section 
+    h2 Tutti i titoli 
+    include ../components/stocks_list/stocks_list.pug
+
