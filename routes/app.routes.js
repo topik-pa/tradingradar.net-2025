@@ -20,9 +20,6 @@ module.exports = app => {
   // app.get('/', isAuthenticated, ctrl.hpView);  
   app.get('/', ctrl.hpView);
 
-  //stock list
-  app.get('/titoli', isAuthenticated, ctrl.stockListView);
-
   //target price e raccommandazioni
   app.get('/target-price-raccomandazioni', ctrl.targetPriceRaccView);
 

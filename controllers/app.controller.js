@@ -180,15 +180,6 @@ exports.hpView = async (req, res) => {
     user: req.session.user
   });
 };
-// stock list view
-exports.stockListView = async (req, res) => {
-  res.render('stock-list', {
-    id: 'titoli',
-    title: 'Tutti i titoli', 
-    description: 'Titoli...',
-    user: req.session.user
-  });
-};
 //target price e raccommandazioni view
 exports.targetPriceRaccView = async (req, res) => {
   res.render('target-price-racc', {
