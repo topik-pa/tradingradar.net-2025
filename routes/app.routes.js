@@ -1,5 +1,5 @@
 const ctrl = require('../controllers/app.controller.js');
-var router = require('express').Router();
+const router = require('express').Router();
 
 
 //middleware to test if authenticated
@@ -14,32 +14,32 @@ module.exports = app => {
   router.post('/login', ctrl.loginUser);
 
   //logout
-  app.get('/logout', ctrl.logoutUser);
+  router.get('/logout', ctrl.logoutUser);
 
   //home page
   // app.get('/', isAuthenticated, ctrl.hpView);  
-  app.get('/', ctrl.hpView);
+  router.get('/', ctrl.hpView);
 
   //target price e raccommandazioni
-  app.get('/target-price-raccomandazioni', ctrl.targetPriceRaccView);
+  router.get('/target-price-raccomandazioni', ctrl.targetPriceRaccView);
 
   // dividendi
-  app.get('/dividendi', ctrl.dividendsView);
+  router.get('/dividendi', ctrl.dividendsView);
 
   //contatti
-  app.get('/contatti', ctrl.contctsView);
+  router.get('/contatti', ctrl.contctsView);
 
   //stock
-  app.get('/analisi/:stock', ctrl.stockView);  
+  router.get('/analisi/:stock', ctrl.stockView);  
 
 
   
   // Sitemap.xml
-  app.get('/sitemap.xml', function (req, res) {
+  router.get('/sitemap.xml', function (req, res) {
     res.sendFile('public/sitemap.xml', { root: '.' });
   });
   // Robots.txt
-  app.get('/robots.txt', function (req, res) {
+  router.get('/robots.txt', function (req, res) {
     res.sendFile('public/robots.txt', { root: '.' });
   });
 

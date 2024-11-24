@@ -1,0 +1,26 @@
+#perf-month ul.up span {
+  color: var(--green);
+}
+#perf-month ul.down span {
+  color: var(--red);
+}
+#perf-month ul span {
+  text-shadow: 0 0 var(--gray);
+}
+
+#perf-month h3::before {
+  font-family: 'icomoon' !important;
+  content: "\e9a5";
+  font-size: var(--font-size-biggest);
+  margin-right: var(--x-small-space);
+  vertical-align: text-bottom;
+  display: inline-block;
+  text-shadow: var(--text-shadow);
+}
+#perf-month-up h3::before {
+  color: var(--green);
+}
+#perf-month-down h3::before {
+  color: var(--red);
+  transform: rotate(90deg);
+}

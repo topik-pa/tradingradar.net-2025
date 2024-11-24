@@ -1,0 +1,21 @@
+#uptrends h2::before {
+  font-family: 'icomoon' !important;
+  content: "\e9b5";
+  font-size: var(--font-size-biggest);
+  margin-right: var(--x-small-space);
+  vertical-align: text-bottom;
+  display: inline-block;
+  color: var(--green);
+  text-shadow: var(--text-shadow);
+}
+
+#downtrends h2::before {
+  font-family: 'icomoon' !important;
+  content: "\e9b5";
+  font-size: var(--font-size-biggest);
+  margin-right: var(--x-small-space);
+  vertical-align: text-bottom;
+  display: inline-block;
+  color: var(--red);
+  text-shadow: var(--text-shadow);
+}

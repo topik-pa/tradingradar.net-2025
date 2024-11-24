@@ -11,7 +11,15 @@ block main
   h1 #{title}#[br]
     small Scopri i titoli azionari più interessanti attraverso i dati forniti dai principali media online del settore finanziario
 
-  section 
-    h2 Tutti i titoli 
-    include ../components/stocks_list/stocks_list.pug
+  include ../components/stocks_list/stocks_list.pug
 
+  
+  h2 I segnali di oggi #[em(id="date")]
+
+  include ../components/perf-month/perf-month.pug
+
+  include ../components/perf-year/perf-year.pug
+
+  include ../components/trend/trend.pug
+
+  include ../components/inversion/inversion.pug

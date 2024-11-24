@@ -13,6 +13,9 @@
   --blue: #3e78e8;
   --red:  #c91e2c;
   --green:#3db818;
+  --gold:   #ffd700;
+  --silver: #aaa9ad;
+  --bronze: #cd7f32;
 
   --primary: var(--white);
   --secondary: var(--black);

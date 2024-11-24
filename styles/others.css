@@ -1,0 +1,87 @@
+table tbody tr:nth-child(odd) {
+  background-color: var(--lightest-gray);
+}
+
+main section:nth-child(even):not(.loading) {
+  background-color: var(--lightest-gray);
+  margin: -1.5rem;
+  padding: 1.5rem;
+}
+main section:nth-child(even) table tbody tr:nth-child(odd) {
+  background-color: var(--white);
+}
+main section:nth-child(even) ul li:nth-child(odd) {
+  background-color: var(--white);
+}
+
+p.source, p.detection {
+  font-style: italic;
+  font-size: var(--font-size-small);
+  color: var(--darker-gray);
+}
+
+.t-share {
+  margin-top: var(--normal-space);
+}
+
+/* flex list wrapper */
+.list-wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.list-wrapper > div {
+  margin: var(--small-space) 0;
+  width: 48%;
+}
+.list-wrapper .social {
+  text-align: center;
+  border-top: 1px solid var(--lighter-gray);
+  padding-top: var(--x-large-space);
+}
+@media screen and (max-width: 768px) {
+  .list-wrapper > div {
+    width: 100%;
+  }
+}
+
+/* flex table wrapper */
+.table-wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.table-wrapper > div {
+  margin: var(--small-space) 0;
+  width: 48%;
+}
+.table-wrapper .social {
+  text-align: center;
+  border-top: 1px solid var(--light-gray);
+  padding-top: var(--x-large-space);
+}
+
+.table-wrapper table {
+  margin-bottom: var(--x-large-space);
+  max-height: 33rem;
+  display: inline-block;
+  overflow: auto;
+  text-shadow: 0 0 var(--light-gray);
+  font-weight: 500;
+}
+
+.table-wrapper table th, td {
+  padding: var(--x-small-space) var(--normal-space);
+  text-align: left;
+  padding-left: 0;
+}
+
+.table-wrapper table th {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .table-wrapper > div {
+    width: 100%;
+  }
+}

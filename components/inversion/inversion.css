@@ -1,0 +1,21 @@
+#upinversion h2::before {
+  font-family: 'icomoon' !important;
+  content: "\e9a9";
+  font-size: var(--font-size-biggest);
+  margin-right: var(--x-small-space);
+  vertical-align: text-bottom;
+  display: inline-block;
+  color: var(--green);
+  text-shadow: var(--text-shadow);
+}
+
+#downinversion h2::before {
+  font-family: 'icomoon' !important;
+  content: "\e9a9";
+  font-size: var(--font-size-biggest);
+  margin-right: var(--x-small-space);
+  vertical-align: text-bottom;
+  display: inline-block;
+  color: var(--red);
+  text-shadow: var(--text-shadow);
+}

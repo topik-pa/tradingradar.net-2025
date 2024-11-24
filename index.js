@@ -76,6 +76,7 @@ app.use((req, res, next) => {
   next();
 });
 
+require('./routes/api.routes')(app);
 require('./routes/app.routes')(app);
 //404 handling
 app.use((req, res) => {
