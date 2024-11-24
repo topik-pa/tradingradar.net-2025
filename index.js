@@ -6,6 +6,7 @@ const session = require('express-session');
 const path = require('path');
 const compression = require('compression');
 const { I18n } = require('i18n');
+require('dotenv').config()
 
 const app = express();
 
@@ -57,8 +58,6 @@ app.use((req, res, next) => {
 });
 
 app.use('/components', express.static(path.join(__dirname, 'components')));
-
-app.use('/views', express.static(path.join(__dirname, 'views')));
 app.use('/scripts', express.static(path.join(__dirname, 'scripts')));
 app.use('/styles', express.static(path.join(__dirname, 'styles')));
 app.use('/assets', express.static(path.join(__dirname, 'assets')));

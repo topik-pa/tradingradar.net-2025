@@ -4,7 +4,7 @@ const options = {
   port: null,
   headers: {
     'x-rapidapi-host': 'tradingradar-v3.herokuapp.com',
-    'x-rapidapi-key': 'a8e4f24d21msh497089d72e59bf3p1377e8jsn2be6a846ed17',
+    'x-rapidapi-key': process.env.X_RAPIDAPI_KEY,
     useQueryString: true
   }
 }
