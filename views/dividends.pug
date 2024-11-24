@@ -6,7 +6,21 @@ block append meta
   meta(name="description" content=description)
   meta(name="keywords" content="")
   link(rel="stylesheet", href="/styles/views/dividends.css")
-  script(src='/scripts/dividends.js', defer)
+  script(src='/scripts/dividends.js', type='module', defer)
 
 block main
-  h1 #{title}
+  section(id="dividens")
+    h1 #{title} 
+    div(class="list-wrapper")
+      div(id="dividend-yield") 
+        h3 I valori dei dividendi #[em in rapporto al prezzo]
+        p Lista dei dividendi ordinata per valore in rapporto al prezzo di listino del Titolo
+        ul(class="trlist rank yield")
+        p(class="source") Fonte: #[em(class="img_icon milano-finanza") Milano Finanza]
+        p(class="detection") Rilevamento: #[em ]
+      div(id="dividend-date")
+        h3 Prossime date di Stacco della Cedola
+        p La lista ordinata delle date di stacco del Dividendo 
+        ul(class="trlist date")
+        p(class="source") Fonte: #[em(class="img_icon milano-finanza") Milano Finanza]
+        p(class="detection") Rilevamento: #[em ]

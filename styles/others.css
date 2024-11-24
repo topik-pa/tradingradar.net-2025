@@ -61,7 +61,7 @@ p.source, p.detection {
   padding-top: var(--x-large-space);
 }
 
-.table-wrapper table {
+table {
   margin-bottom: var(--x-large-space);
   max-height: 33rem;
   display: inline-block;

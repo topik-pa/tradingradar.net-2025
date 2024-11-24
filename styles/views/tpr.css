@@ -1,14 +1,14 @@
-#dividens ul span {
-  text-shadow: 0 0 var(--gray);
-}
-
-#dividens h3::before {
+#target-price h2::before {
   font-family: 'icomoon' !important;
-  content: "\e9d9";
+  content: "\e907";
   font-size: var(--font-size-biggest);
   margin-right: var(--x-small-space);
   vertical-align: text-bottom;
   display: inline-block;
   color: var(--gray);
   text-shadow: var(--text-shadow);
+}
+
+#target-price table {
+  width: 100%;
 }

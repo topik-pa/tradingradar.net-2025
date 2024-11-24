@@ -16,10 +16,6 @@ async function callCustomApi () {
     trend.init(res.body.downtrends, 'downtrends')
     inversion.init(res.body.tiup, 'upinversion')
     inversion.init(res.body.tidown, 'downinversion')
-    //upTrends.init(res.body.uptrends)
-    //downTrends.init(res.body.downtrends)
-    //upInversion.init(res.body.tiup)
-    //downInversion.init(res.body.tidown)
     updateUI(statuses[2])
   } catch (error) {
     console.error(error)

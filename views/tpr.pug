@@ -1,0 +1,25 @@
+
+extends layout.pug
+
+block append meta
+  title #{title} 
+  meta(name="description" content=description)
+  meta(name="keywords" content="")
+  link(rel="stylesheet", href="/styles/views/tpr.css")
+  script(src='/scripts/tpr.js', type='module', defer)
+
+block main
+  section(id="target-price")
+    h1 #{title}
+    p I target Price e le Raccomandazioni delle principali Banche d'Affari #[em ordinati per data]
+    table
+      thead
+        tr
+          th Nome
+          th Data
+          th Banca
+          th Giudizio
+          th Target price
+      tbody
+    p(class="source") Fonte: #[em(class="img_icon soldi-on-line") Soldi on Line]
+    p(class="detection") Rilevamento: #[em ]

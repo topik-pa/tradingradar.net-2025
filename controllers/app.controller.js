@@ -182,9 +182,9 @@ exports.hpView = async (req, res) => {
 };
 //target price e raccommandazioni view
 exports.targetPriceRaccView = async (req, res) => {
-  res.render('target-price-racc', {
+  res.render('tpr', {
     id: 'tpr',
-    title: 'Target price e raccomandazioni', 
+    title: 'Target Price e ultime Raccomandazioni dalle Banche di Affari', 
     description: 'Descr...',
     user: req.session.user
   });
@@ -193,7 +193,7 @@ exports.targetPriceRaccView = async (req, res) => {
 exports.dividendsView = async (req, res) => {
   res.render('dividends', {
     id: 'dividendi',
-    title: 'Tutti i dividendi', 
+    title: 'Data e valore dei Dividendi', 
     description: 'Descr...',
     user: req.session.user
   });
