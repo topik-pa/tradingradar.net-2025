@@ -32,6 +32,9 @@ module.exports = app => {
   //stock
   router.get('/analisi/:stock', ctrl.stockView);  
 
+  //privacy
+  router.get('/privacy', ctrl.privacyView);
+
 
   
   // Sitemap.xml

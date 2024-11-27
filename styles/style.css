@@ -21,6 +21,7 @@
 @import "/components/perf-year/perf-year.css";
 @import "/components/trend/trend.css";
 @import "/components/inversion/inversion.css";
+@import "/components/shared/cookie_layer/cookie_layer.css";
 
 
 header, footer {

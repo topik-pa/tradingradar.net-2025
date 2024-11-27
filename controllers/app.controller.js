@@ -212,6 +212,16 @@ exports.contctsView = async (req, res) => {
     url: req.url
   });
 };
+// privacy view
+exports.privacyView = async (req, res) => {
+  res.render('privacy', {
+    id: 'privacy',
+    title: 'Privacy', 
+    description: 'Descr...',
+    user: req.session.user,
+    url: req.url
+  });
+};
 
 // stock view
 exports.stockView = async (req, res) => {
