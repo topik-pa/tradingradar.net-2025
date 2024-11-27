@@ -178,7 +178,8 @@ exports.hpView = async (req, res) => {
     id: 'hp',
     title: 'Segnali di analisi tecnica in tempo reale', 
     description: 'Descr...',
-    user: req.session.user
+    user: req.session.user,
+    url: req.url
   });
 };
 //target price e raccommandazioni view
@@ -187,7 +188,8 @@ exports.targetPriceRaccView = async (req, res) => {
     id: 'tpr',
     title: 'Target Price e ultime Raccomandazioni dalle Banche di Affari', 
     description: 'Descr...',
-    user: req.session.user
+    user: req.session.user,
+    url: req.url
   });
 };
 // dividendi view
@@ -196,7 +198,8 @@ exports.dividendsView = async (req, res) => {
     id: 'dividendi',
     title: 'Data e valore dei Dividendi', 
     description: 'Descr...',
-    user: req.session.user
+    user: req.session.user,
+    url: req.url
   });
 };
 // contatti view
@@ -205,7 +208,8 @@ exports.contctsView = async (req, res) => {
     id: 'contatti',
     title: 'Contattaci', 
     description: 'Descr...',
-    user: req.session.user
+    user: req.session.user,
+    url: req.url
   });
 };
 
@@ -240,6 +244,7 @@ exports.stockView = async (req, res) => {
     title: 'Analisi titolo ', 
     description: 'Descr...',
     user: req.session.user,
+    url: req.url,
     name,
     code
   })

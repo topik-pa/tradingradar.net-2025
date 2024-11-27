@@ -3,10 +3,13 @@
   let proj_tagline = 'Titoli sull\'orlo di un crisi di nervi'
   let proj_description = 'Scopri le Azioni più interessanti della Borsa Italiana con dati in tempo reale dalle principali testate del settore: performance, trend, target price, raccomandazioni, dividendi, medie, supporti e resistenze, RSi, rating e tanti altri dati'
   let proj_url = 'https://tradingradar.net'
-  let copy = 2025
-  let owner = 'Marco Pavan'
-  let email = 'info@tradingradar.net'
-  let logo = 'https://www.tradingradar.net/assets/images/logo.png'
+  let proj_copy = 2025
+  let proj_owner = 'Marco Pavan'
+  let proj_email = 'info@tradingradar.net'
+  let proj_logo = 'https://www.tradingradar.net/assets/images/logo.png'
+  let fbAppId = 8622517134464699
+  let sc_project = 11043457
+  let sc_security = '9f87886c'
 
 doctype html
 html(lang=locale)
@@ -15,7 +18,8 @@ html(lang=locale)
       meta(charset="utf-8")
       meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
       meta(name="author" content=owner)
-      link(rel="shortcut icon", href="https://www.tradingradar.net/public/favicon.ico", type="image/x-icon")
+      meta(property="fb:app_id" content=fbAppId)
+      link(rel="shortcut icon", href="/public/favicon.ico", type="image/x-icon")
       link(rel="stylesheet", type="text/css", href="/styles/style.css")
   body(id=id, class=className)
     include ../components/shared/header/header.pug
@@ -24,7 +28,15 @@ html(lang=locale)
       block main
     block outro
     include ../components/shared/footer/footer.pug
+    block viewscripts
     script(src='/scripts/scripts.js', type='module')
+    div(id="fb-root")
+    script(async defer crossorigin="anonymous" src=("https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v21.0&appId=" + fbAppId))
+    script.
+        var sc_project = #{sc_project};
+        var sc_invisible = 1;
+        var sc_security = "#{sc_security}";
+    script(async, defer, src='https://www.statcounter.com/counter/counter.js')
     script(type='application/ld+json').
           {
             "@context": "https://schema.org",
