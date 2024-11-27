@@ -80,14 +80,14 @@ require('./routes/app.routes')(app);
 //404 handling
 app.use((req, res) => {
   res.status(400);
-  res.render('404', {title: 'Not found'});
+  res.render('404', {title: '404 - Not found'});
 });
 //error handling
 // eslint-disable-next-line no-unused-vars
 app.use((error, req, res, next) => {
   console.log(error.stack);
   res.status(500);
-  res.render('500', {title: 'Server error'});
+  res.render('500', {title: '500 - Server error'});
 });
 
 
