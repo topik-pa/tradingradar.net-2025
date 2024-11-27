@@ -5,6 +5,14 @@ block append meta
   meta(name="description" content=description)
   meta(name="keywords" content="login")
   link(rel="canonical", href=href=proj_url + url)
+
+  meta(name="og:url" content=proj_url)
+  meta(name="og:type" content="website")
+  meta(name="og:title" content=proj_tagline)
+  meta(name="og:site_name" content=proj_name)
+  meta(name="og:description" content=description)
+  meta(name="og:image" content=proj_logo)
+
   link(rel="stylesheet", href="/styles/views/login.css")
   script(src='/scripts/login.js', defer)
 
