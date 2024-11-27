@@ -8,13 +8,12 @@ block append meta
   script(src='/scripts/home.js', type='module', defer)
 
 block main
-  h1 #{title}#[br]
-    small Scopri i titoli azionari più interessanti attraverso i dati forniti dai principali media online del settore finanziario
 
+  include ../components/hp-header/hp-header.pug
+  
   include ../components/stocks_list/stocks_list.pug
 
-  
-  h2 I segnali di oggi #[em(id="date")]
+  //- h2 I segnali di oggi #[em(id="date")]
 
   include ../components/perf-month/perf-month.pug
 

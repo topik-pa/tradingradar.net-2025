@@ -6,7 +6,103 @@ block append meta
   meta(name="description" content=description)
   meta(name="keywords" content="")
   link(rel="stylesheet", href="/styles/views/stock.css")
-  script(src='/scripts/stock.js', defer)
+  script(src='/scripts/stock.js', type='module', defer)
 
 block main
-  h1 #{title} #{name} 
+  h1 #[span #{name}] - Informazioni, Analisi Tecnica e Rassegna Stampa
+  img(src=('/assets/images/stocks/' + code + '-min.png'), alt=name)
+  p Tutti i dati sono forniti in #[em tempo reale] interrogando direttamente le fonti originali
+
+  section(id="top-data")
+    div(id="last-price", class="rounded loading")
+      h4 Ultimo prezzo rilevato (€): 
+      span
+    div(id="dividend", class="rounded loading")
+      h4 Div. Yield (%):
+      span(id="yeld")
+      h4 Valore dividendo (€):
+      span(id="value")
+      h4 Data ultimo dividendo:
+      span(id="last")
+    div(id="average", class="rounded loading")
+      h4 20 gg (€):
+      span(id="mm20")
+      h4 40 gg (€):
+      span(id="mm40")
+      h 100 gg (€):
+      span(id="mm100")
+    div(id="performance", class="rounded loading")
+      h4 1 mese:
+      span(id="m1")
+      h4 6 mesi:
+      span(id="m6")
+      h4 1 anno:
+      span(id="y1") 
+
+  section(id="analyses")
+    div(id="borsa-italiana", class="rounded loading")
+      h3(class="borsa-italiana img_icon") Borsa Italiana
+      dl 
+        dt Resistenza (€):
+        dd(id="bi-resistance")
+        dt Supporto (€):
+        dd(id="bi-support") 
+        dt RSI:
+        dd(id="bi-rsi") 
+        dt Valutazione:
+        dd(id="bi-evaluation") 
+        dt Rating [0-4]:
+        dd(id="bi-rating") 
+    div(id="il-sole-24-ore", class="rounded loading")
+      h3(class="il-sole-24-ore img_icon") Il Sole 24 Ore
+      dl 
+        dt Tendenza breve periodo:
+        dd(id="sol24-short-tend")
+        dt Tendenza medio periodo:
+        dd(id="sol24-med-tend") 
+        dt Profilo:
+        dd(id="sol24-profile") 
+        dt Commento:
+        dd(id="sol24-comment") 
+    div(id="milano-finanza", class="rounded loading") 
+      h3(class="milano-finanza img_icon") Milano Finanza
+      dl 
+        dt Rating [A-E]:
+        dd(id="mf-rating")
+        dt Risk [0-100]:
+        dd(id="mf-risk")  
+    div(id="soldi-on-line", class="rounded loading") 
+      h3(class="soldi-on-line img_icon") SoldiOnLine
+      dl 
+        dt Giudizio:
+        dd(id="sol-evaluation")
+        dt Target price (€):
+        dd(id="sol-target") 
+        dt Banca d'affari:
+        dd(id="sol-bank") 
+        dt Data:
+        dd(id="sol-date") 
+    div(id="teleborsa", class="rounded loading") 
+      h3(class="teleborsa img_icon") Teleborsa
+      dl 
+        dt Resistenza (€):
+        dd(id="tb-resistance")
+        dt Supporto (€):
+        dd(id="tb-support") 
+        dt Trend:
+        dd(id="tb-trend") 
+
+  section(id="news", class="rounded zoom loading")
+    h2 Rassegna Stampa #{name}
+    ul 
+
+
+
+
+
+  
+
+  //- section(id="info", class="rounded zoom loading")
+  //-   h2 Informazioni #{name}
+  //-   p Valore e data del #[em dividendo]; le #[em medie mobili] a 20, 40 e 100 giorni; i #[em massimi e minimi] (assoluti e relativi all'ultimo anno) e le #[em performance] fatte registrare dal titolo #{name}.
+    

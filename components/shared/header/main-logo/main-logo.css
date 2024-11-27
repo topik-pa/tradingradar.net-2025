@@ -1,0 +1,17 @@
+#main-logo {
+  font-size: var(--font-size-biggest);
+}
+
+#main-logo a {
+  color: var(--white);
+}
+
+#main-logo span {
+  vertical-align: middle;
+}
+
+#main-logo img {
+  height: 3.2rem;
+  vertical-align: middle;
+  margin-right: var(--x-large-space);
+}

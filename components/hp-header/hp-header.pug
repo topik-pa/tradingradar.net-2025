@@ -1,0 +1,42 @@
+- 
+  let sources = [
+    {
+      name: 'Borsa Italiana',
+      id: 'borsa-italiana',
+      href: 'https://www.borsaitaliana.it/homepage/homepage.htm'
+    },
+    {
+      name: 'Il Sole 24 Ore',
+      id: 'il-sole-24-ore',
+      href: 'https://www.ilsole24ore.com/'
+    },
+    {
+      name: 'Milano Finanza',
+      id: 'milano-finanza',
+      href: 'https://www.milanofinanza.it/'
+    },
+    {
+      name: 'SoldiOnLine',
+      id: 'soldi-on-line',
+      href: 'https://www.soldionline.it/'
+    },
+    {
+      name: 'Teleborsa',
+      id: 'teleborsa',
+      href: 'https://www.teleborsa.it/'
+    },
+    {
+      name: 'Affari e Finanza',
+      id: 'repubblica',
+      href: 'https://www.repubblica.it/economia/affari-e-finanza/'
+    }
+  ]
+section(id="hp-header", class="rounded")
+  h1 #{title}
+  p Scopri #[em i titoli azionari più interessanti] attraverso i #[em dati forniti dai principali media online] del settore finanziario
+
+  p I dati forniti sono presi in tempo reale #[em dai principali media online] del settore finanziario.
+  div
+    each source in sources
+      a(class="img_icon " + source.id, href=source.href, title=source.name) #{source.name}
+  

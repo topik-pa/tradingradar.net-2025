@@ -177,6 +177,7 @@ exports.hpView = async (req, res) => {
   res.render('home', {
     id: 'hp',
     title: 'Segnali di analisi tecnica in tempo reale', 
+    description: 'Descr...',
     user: req.session.user
   });
 };

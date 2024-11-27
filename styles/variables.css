@@ -1,6 +1,6 @@
 :root {
   /* COLORS */
-  --white:         #FAFAFA;
+  --white:         #FCFCFC;
   --lightest-gray: #F1F1F1;
   --lighter-gray:  #E0E0E0;
   --light-gray:    #A9A9A9;
@@ -41,9 +41,9 @@
   --font-size-small: .9rem;
   --font-size-normal: 1rem;
   --font-size-big: 1.2rem;
-  --font-size-bigger: 1.5rem;
-  --font-size-huge: 1.8rem;
-  --font-size-biggest: 2.2rem;
+  --font-size-bigger: 1.4rem;
+  --font-size-huge: 1.7rem;
+  --font-size-biggest: 2.0rem;
 
   /* SHADOWS */
   --shadow: 0 0 10px 0 var(--black);

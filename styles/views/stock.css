@@ -1,0 +1,12 @@
+#top-data, #analyses {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#top-data .rounded, #analyses .rounded {
+  width: 100%;
+  max-width: 21rem;
+  min-height: 7rem;
+  margin-bottom: 2rem;
+}

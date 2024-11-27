@@ -1,4 +1,4 @@
-table tbody tr:nth-child(odd) {
+/* table tbody tr:nth-child(odd) {
   background-color: var(--lightest-gray);
 }
 
@@ -12,7 +12,7 @@ main section:nth-child(even) table tbody tr:nth-child(odd) {
 }
 main section:nth-child(even) ul li:nth-child(odd) {
   background-color: var(--white);
-}
+} */
 
 p.source, p.detection {
   font-style: italic;

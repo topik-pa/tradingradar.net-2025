@@ -14,6 +14,8 @@
 @import "./others.css";
 
 @import "/components/shared/header/main-menu/main-menu.css";
+@import "/components/shared/header/main-logo/main-logo.css";
+@import "/components/hp-header/hp-header.css";
 @import "/components/stocks_list/stocks_list.css";
 @import "/components/perf-month/perf-month.css";
 @import "/components/perf-year/perf-year.css";
@@ -22,7 +24,7 @@
 
 
 header, footer {
-  padding: 0 1rem;
+  padding: 0 var(--normal-space);
   background: var(--secondary);
   color: #FFFFFF;
   font-weight: bold;
