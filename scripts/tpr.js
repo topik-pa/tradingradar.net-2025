@@ -53,7 +53,7 @@ function printData (stocks, target) {
   }
 }
 
-  $root = document.getElementById('target-price')
-  statuses = ['idle', 'loading', 'success', 'error']
-  updateUI(statuses[1])
-  callTheApi()
+$root = document.getElementById('target-price')
+statuses = ['idle', 'loading', 'success', 'error']
+updateUI(statuses[1])
+callTheApi()

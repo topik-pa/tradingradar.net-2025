@@ -30,7 +30,7 @@ const Users = [
     email: 'barbaradurso@mediaset.it',
     password: 'password'
   }
-];
+]
 
 //Get stocks
 let stocks = []
@@ -73,23 +73,22 @@ const regenerateSession = async (req) => {
   await new Promise((resolve, reject) => {
     req.session.regenerate((err) => {
       if (err) {
-        reject(err);
+        reject(err)
       } else {
-        resolve();
+        resolve()
       }
-    });
-  });
-};
-
+    })
+  })
+}
 
 // Functions
 // login
 exports.loginUser = async (req, res, next) => {
   const findUserByEmail = async (email) => {
     return await Users.find((user) => {
-      return user.email === email;
-    });
-  };
+      return user.email === email
+    })
+  }
   // Validate request body
   if (
     !req.body || 
@@ -100,66 +99,66 @@ exports.loginUser = async (req, res, next) => {
     return res.status(400).send({
       error: 'Invalid body',
       code: 'invalidBody'
-    });
+    })
   }
 
-  const user = await findUserByEmail(req.body.email);
+  const user = await findUserByEmail(req.body.email)
 
   if (!user) {
     return res.status(404).send({ 
       error: 'User not found',
       code: 'userNotFound'
-    });
+    })
   }
 
   if (user.password !== req.body.password) {
     return res.status(401).send({ 
       error: 'Wrong password',
       code: 'wrongPassword'
-    });
+    })
   }
 
   // Session
   // regenerate the session, which is good practice to help
   // guard against forms of session fixation
   try {
-    await regenerateSession(req);
+    await regenerateSession(req)
   } catch (error) {
-    return next(error);
+    return next(error)
   }
 
   // store user information in session, typically a user id
-  req.session.user = {};
-  req.session.user.name = user.name;
-  req.session.user.surname = user.surname;
-  req.session.user.email = user.email;
+  req.session.user = {}
+  req.session.user.name = user.name
+  req.session.user.surname = user.surname
+  req.session.user.email = user.email
 
   // save the session before redirection to ensure page
   // load does not happen before session is saved
   req.session.save(function (error) {
-    if (error) {return next(error);}
-    return res.redirect('/');
+    if (error) {return next(error)}
+    return res.redirect('/')
     // return res.status(200).send({});
-  });
+  })
 
-};
+}
 // logout
 exports.logoutUser = async (req, res, next) => {
   // clear the user from the session object and save.
   // this will ensure that re-using the old session id
   // does not have a logged in user
-  req.session.user = null;
+  req.session.user = null
   req.session.save(function (error) {
-    if (error) next(error);
+    if (error) next(error)
   
     // regenerate the session, which is good practice to help
     // guard against forms of session fixation
     req.session.regenerate(function (error) {
-      if (error) next(error);
-      res.redirect('/login');
-    });
-  });
-};
+      if (error) next(error)
+      res.redirect('/login')
+    })
+  })
+}
 
 // Views
 // login view
@@ -169,8 +168,8 @@ exports.loginView = async (req, res) => {
     className: 'login',
     title: 'Login Page',
     url: req.url
-  });
-};
+  })
+}
 // home page view
 exports.hpView = async (req, res) => {
   res.locals.stocks = stocks
@@ -180,8 +179,8 @@ exports.hpView = async (req, res) => {
     description: 'Descr...',
     user: req.session.user,
     url: req.url
-  });
-};
+  })
+}
 //target price e raccommandazioni view
 exports.targetPriceRaccView = async (req, res) => {
   res.render('tpr', {
@@ -190,8 +189,8 @@ exports.targetPriceRaccView = async (req, res) => {
     description: 'Descr...',
     user: req.session.user,
     url: req.url
-  });
-};
+  })
+}
 // dividendi view
 exports.dividendsView = async (req, res) => {
   res.render('dividends', {
@@ -200,8 +199,8 @@ exports.dividendsView = async (req, res) => {
     description: 'Descr...',
     user: req.session.user,
     url: req.url
-  });
-};
+  })
+}
 // contatti view
 exports.contctsView = async (req, res) => {
   res.render('contacts', {
@@ -210,8 +209,8 @@ exports.contctsView = async (req, res) => {
     description: 'Descr...',
     user: req.session.user,
     url: req.url
-  });
-};
+  })
+}
 // privacy view
 exports.privacyView = async (req, res) => {
   res.render('privacy', {
@@ -220,8 +219,8 @@ exports.privacyView = async (req, res) => {
     description: 'Descr...',
     user: req.session.user,
     url: req.url
-  });
-};
+  })
+}
 
 // stock view
 exports.stockView = async (req, res) => {
@@ -239,15 +238,15 @@ exports.stockView = async (req, res) => {
     return res.status(422).send({ 
       error: 'Cannot find ISIN code',
       code: 'noISIN'
-    });
+    })
   }
   if (!stocks.length) {
     return res.status(500).send({ 
       error: 'No stocks availables',
       code: 'noStocks'
-    });
+    })
   }
-  const {name, code} = getStockNameAndCode(req.query.isin);
+  const {name, code} = getStockNameAndCode(req.query.isin)
 
   res.render('stock', { 
     id: 'stock', 
@@ -258,5 +257,5 @@ exports.stockView = async (req, res) => {
     name,
     code
   })
-};
+}
 

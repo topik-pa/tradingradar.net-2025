@@ -2,7 +2,6 @@ const ctrl = require('../controllers/api.controller.js')
 const router = require('express').Router()
 
 module.exports = app => {
-  
 
   const apiUrls = [
     '/stocks/perf1M',

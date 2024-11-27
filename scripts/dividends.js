@@ -42,8 +42,7 @@ function printData (stocks, target, key) {
   }
 }
 
-
-  $root = document.getElementById('dividens')
-  statuses = ['idle', 'loading', 'success', 'error']
-  updateUI(statuses[1])
-  callTheApi()
+$root = document.getElementById('dividens')
+statuses = ['idle', 'loading', 'success', 'error']
+updateUI(statuses[1])
+callTheApi()

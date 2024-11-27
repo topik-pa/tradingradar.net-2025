@@ -35,5 +35,5 @@ stocks.init()
 //perfYear.init()
 //callCustomApi()
 
-const date = new Date(Date.now()).toLocaleDateString("it-IT");
-document.getElementById('date').innerText = date;
+const date = new Date(Date.now()).toLocaleDateString('it-IT')
+document.getElementById('date').innerText = date
