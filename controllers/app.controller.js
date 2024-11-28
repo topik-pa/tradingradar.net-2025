@@ -1,7 +1,7 @@
 const https = require('https')
 
 // Model (emulated)
-const Users = [
+/* const Users = [
   {
     id: 0,
     name: 'admin',
@@ -30,7 +30,7 @@ const Users = [
     email: 'barbaradurso@mediaset.it',
     password: 'password'
   }
-]
+] */
 
 //Get stocks
 let stocks = []
@@ -165,8 +165,8 @@ exports.logoutUser = async (req, res, next) => {
 exports.loginView = async (req, res) => {
   res.render('login', {
     id: 'login',
-    className: 'login',
     title: 'Login Page',
+    description: 'Descr...',
     url: req.url
   })
 }
@@ -202,7 +202,7 @@ exports.dividendsView = async (req, res) => {
   })
 }
 // contatti view
-exports.contctsView = async (req, res) => {
+exports.contactsView = async (req, res) => {
   res.render('contacts', {
     id: 'contatti',
     title: 'Contattaci', 
@@ -247,7 +247,6 @@ exports.stockView = async (req, res) => {
     })
   }
   const {name, code} = getStockNameAndCode(req.query.isin)
-
   res.render('stock', { 
     id: 'stock', 
     title: 'Analisi titolo ', 

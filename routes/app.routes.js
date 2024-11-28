@@ -26,7 +26,7 @@ module.exports = app => {
   router.get('/dividendi', ctrl.dividendsView)
 
   //contatti
-  router.get('/contatti', ctrl.contctsView)
+  router.get('/contatti', ctrl.contactsView)
 
   //stock
   router.get('/analisi/:stock', ctrl.stockView)  
