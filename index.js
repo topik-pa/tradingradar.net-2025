@@ -82,7 +82,7 @@ app.use((req, res) => {
 })
 //error handling
 app.use((error, req, res) => {
-  console.log(error.stack)
+  console.error(error.stack)
   res.status(500)
   res.render('500', {title: '500 - Server error'})
 })

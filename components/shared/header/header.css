@@ -1,0 +1,11 @@
+header {
+  padding: var(--small-space) var(--view-padding);
+  background: var(--primary);
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header a {
+  color: var(--secondary);
+}

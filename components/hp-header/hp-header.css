@@ -2,16 +2,15 @@
   display: flex;
   justify-content: start;
   flex-wrap: wrap;
+  margin-top: var(--xx-large-space);
  }
 #hp-header a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: var(--normal-space);
+  margin-right: var(--xx-large-space);
 }
 #hp-header a::before {
   width: var(--xx-large-space);
   height: var(--xx-large-space);
-  /* margin-right: var(--small-space);
-  border: 1px solid var(--gray); */
 }

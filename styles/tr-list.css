@@ -4,11 +4,12 @@ ul.trlist {
   overflow-y: auto;
 }
 ul.trlist li {
-  padding: var(--x-small-space);
+  padding: var(--small-space);
   display: flex;
   justify-content: space-between;
   font-weight: 500;
   margin: 0;
+  border-radius: var(--border-radius-small);
 }
 /* ranked list */
 ul.rank li:nth-child(1) a, ul.rank li:nth-child(2) a, ul.rank li:nth-child(3) a {

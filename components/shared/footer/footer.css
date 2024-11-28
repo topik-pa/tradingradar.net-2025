@@ -1,0 +1,11 @@
+footer {
+  padding: 0 var(--normal-space);
+  background: var(--secondary);
+  color: #FFFFFF;
+  font-weight: bold;
+  text-align: center;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

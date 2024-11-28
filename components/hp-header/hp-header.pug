@@ -33,10 +33,10 @@
   ]
 section(id="hp-header", class="rounded")
   h1 #{title}
-  p Scopri #[em i titoli azionari più interessanti] attraverso i #[em dati forniti dai principali media online] del settore finanziario
+  p #{description}
 
   p I dati forniti sono presi in tempo reale #[em dai principali media online] del settore finanziario.
   div
     each source in sources
-      a(class="img_icon " + source.id, href=source.href, title=source.name) #{source.name}
+      a(class="img_icon " + source.id, href=source.href, title="Visita il portale: " + source.name) #{source.name}
   

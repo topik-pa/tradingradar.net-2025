@@ -7,10 +7,10 @@
   --gray:          #888888;
   --dark-gray:     #707070;
   --darker-gray:   #585858;
-  --darkest-gray:  #383838;
+  --darkest-gray:  #333333;
   --black:         #181818;
 
-  --blue: #3e78e8;
+  --blue: #023baf;
   --red:  #c91e2c;
   --green:#3db818;
   --gold:   #ffd700;
@@ -18,14 +18,14 @@
   --bronze: #cd7f32;
 
   --primary: var(--white);
-  --secondary: var(--black);
+  --secondary: var(--darkest-gray);
   --tertiary: var(--blue);
 
   --error: var(--red);
   --success: var(--green);
   --link: var(--blue);
-  --text: var(--primary);
-  --background: var(--secondary);
+  --text: var(--secondary);
+  --background: var(--primary);
 
   /* TRANSPARENCIES */
   --transparent: .2;
@@ -54,11 +54,11 @@
   --x-small-space: .5rem;
   --small-space: .7rem;
   --normal-space: 1rem;
-  --large-space: 1.5rem;
-  --x-large-space: 2rem;
-  --xx-large-space: 3rem;
+  --large-space: 1.4rem;
+  --x-large-space: 2.2rem;
+  --xx-large-space: 3.6rem;
 
-  --view-padding: var(--large-space);
+  --view-padding: var(--x-large-space);
   --section-margin: var(--x-large-space);
   --gap: var(--x-small-space);
   --button-padding: var(--small-space);
@@ -81,43 +81,4 @@
   --modal: 999;
   --privacy: 9999;
   --gototop: 99999;
-}
-
-.dark:root {
-  --white:         #181818;
-  --lightest-gray: #383838;
-  --lighter-gray:  #585858;
-  --light-gray:    #707070;
-  --gray:          #888888;
-  --dark-gray:     #A9A9A9;
-  --darker-gray:   #E0E0E0;
-  --darkest-gray:  #F1F1F1;
-  --black:         #FAFAFA;
-
-  --primary: var(--darker-gray);
-  --secondary: var(--lightest-gray);
-  --link: var(--black);
-}
-.dark .invert {
-  filter: invert(1);
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --white:         #181818;
-    --lightest-gray: #383838;
-    --lighter-gray:  #585858;
-    --light-gray:    #707070;
-    --gray:          #888888;
-    --dark-gray:     #A9A9A9;
-    --darker-gray:   #E0E0E0;
-    --darkest-gray:  #F1F1F1;
-    --black:         #FAFAFA;
-  
-    --primary: var(--darker-gray);
-    --secondary: var(--lightest-gray);
-    --link: var(--black);
-  }
-  .invert {
-    filter: invert(1);
-  }
 }

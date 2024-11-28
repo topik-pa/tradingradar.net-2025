@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const https = require('https')
 
 // Model (emulated)
@@ -175,8 +176,8 @@ exports.hpView = async (req, res) => {
   res.locals.stocks = stocks
   res.render('home', {
     id: 'hp',
-    title: 'Segnali di analisi tecnica in tempo reale', 
-    description: 'Descr...',
+    title: 'Segnali di Borsa in tempo reale', 
+    description: 'Scopri in tempo reale quali titoli azionari stanno generando segnali cruciali secondo le principali testate del settore e trova ora le azioni più interessanti della Borsa Italiana.',
     user: req.session.user,
     url: req.url
   })

@@ -3,12 +3,12 @@
 
 if stocks
   section(id="select_stock", class="rounded zoom")
-    h2 Seleziona il titolo azionario per ottenere l'analisi completa
+    h2 Seleziona il titolo azionario per ottenere l'analisi completa in tempo reale
     div(class="alphabet")
       each letter in alphabet
         span #{letter}
     div(class="stocks") 
       each stock in stocks
-        a(class="stock hide", href=`/analisi/${encodeURI(stock.name.toLowerCase().replace(/ /g, '-'))}?isin=${stock.isin}`, title='Analisi Tecnica' + ' ' + stock.name, data-code=stock.code, data-letter=stock.name[0])
+        a(class="stock hide", href=`/analisi/${encodeURI(stock.name.toLowerCase().replace(/ /g, '-'))}?isin=${stock.isin}`, title='Analisi Tecnica: ' + stock.name, data-code=stock.code, data-letter=stock.name[0])
           img(src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==", alt='Analisi Tecnica' + ' ' + stock.name, data-status)
           span #{stock.name}

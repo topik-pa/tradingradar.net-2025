@@ -13,6 +13,8 @@
 @import "./image-icons.css";
 @import "./others.css";
 
+@import "/components/shared/header/header.css";
+@import "/components/shared/footer/footer.css";
 @import "/components/shared/header/main-menu/main-menu.css";
 @import "/components/shared/header/main-logo/main-logo.css";
 @import "/components/hp-header/hp-header.css";
@@ -23,19 +25,3 @@
 @import "/components/inversion/inversion.css";
 @import "/components/shared/cookie_layer/cookie_layer.css";
 @import "/components/shared/goto_top/goto_top.css";
-
-
-header, footer {
-  padding: 0 var(--normal-space);
-  background: var(--secondary);
-  color: #FFFFFF;
-  font-weight: bold;
-  text-align: center;
-  height: 5vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-header {
-  justify-content: space-between;
-}
