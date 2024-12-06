@@ -36,6 +36,7 @@ const https = require('https')
 //Get stocks
 let stocks = []
 function getStocks () {
+  console.log('GET STOCKS FROM REMOTE')
   const options = {
     method: 'GET',
     hostname: 'tradingradar-v3.herokuapp.com',
@@ -92,7 +93,7 @@ exports.loginUser = async (req, res, next) => {
   }
   // Validate request body
   if (
-    !req.body || 
+    !req.body ||
     Object.keys(req.body).length === 0 ||
     !req.body.email ||
     !req.body.password
@@ -106,14 +107,14 @@ exports.loginUser = async (req, res, next) => {
   const user = await findUserByEmail(req.body.email)
 
   if (!user) {
-    return res.status(404).send({ 
+    return res.status(404).send({
       error: 'User not found',
       code: 'userNotFound'
     })
   }
 
   if (user.password !== req.body.password) {
-    return res.status(401).send({ 
+    return res.status(401).send({
       error: 'Wrong password',
       code: 'wrongPassword'
     })
@@ -151,7 +152,7 @@ exports.logoutUser = async (req, res, next) => {
   req.session.user = null
   req.session.save(function (error) {
     if (error) next(error)
-  
+
     // regenerate the session, which is good practice to help
     // guard against forms of session fixation
     req.session.regenerate(function (error) {
@@ -176,7 +177,7 @@ exports.hpView = async (req, res) => {
   res.locals.stocks = stocks
   res.render('home', {
     id: 'hp',
-    title: 'Segnali di Borsa in tempo reale', 
+    title: 'Segnali di Borsa in tempo reale',
     description: 'Scopri in tempo reale quali titoli azionari stanno generando segnali cruciali secondo le principali testate del settore e trova ora le azioni più interessanti della Borsa Italiana.',
     user: req.session.user,
     url: req.url
@@ -186,7 +187,7 @@ exports.hpView = async (req, res) => {
 exports.targetPriceRaccView = async (req, res) => {
   res.render('tpr', {
     id: 'tpr',
-    title: 'Target Price e ultime Raccomandazioni dalle Banche di Affari', 
+    title: 'Target Price e ultime Raccomandazioni dalle Banche di Affari',
     description: 'Descr...',
     user: req.session.user,
     url: req.url
@@ -196,7 +197,7 @@ exports.targetPriceRaccView = async (req, res) => {
 exports.dividendsView = async (req, res) => {
   res.render('dividends', {
     id: 'dividendi',
-    title: 'Data e valore dei Dividendi', 
+    title: 'Data e valore dei Dividendi',
     description: 'Descr...',
     user: req.session.user,
     url: req.url
@@ -206,7 +207,7 @@ exports.dividendsView = async (req, res) => {
 exports.contactsView = async (req, res) => {
   res.render('contacts', {
     id: 'contatti',
-    title: 'Contattaci', 
+    title: 'Contattaci',
     description: 'Descr...',
     user: req.session.user,
     url: req.url
@@ -216,7 +217,7 @@ exports.contactsView = async (req, res) => {
 exports.privacyView = async (req, res) => {
   res.render('privacy', {
     id: 'privacy',
-    title: 'Privacy', 
+    title: 'Privacy',
     description: 'Descr...',
     user: req.session.user,
     url: req.url
@@ -236,21 +237,21 @@ exports.stockView = async (req, res) => {
     }
   }
   if (!req.query.isin) {
-    return res.status(422).send({ 
+    return res.status(422).send({
       error: 'Cannot find ISIN code',
       code: 'noISIN'
     })
   }
   if (!stocks.length) {
-    return res.status(500).send({ 
+    return res.status(500).send({
       error: 'No stocks availables',
       code: 'noStocks'
     })
   }
   const {name, code} = getStockNameAndCode(req.query.isin)
-  res.render('stock', { 
-    id: 'stock', 
-    title: 'Analisi titolo ', 
+  res.render('stock', {
+    id: 'stock',
+    title: 'Analisi titolo ',
     description: 'Descr...',
     user: req.session.user,
     url: req.url,

@@ -10,17 +10,45 @@ const custApiElements = document.querySelectorAll('#downinversion, #upinversion,
 
 async function callCustomApi () {
   updateUI(statuses[1])
-  try {
-    const res = await proxyFetch('/api/custom')
-    trend.init(res.body.uptrends, 'uptrends')
-    trend.init(res.body.downtrends, 'downtrends')
-    inversion.init(res.body.tiup, 'upinversion')
-    inversion.init(res.body.tidown, 'downinversion')
-    updateUI(statuses[2])
-  } catch (error) {
-    console.error(error)
-    updateUI(statuses[3])
+  let trLocalData = JSON.parse(localStorage.getItem('trLocalData'))
+  let uptrends = trLocalData?.uptrends || null
+  let downtrends = trLocalData?.downtrends || null
+  let upinversion = trLocalData?.upinversion || null
+  let downinversion = trLocalData?.downinversion || null
+
+  if(
+    !uptrends ||
+    !downtrends ||
+    !upinversion ||
+    !downinversion
+  ) {
+    try {
+      const remote = await proxyFetch('/api/custom')
+      let data = remote.body || []
+      uptrends = data.uptrends
+      downtrends = data.downtrends
+      upinversion = data.tiup
+      downinversion = data.tidown
+
+      if(data.length !== 0) {
+        if (!trLocalData) trLocalData = {}
+        trLocalData.uptrends = data.uptrends
+        trLocalData.downtrends = data.downtrends
+        trLocalData.upinversion = data.tiup
+        trLocalData.downinversion = data.tidown
+        localStorage.setItem('trLocalData', JSON.stringify(trLocalData))
+      }
+    } catch (error) {
+      console.error(error)
+      updateUI(statuses[3])
+      return
+    }
   }
+  trend.init(uptrends, 'uptrends')
+  trend.init(downtrends, 'downtrends')
+  inversion.init(upinversion, 'upinversion')
+  inversion.init(downinversion, 'downinversion')
+  updateUI(statuses[2])
 }
 
 function updateUI (status) {
@@ -31,9 +59,9 @@ function updateUI (status) {
 }
 
 stocks.init()
-perfMonth.init()
-perfYear.init()
-callCustomApi()
+await perfMonth.init()
+await perfYear.init()
+await callCustomApi()
 
 const date = new Date(Date.now()).toLocaleDateString('it-IT')
 document.getElementById('date').innerText = date

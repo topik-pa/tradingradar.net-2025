@@ -2,14 +2,27 @@ import proxyFetch from '../../../scripts/proxyFetch.js'
 let $root; let statuses; const url = '/api/stocks/perf1Y/?order=desc'
 
 async function callTheApi () {
-  try {
-    const response = await proxyFetch(url)
-    updateUI(statuses[2])
-    printData(response.body.slice(0, 10), 'ul.up')
-    printData(response.body.reverse().slice(0, 10), 'ul.down')
-  } catch (error) {
-    console.error(error)
-    updateUI(statuses[3])
+  let trLocalData = JSON.parse(localStorage.getItem('trLocalData'))
+  let data = trLocalData?.perfYear || []
+
+  if(data.length === 0) {
+    try {
+      const remote = await proxyFetch(url)
+      data = remote.body || []
+    } catch (error) {
+      console.error(error)
+      updateUI(statuses[3])
+      return
+    }
+  }
+  updateUI(statuses[2])
+  printData(data.slice(0, 10), 'ul.up')
+  printData(data.reverse().slice(0, 10), 'ul.down')
+
+  if(data.length !== 0) {
+    if (!trLocalData) trLocalData = {}
+    trLocalData.perfYear = data
+    localStorage.setItem('trLocalData', JSON.stringify(trLocalData))
   }
 }
 
@@ -38,11 +51,11 @@ function printData (stocks, target) {
 }
 
 const perfYear = {
-  init: () => {
+  init: async () => {
     $root = document.getElementById('perf-year')
     statuses = ['idle', 'loading', 'success', 'error']
     updateUI(statuses[1])
-    callTheApi()
+    await callTheApi()
   }
 }
 

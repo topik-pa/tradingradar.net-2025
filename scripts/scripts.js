@@ -5,3 +5,7 @@ import gotoTop from '../components/shared/goto_top/goto_top.js'
 mainMenu.toggleMobileMenu()
 cookieLayer.init()
 gotoTop.init()
+
+setTimeout(() => {
+  localStorage.removeItem('trLocalData')
+}, 1000 * 60 * 5)
