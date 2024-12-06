@@ -30,6 +30,9 @@ p.source, p.detection {
   justify-content: space-around;
   flex-wrap: wrap;
 }
+.list-wrapper h3 {
+  margin-bottom: var(--large-space);
+}
 .list-wrapper > div {
   margin: var(--small-space) 0;
   width: 48%;
@@ -70,13 +73,14 @@ table {
   font-weight: 500;
 }
 
-.table-wrapper table th, td {
+th, td {
   padding: var(--x-small-space) var(--normal-space);
   text-align: left;
   padding-left: 0;
+  min-width: 8rem;
 }
 
-.table-wrapper table th {
+th {
   font-weight: 500;
 }
 

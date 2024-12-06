@@ -1,10 +1,10 @@
 html {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 @media screen and (max-width: 1366px) {
   html {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 

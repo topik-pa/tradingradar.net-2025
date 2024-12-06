@@ -41,14 +41,17 @@
 }
 #select_stock .stocks .stock img {
   margin: var(--x-small-space) 25%;
-  width: 4rem;
-  height: 4rem;
+  width: 3.4rem;
+  height: 3.4rem;
   border: 1px solid var(--light-gray);
   border-radius: var(--border-radius-round);
 }
 #select_stock .stocks .stock span {
-  height: 2rem;
   overflow: visible;
+  width: 21ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 

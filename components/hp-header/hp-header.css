@@ -2,15 +2,15 @@
   display: flex;
   justify-content: start;
   flex-wrap: wrap;
-  margin-top: var(--xx-large-space);
+  margin-top: var(--large-space);
  }
 #hp-header a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: var(--xx-large-space);
+  margin-right: var(--large-space);
 }
 #hp-header a::before {
-  width: var(--xx-large-space);
-  height: var(--xx-large-space);
+  width: var(--x-large-space);
+  height: var(--x-large-space);
 }

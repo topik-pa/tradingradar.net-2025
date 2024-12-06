@@ -19,88 +19,100 @@ block append meta
   script(src='/scripts/stock.js', type='module', defer)
 
 block main
-  h1 #[span #{name}] - Informazioni, Analisi Tecnica e Rassegna Stampa
-  img(src=('/assets/images/stocks/' + code + '-min.png'), alt=name)
-  p Tutti i dati sono forniti in #[em tempo reale] interrogando direttamente le fonti originali
+  section(id="head", class="rounded")
+    div 
+      img(src=('/assets/images/stocks/' + code + '-min.png'), alt=name)
+      h1 #{name}
+    p Tutti i dati sono forniti in #[em tempo reale] interrogando direttamente le fonti originali
 
   section(id="top-data")
     div(id="last-price", class="rounded loading")
-      h4 Ultimo prezzo rilevato (€): 
-      span
+      h2 Ultimo prezzo rilevato 
+      div(class="big") #[small €] #[span]
+
     div(id="dividend", class="rounded loading")
-      h4 Div. Yield (%):
-      span(id="yeld")
-      h4 Valore dividendo (€):
-      span(id="value")
-      h4 Data ultimo dividendo:
-      span(id="last")
+      h2 Dividendo
+      h3 Div. Yield
+      div(class="small") #[small %] #[span(id="yeld")]
+      h3 Valore dividendo
+      div(class="small") #[small €] #[span(id="value")]
+      h3 Data dividendo
+      div(class="small") #[span(id="last")]
+
     div(id="average", class="rounded loading")
-      h4 20 gg (€):
-      span(id="mm20")
-      h4 40 gg (€):
-      span(id="mm40")
-      h 100 gg (€):
-      span(id="mm100")
+      h2 Medie mobili
+      h3 20 giorni
+      div(class="small") #[small €] #[span(id="mm20")]
+      h3 40 giorni
+      div(class="small") #[small €] #[span(id="mm40")]
+      h3 100 giorni
+      div(class="small") #[small €] #[span(id="mm100")]
+
     div(id="performance", class="rounded loading")
-      h4 1 mese:
-      span(id="m1")
-      h4 6 mesi:
-      span(id="m6")
-      h4 1 anno:
-      span(id="y1") 
+      h2 Performance
+      h3 1 mese
+      div(class="small") #[small %] #[span(id="m1")]
+      h3 6 mesi
+      div(class="small") #[small %] #[span(id="m6")]
+      h3 1 anno
+      div(class="small") #[small %] #[span(id="y1")]
 
   section(id="analyses")
     div(id="borsa-italiana", class="rounded loading")
-      h3(class="borsa-italiana img_icon") Borsa Italiana
+      h2(class="borsa-italiana img_icon") Borsa Italiana
       dl 
-        dt Resistenza (€):
-        dd(id="bi-resistance")
-        dt Supporto (€):
-        dd(id="bi-support") 
-        dt RSI:
-        dd(id="bi-rsi") 
-        dt Valutazione:
-        dd(id="bi-evaluation") 
-        dt Rating [0-4]:
-        dd(id="bi-rating") 
+        dt Resistenza
+        dd(class="small") #[small €] #[span(id="bi-resistance")]
+        dt Supporto
+        dd(class="small") #[small €] #[span(id="bi-support")]
+        dt RSI
+        dd(class="small") #[span(id="bi-rsi")]
+        dt Valutazione
+        dd #[span(id="bi-evaluation")]
+        dt Rating [0-4]
+        dd(class="small") #[span(id="bi-rating")]
+
     div(id="il-sole-24-ore", class="rounded loading")
-      h3(class="il-sole-24-ore img_icon") Il Sole 24 Ore
+      h2(class="il-sole-24-ore img_icon") Il Sole 24 Ore
       dl 
-        dt Tendenza breve periodo:
-        dd(id="sol24-short-tend")
-        dt Tendenza medio periodo:
-        dd(id="sol24-med-tend") 
-        dt Profilo:
-        dd(id="sol24-profile") 
-        dt Commento:
-        dd(id="sol24-comment") 
+        dt Tendenza breve periodo
+        dd(class="small") #[span(id="sol24-short-tend")]
+        dt Tendenza medio periodo
+        dd(class="small") #[span(id="sol24-med-tend")]
+        dt Profilo
+        dd #[span(id="sol24-profile")]
+        dt Commento
+        dd #[span(id="sol24-comment")]
+
     div(id="milano-finanza", class="rounded loading") 
-      h3(class="milano-finanza img_icon") Milano Finanza
+      h2(class="milano-finanza img_icon") Milano Finanza
       dl 
-        dt Rating [A-E]:
-        dd(id="mf-rating")
-        dt Risk [0-100]:
-        dd(id="mf-risk")  
+        dt Rating [A-E]
+        dd(class="small") #[span(id="mf-rating")]
+        dt Risk [0-100]
+        dd(class="small") #[span(id="mf-risk")]
+
     div(id="soldi-on-line", class="rounded loading") 
-      h3(class="soldi-on-line img_icon") SoldiOnLine
+      h2(class="soldi-on-line img_icon") SoldiOnLine
       dl 
-        dt Giudizio:
-        dd(id="sol-evaluation")
-        dt Target price (€):
-        dd(id="sol-target") 
-        dt Banca d'affari:
-        dd(id="sol-bank") 
-        dt Data:
-        dd(id="sol-date") 
+        dt Giudizio
+        dd(class="small") #[span(id="sol-evaluation")]
+        dt Target price
+        dd(class="small") #[small €] #[span(id="sol-target")]
+        dt Banca d'affari
+        dd(class="small") #[span(id="sol-bank")]
+        dt Data
+        dd(class="small") #[span(id="sol-date")]
+
     div(id="teleborsa", class="rounded loading") 
-      h3(class="teleborsa img_icon") Teleborsa
+      h2(class="teleborsa img_icon") Teleborsa
       dl 
-        dt Resistenza (€):
-        dd(id="tb-resistance")
-        dt Supporto (€):
-        dd(id="tb-support") 
-        dt Trend:
-        dd(id="tb-trend") 
+        dt Resistenza
+        dd(class="small") #[small €] #[span(id="tb-resistance")]
+        dt Supporto
+        dd(class="small") #[small €] #[span(id="tb-support")]
+        dt Trend
+        dd #[span(id="tb-trend")]
 
   section(id="news", class="rounded zoom loading")
     h2 Rassegna Stampa #{name}

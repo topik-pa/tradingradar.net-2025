@@ -139,14 +139,16 @@ function printNewsData () {
   for (const item of data.news.body) {
     const $li = document.createElement('li')
     const $a = document.createElement('a')
+    const $h3 = document.createElement('h3')
+    $h3.classList.add('img_icon')
+    $h3.classList.add(getOrigNewsIcon(item.url))
     $a.innerText = item.title
     $a.title = item.title
     $a.href = item.url
     $a.target = '_blank'
     $a.rel = 'noopener noreferrer'
-    $li.classList.add('img_icon')
-    $li.classList.add(getOrigNewsIcon(item.url))
-    $li.appendChild($a)
+    $li.appendChild($h3)
+    $h3.appendChild($a)
     $ul.appendChild($li)
   }
   $press.classList.remove(...cls)
@@ -156,14 +158,14 @@ function printNewsData () {
 isin = new URLSearchParams(window.location.search).get('isin')
 $root = document.getElementById('stock')
 if (isin) {
-  //await callTheApi('info')
+  await callTheApi('info')
   if (data.info.status === 'success') {
     printPrice()
     printDividendData()
     printAverageData()
     printPerformanceData()
   }
-  //await callTheApi('analysis')
+  await callTheApi('analysis')
   if (data.analysis.status === 'success') {
     //printAnalysisData()
     printBorsaItaliana()
@@ -172,7 +174,7 @@ if (isin) {
     printSoldiOnLine()
     printTeleborsa()
   }
-  //await callTheApi('news')
+  await callTheApi('news')
   if (data.news.status === 'success') {
     printNewsData()
   }

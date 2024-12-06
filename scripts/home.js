@@ -31,9 +31,9 @@ function updateUI (status) {
 }
 
 stocks.init()
-//perfMonth.init()
-//perfYear.init()
-//callCustomApi()
+perfMonth.init()
+perfYear.init()
+callCustomApi()
 
 const date = new Date(Date.now()).toLocaleDateString('it-IT')
 document.getElementById('date').innerText = date

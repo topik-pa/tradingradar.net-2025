@@ -6,11 +6,13 @@ h1 {
 }
 h2 {
   font-size: var(--font-size-bigger);
+  margin-bottom: var(--normal-space);
   letter-spacing: .1rem;
   line-height: 100%;
 }
 h3 {
   font-size: var(--font-size-big);
+  margin-bottom: var(--small-space);
   letter-spacing: .1rem;
 }
 h4 {
