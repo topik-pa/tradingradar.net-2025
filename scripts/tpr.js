@@ -1,34 +1,8 @@
-import proxyFetch from '../../scripts/proxyFetch.js'
-let $root; let statuses; const url = '/api/stocks/lastJudgment/?order=desc'
-
-async function callTheApi () {
-  let trLocalData = JSON.parse(localStorage.getItem('trLocalData'))
-  let data = trLocalData?.lastJudgment || []
-
-  if(data.length === 0) {
-    try {
-      const remote = await proxyFetch(url)
-      data = remote.body || []
-    } catch (error) {
-      console.error(error)
-      updateUI(statuses[3])
-      return
-    }
-  }
-  updateUI(statuses[2])
-  printData(data, 'table')
-
-  if(data.length !== 0) {
-    if (!trLocalData) trLocalData = {}
-    trLocalData.lastJudgment = data
-    localStorage.setItem('trLocalData', JSON.stringify(trLocalData))
-  }
-}
-
-function updateUI (status) {
-  $root.classList.remove(...statuses)
-  $root.classList.add(status)
-}
+import { getStocks, getStockHref } from './global.js'
+const key = 'lastJudgment'
+const url = `/api/stocks/${key}/?order=desc`
+const rootId = 'target-price'
+const $root = document.getElementById(rootId)
 
 function printData (stocks, target) {
   const $table = $root.querySelector(target)
@@ -42,7 +16,7 @@ function printData (stocks, target) {
     const $a = document.createElement('a')
     $a.innerText = stock.name
     $a.title = stock.name
-    $a.href = `/analisi/${encodeURI(stock.name?.toLowerCase().replace(/ /g, '-'))}?isin=${stock.isin}`
+    $a.href = getStockHref(stock.name, stock.isin)
     $td1.appendChild($a)
     $tr.appendChild($td1)
 
@@ -66,7 +40,5 @@ function printData (stocks, target) {
   }
 }
 
-$root = document.getElementById('target-price')
-statuses = ['idle', 'loading', 'success', 'error']
-updateUI(statuses[1])
-await callTheApi()
+const stocks = await getStocks([$root], key, url)
+printData(stocks, 'table')

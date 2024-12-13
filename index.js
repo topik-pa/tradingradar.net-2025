@@ -3,7 +3,7 @@ const http = require('http')
 const session = require('express-session')
 const path = require('path')
 const compression = require('compression')
-const { I18n } = require('i18n')
+// const { I18n } = require('i18n')
 require('dotenv').config()
 
 const app = express()
@@ -62,16 +62,16 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')))
 
 app.set('view engine', 'pug')
 
-const i18n = new I18n({
-  locales: ['en', 'it'],
-  defaultLocale: 'en',
+/*const i18n = new I18n({
+  locales: ['it', 'en'],
+  defaultLocale: 'it',
   objectNotation: true,
   directory: path.join(__dirname, 'locales')
 })
 app.use((req, res, next) => {
   i18n.init(req, res)
   next()
-})
+})*/
 
 require('./routes/api.routes')(app)
 require('./routes/app.routes')(app)

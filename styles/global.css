@@ -71,10 +71,10 @@ ul li, ol li {
   display: block!important;
 }
 
-.green {
+.green, .rialzo, .buy  {
   color: var(--green);
 }
-.red {
+.red, .ribasso, .sell {
   color: var(--red);
 }
 .blue {

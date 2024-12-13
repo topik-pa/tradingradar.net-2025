@@ -6,6 +6,3 @@ mainMenu.toggleMobileMenu()
 cookieLayer.init()
 gotoTop.init()
 
-setTimeout(() => {
-  localStorage.removeItem('trLocalData')
-}, 1000 * 60 * 5)

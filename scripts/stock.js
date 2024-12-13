@@ -63,10 +63,22 @@ function printAverageData () {
 }
 
 function printPerformanceData () {
+  const textColor = (value)=> {
+    return (parseInt(value) > 0) ? 'green' : 'red'
+  }
   const $wrap = $root.querySelector('#performance')
-  $wrap.querySelector('#m1').innerText = data.info.body.perf1M?.value || 'nd'
-  $wrap.querySelector('#m6').innerText = data.info.body.perf6M?.value || 'nd'
-  $wrap.querySelector('#y1').innerText = data.info.body.perf1Y?.value || 'nd'
+  const $m1 = $wrap.querySelector('#m1')
+  const $m6 = $wrap.querySelector('#m6')
+  const $y1 = $wrap.querySelector('#y1')
+
+  $m1.innerText = data.info.body.perf1M?.value.replace('%', '') || 'nd'
+  $m6.innerText = data.info.body.perf6M?.value.replace('%', '') || 'nd'
+  $y1.innerText = data.info.body.perf1Y?.value.replace('%', '') || 'nd'
+
+  $m1.classList.add(textColor(data.info.body.perf1M?.value))
+  $m6.classList.add(textColor(data.info.body.perf6M?.value))
+  $y1.classList.add(textColor(data.info.body.perf1Y?.value))
+
   $wrap.classList.remove(...cls)
   $wrap.classList.add(data.info.status)
 }
@@ -77,7 +89,21 @@ function printBorsaItaliana () {
   $wrap.querySelector('#bi-support').innerText = data.analysis.body.borsaIt_support?.value || 'nd'
   $wrap.querySelector('#bi-rsi').innerText = data.analysis.body.borsaIt_rsi?.value || 'nd'
   $wrap.querySelector('#bi-evaluation').innerText = data.analysis.body.borsaIt_evaluation?.value || 'nd'
-  $wrap.querySelector('#bi-rating').innerText = data.analysis.body.borsaIt_rating?.value || 'nd'
+  //$wrap.querySelector('#bi-rating').innerText = data.analysis.body.borsaIt_rating?.value || 'nd'
+
+  const $gauge = document.createElement('img')
+  $gauge.src='/assets/images/icons/' + data.analysis.body.borsaIt_rating?.value + '.png'
+  $gauge.alt = 'Rating: ' + data.analysis.body.borsaIt_rating?.value + '/4'
+  $gauge.classList = 'gauge'
+  $wrap.querySelector('#bi-rating').appendChild($gauge)
+
+  if(data.info.body.lastPrice?.value > data.analysis.body.borsaIt_resistance?.value) {
+    $wrap.querySelector('#bi-resistance + .note').classList.add('show')
+  }
+  if(data.info.body.lastPrice?.value < data.analysis.body.borsaIt_support?.value) {
+    $wrap.querySelector('#bi-support + .note').classList.add('show')
+  }
+
   $wrap.classList.remove(...cls)
   $wrap.classList.add(data.info.status)
 }
@@ -85,7 +111,10 @@ function printBorsaItaliana () {
 function printSole24Ore () {
   const $wrap = $root.querySelector('#il-sole-24-ore')
   $wrap.querySelector('#sol24-short-tend').innerText = data.analysis.body.sol24_shortTendency?.value || 'nd'
+  $wrap.querySelector('#sol24-short-tend').classList.add(data.analysis.body.sol24_shortTendency?.value.toLowerCase())
   $wrap.querySelector('#sol24-med-tend').innerText = data.analysis.body.sol24_mediumTendency?.value || 'nd'
+  $wrap.querySelector('#sol24-med-tend').classList.add(data.analysis.body.sol24_mediumTendency?.value.toLowerCase())
+
   $wrap.querySelector('#sol24-profile').innerText = data.info.body.profile?.value || 'nd'
   $wrap.querySelector('#sol24-comment').innerText = data.info.body.comment?.value || 'nd'
   $wrap.classList.remove(...cls)
@@ -93,8 +122,37 @@ function printSole24Ore () {
 }
 
 function printMilanoFinanza () {
+  const getRating = (value) => {
+    let rating = value[0]
+    let returned
+    switch (rating) {
+    case 'A':
+      returned = 4
+      break
+    case 'B':
+      returned =  3
+      break
+    case 'C':
+      returned =  2
+      break
+    case 'D':
+      returned =  1
+      break
+    default:
+      returned = 0
+      break
+    }
+    return returned
+  }
   const $wrap = $root.querySelector('#milano-finanza')
-  $wrap.querySelector('#mf-rating').innerText = data.analysis.body.milFin_mfRanking?.value || 'nd'
+  // $wrap.querySelector('#mf-rating').innerText = data.analysis.body.milFin_mfRanking?.value || 'nd'
+
+  const $gauge = document.createElement('img')
+  $gauge.src='/assets/images/icons/' + getRating(data.analysis.body.milFin_mfRanking?.value) + '.png'
+  $gauge.alt = 'Rating: ' + getRating(data.analysis.body.milFin_mfRanking?.value) + '/4'
+  $gauge.classList = 'gauge'
+  $wrap.querySelector('#mf-rating').appendChild($gauge)
+
   $wrap.querySelector('#mf-risk').innerText = data.analysis.body.milFin_mfRisk?.value || 'nd'
   $wrap.classList.remove(...cls)
   $wrap.classList.add(data.info.status)
@@ -103,6 +161,9 @@ function printMilanoFinanza () {
 function printSoldiOnLine () {
   const $wrap = $root.querySelector('#soldi-on-line')
   $wrap.querySelector('#sol-evaluation').innerText = data.analysis.body.sol_lastJudgment?.value[2] || 'nd'
+  if(['Buy', 'Sell'].includes(data.analysis.body.sol_lastJudgment?.value[2])) {  //▲ Buy anche...
+    $wrap.querySelector('#sol-evaluation').classList.add(data.analysis.body.sol_lastJudgment?.value[2].toLowerCase())
+  }
   $wrap.querySelector('#sol-target').innerText = data.analysis.body.sol_lastJudgment?.value[3] || 'nd'
   $wrap.querySelector('#sol-bank').innerText = data.analysis.body.sol_lastJudgment?.value[1] || 'nd'
   $wrap.querySelector('#sol-date').innerText = data.analysis.body.sol_lastJudgment?.value[0] || 'nd'
@@ -115,6 +176,14 @@ function printTeleborsa () {
   $wrap.querySelector('#tb-resistance').innerText = data.analysis.body.teleb_tbResistance?.value || 'nd'
   $wrap.querySelector('#tb-support').innerText = data.analysis.body.teleb_tbSupport?.value || 'nd'
   $wrap.querySelector('#tb-trend').innerText = data.analysis.body.teleb_trend?.value || 'nd'
+
+  if(data.info.body.lastPrice?.value > data.analysis.body.teleb_tbResistance?.value) {
+    $wrap.querySelector('#tb-resistance + .note').classList.add('show')
+  }
+  if(data.info.body.lastPrice?.value < data.analysis.body.teleb_tbSupport?.value) {
+    $wrap.querySelector('#tb-support + .note').classList.add('show')
+  }
+
   $wrap.classList.remove(...cls)
   $wrap.classList.add(data.info.status)
 }

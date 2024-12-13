@@ -1,5 +1,5 @@
-let $root
-let color
+import { getStockHref } from '../../scripts/global.js'
+let $root, color
 
 function printData (stocks, target) {
   const $table = $root.querySelector(target)
@@ -13,7 +13,7 @@ function printData (stocks, target) {
     const $a = document.createElement('a')
     $a.innerText = stock.name
     $a.title = stock.name
-    $a.href = `/analisi/${encodeURI(stock.name?.toLowerCase().replace(/ /g, '-'))}?isin=${stock.isin}`
+    $a.href = getStockHref(stock.name, stock.isin)
     $td1.appendChild($a)
     $tr.appendChild($td1)
 
@@ -39,9 +39,9 @@ function printData (stocks, target) {
 }
 
 const trends = {
-  init: (stocks, trendType) => {
-    $root = document.getElementById(trendType)
-    color = trendType === 'uptrends' ? 'green' : 'red'
+  init: (stocks, rootId) => {
+    $root = document.getElementById(rootId)
+    color = rootId === 'uptrends' ? 'green' : 'red'
     printData(stocks, 'table')
   }
 }

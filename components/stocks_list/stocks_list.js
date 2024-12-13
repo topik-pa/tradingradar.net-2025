@@ -30,7 +30,7 @@ function alphabetShowHideStocks (letter = 'A') {
   })
 }
 
-const stocks = {
+const stock_list = {
   init: () => {
     $root = document.getElementById('select_stock')
     $alphabet = $root.getElementsByClassName('alphabet')[0]
@@ -41,4 +41,4 @@ const stocks = {
   }
 }
 
-export default stocks
+export default stock_list

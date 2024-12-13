@@ -1,67 +1,113 @@
-import proxyFetch from './proxyFetch.js'
-import stocks from '../components/stocks_list/stocks_list.js'
-import perfMonth from '../components/perf-month/perf-month.js'
-import perfYear from '../components/perf-year/perf-year.js'
+import { getStocks, getLocalData, getStockHref } from '../../scripts/global.js'
+import stock_list from '../components/stocks_list/stocks_list.js'
+import perf1M from '../components/perf-month/perf-month.js'
+import perf1Y from '../components/perf-year/perf-year.js'
 import trend from '../components/trend/trend.js'
 import inversion from '../components/inversion/inversion.js'
 
-const statuses = ['idle', 'loading', 'success', 'error']
-const custApiElements = document.querySelectorAll('#downinversion, #upinversion, #downtrends, #uptrends')
-
-async function callCustomApi () {
-  updateUI(statuses[1])
-  let trLocalData = JSON.parse(localStorage.getItem('trLocalData'))
-  let uptrends = trLocalData?.uptrends || null
-  let downtrends = trLocalData?.downtrends || null
-  let upinversion = trLocalData?.upinversion || null
-  let downinversion = trLocalData?.downinversion || null
-
-  if(
-    !uptrends ||
-    !downtrends ||
-    !upinversion ||
-    !downinversion
-  ) {
-    try {
-      const remote = await proxyFetch('/api/custom')
-      let data = remote.body || []
-      uptrends = data.uptrends
-      downtrends = data.downtrends
-      upinversion = data.tiup
-      downinversion = data.tidown
-
-      if(data.length !== 0) {
-        if (!trLocalData) trLocalData = {}
-        trLocalData.uptrends = data.uptrends
-        trLocalData.downtrends = data.downtrends
-        trLocalData.upinversion = data.tiup
-        trLocalData.downinversion = data.tidown
-        localStorage.setItem('trLocalData', JSON.stringify(trLocalData))
-      }
-    } catch (error) {
-      console.error(error)
-      updateUI(statuses[3])
-      return
-    }
-  }
-  trend.init(uptrends, 'uptrends')
-  trend.init(downtrends, 'downtrends')
-  inversion.init(upinversion, 'upinversion')
-  inversion.init(downinversion, 'downinversion')
-  updateUI(statuses[2])
-}
-
-function updateUI (status) {
-  for (const $elem of custApiElements) {
-    $elem.classList.remove(...statuses)
-    $elem.classList.add(status)
+const shuffleArray = array => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    const temp = array[i]
+    array[i] = array[j]
+    array[j] = temp
   }
 }
 
-stocks.init()
-await perfMonth.init()
-await perfYear.init()
-await callCustomApi()
+const printPerf1MBullet = () => {
+  const stocks = getLocalData('perf1M')
+  if(stocks.length === 0) return
+  const worst = stocks[0]
+  const best = stocks[stocks.length - 1]
+  const $extracts = document.getElementById('extracts')
+  let $a = document.createElement('a')
+  $a.href = getStockHref(worst.name, worst.isin)
+  $a.innerText = worst.name
+  $extracts.querySelector('.performance .worst h4').append($a)
+  $extracts.querySelector('.performance .worst span').innerText = worst.perf1M.value
 
-const date = new Date(Date.now()).toLocaleDateString('it-IT')
-document.getElementById('date').innerText = date
+  $a = document.createElement('a')
+  $a.href = getStockHref(best.name, best.isin)
+  $a.innerText = best.name
+  $extracts.querySelector('.performance .best h4').append($a)
+  $extracts.querySelector('.performance .best span').innerText = best.perf1M.value
+}
+async function callDivYield () {
+  const $target = document.querySelector('#extracts .dividends')
+  const stocks = await getStocks([$target], 'divYield', '/api/stocks/divYield/?order=desc')
+  if(stocks.length === 0) return
+  const ratio = stocks[0]
+  let $a = document.createElement('a')
+  $a.href = getStockHref(ratio.name, ratio.isin)
+  $a.innerText = ratio.name
+  $target.querySelector('.ratio h4').append($a)
+  $target.querySelector('.ratio span').innerText = ratio.divYield.value
+}
+async function callLastDivDate () {
+  const $target = document.querySelector('#extracts .dividends')
+  const stocks = await getStocks([$target], 'lastDivDate', '/api/stocks/lastDivDate/?order=desc')
+  if(stocks.length === 0) return
+  const next = stocks[0]
+  let $a = document.createElement('a')
+  $a.href = getStockHref(next.name, next.isin)
+  $a.innerText = next.name
+  $target.querySelector('.next h4').append($a)
+  $target.querySelector('.next span').innerText = next.lastDivDate.value
+}
+async function callBorsaItalianaRatings () {
+  const $target = document.querySelector('#extracts .ratings')
+  const stocks = await getStocks([$target], 'rating', '/api/stocks/rating/?order=asc')
+  if(stocks.length === 0) return
+  const ratings = stocks.filter((elem) => {
+    return elem.borsaIt_rating.value === 4
+  })
+  if(ratings.length === 0) return
+  shuffleArray(ratings)
+  const best = ratings[0]
+  let $a = document.createElement('a')
+  $a.href = getStockHref(best.name, best.isin)
+  $a.innerText = best.name
+  $target.querySelector('.best h4').append($a)
+  $target.querySelector('.best span').innerText = best.borsaIt_rating.value
+}
+async function callMilanoFinanzaRankings () {
+
+  const $target = document.querySelector('#extracts .rankings')
+  const stocks = await getStocks([$target], 'rankings', '/api/stocks/mfRanking/?order=asc')
+  if(stocks.length === 0) return
+  const rankings = stocks.filter((elem) => {
+    return elem.milFin_mfRanking.value?.includes('A')
+  })
+  if(rankings.length === 0) return
+  shuffleArray(rankings)
+  const best = rankings[0]
+  let $a = document.createElement('a')
+  $a.href = getStockHref(best.name, best.isin)
+  $a.innerText = best.name
+  $target.querySelector('.best h4').append($a)
+  $target.querySelector('.best span').innerText = best.milFin_mfRanking.value
+}
+const addDate = () => {
+  const today = new Date(Date.now()).toLocaleDateString('it-IT')
+  document.getElementById('today').innerText = today
+}
+
+stock_list.init()
+addDate()
+await perf1M.init()
+printPerf1MBullet()
+
+await callDivYield()
+await callLastDivDate()
+await callBorsaItalianaRatings()
+await callMilanoFinanzaRankings()
+
+await perf1Y.init()
+
+const $trend = document.getElementById('trend')
+const $inversion = document.getElementById('inversion')
+const customs = await getStocks([$trend, $inversion], 'custom', '/api/custom')
+trend.init(customs.uptrends, 'uptrends')
+trend.init(customs.downtrends, 'downtrends')
+inversion.init(customs.tiup, 'upinversion')
+inversion.init(customs.tidown, 'downinversion')

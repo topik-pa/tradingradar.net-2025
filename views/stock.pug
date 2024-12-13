@@ -63,21 +63,23 @@ block main
       dl 
         dt Resistenza
         dd(class="small") #[small €] #[span(id="bi-resistance")]
+          span(class="green note") Il prezzo attuale è superiore alla resistenza
         dt Supporto
         dd(class="small") #[small €] #[span(id="bi-support")]
+          span(class="red note") Il prezzo attuale è inferiore al supporto
         dt RSI
         dd(class="small") #[span(id="bi-rsi")]
         dt Valutazione
         dd #[span(id="bi-evaluation")]
-        dt Rating [0-4]
+        dt Rating
         dd(class="small") #[span(id="bi-rating")]
 
     div(id="il-sole-24-ore", class="rounded loading")
       h2(class="il-sole-24-ore img_icon") Il Sole 24 Ore
       dl 
-        dt Tendenza breve periodo
+        dt Tendenza #[em breve] periodo
         dd(class="small") #[span(id="sol24-short-tend")]
-        dt Tendenza medio periodo
+        dt Tendenza #[em medio] periodo
         dd(class="small") #[span(id="sol24-med-tend")]
         dt Profilo
         dd #[span(id="sol24-profile")]
@@ -87,7 +89,7 @@ block main
     div(id="milano-finanza", class="rounded loading") 
       h2(class="milano-finanza img_icon") Milano Finanza
       dl 
-        dt Rating [A-E]
+        dt Rating
         dd(class="small") #[span(id="mf-rating")]
         dt Risk [0-100]
         dd(class="small") #[span(id="mf-risk")]
@@ -109,8 +111,10 @@ block main
       dl 
         dt Resistenza
         dd(class="small") #[small €] #[span(id="tb-resistance")]
+          span(class="green note") Il prezzo attuale è superiore alla resistenza
         dt Supporto
         dd(class="small") #[small €] #[span(id="tb-support")]
+          span(class="red note") Il prezzo attuale è inferiore al supporto
         dt Trend
         dd #[span(id="tb-trend")]
 

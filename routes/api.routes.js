@@ -9,6 +9,8 @@ module.exports = app => {
     '/stocks/lastJudgment',
     '/stocks/lastDivDate',
     '/stocks/divYield',
+    '/stocks/rating',
+    '/stocks/mfRanking',
     '/custom',
     '/info/:isin',
     '/analysis/:isin',

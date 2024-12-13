@@ -45,3 +45,16 @@
   height: var(--x-large-space);
   margin-right: var(--small-space);
 }
+
+.note {
+  display: none;
+  font-size: var(--font-size-normal);
+  font-style: italic;
+}
+.note.show {
+  display: block;
+}
+
+.gauge {
+  width: 8rem;
+}

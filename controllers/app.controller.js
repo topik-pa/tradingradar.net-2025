@@ -167,8 +167,8 @@ exports.logoutUser = async (req, res, next) => {
 exports.loginView = async (req, res) => {
   res.render('login', {
     id: 'login',
-    title: 'Login Page',
-    description: 'Descr...',
+    title: 'Login',
+    description: 'Login',
     url: req.url
   })
 }
@@ -177,8 +177,8 @@ exports.hpView = async (req, res) => {
   res.locals.stocks = stocks
   res.render('home', {
     id: 'hp',
-    title: 'Segnali di Borsa in tempo reale',
-    description: 'Scopri in tempo reale quali titoli azionari stanno generando segnali cruciali secondo le principali testate del settore e trova ora le azioni più interessanti della Borsa Italiana.',
+    title: 'Scopri, in tempo reale, i segnali di Borsa delle tue azioni',
+    description: 'Scopri in tempo reale quali titoli azionari stanno generando segnali cruciali secondo le principali testate del settore e trova ora le azioni più interessanti della Borsa Italiana',
     user: req.session.user,
     url: req.url
   })
@@ -187,8 +187,8 @@ exports.hpView = async (req, res) => {
 exports.targetPriceRaccView = async (req, res) => {
   res.render('tpr', {
     id: 'tpr',
-    title: 'Target Price e ultime Raccomandazioni dalle Banche di Affari',
-    description: 'Descr...',
+    title: 'Target Price e ultime raccomandazioni dalle Banche di Affari',
+    description: 'I target price e le raccomandazioni operative delle principali banche di affari ordinati per data. Scopri gli ultimi giudizi e il prezzo obiettivo delle azioni di Borsa Italiana',
     user: req.session.user,
     url: req.url
   })
@@ -197,8 +197,8 @@ exports.targetPriceRaccView = async (req, res) => {
 exports.dividendsView = async (req, res) => {
   res.render('dividends', {
     id: 'dividendi',
-    title: 'Data e valore dei Dividendi',
-    description: 'Descr...',
+    title: 'Data e valore dei Dividendi di Borsa Italiana',
+    description: 'Lista dei dividendi ordinata per valore in rapporto al prezzo e date di stacco della cedola delle azioni di Borsa Italiana. Scopri quali sono i dividendi più alti e le date di stacco delle principali azioni italiane',
     user: req.session.user,
     url: req.url
   })
@@ -208,7 +208,7 @@ exports.contactsView = async (req, res) => {
   res.render('contacts', {
     id: 'contatti',
     title: 'Contattaci',
-    description: 'Descr...',
+    description: 'Contattaci per domande e suggerimenti',
     user: req.session.user,
     url: req.url
   })
@@ -218,7 +218,7 @@ exports.privacyView = async (req, res) => {
   res.render('privacy', {
     id: 'privacy',
     title: 'Privacy',
-    description: 'Descr...',
+    description: 'La nostra privacy page',
     user: req.session.user,
     url: req.url
   })
@@ -251,8 +251,8 @@ exports.stockView = async (req, res) => {
   const {name, code} = getStockNameAndCode(req.query.isin)
   res.render('stock', {
     id: 'stock',
-    title: 'Analisi titolo ',
-    description: 'Descr...',
+    title: ' tutto ciò che devi sapere su analisi tecnica, dividendi e target',
+    description: ' - Tutto in una pagina! Analisi tecnica, medie, performance, target price, tendenze e giudizi dalle principali testate online. Scopri in tempo reale tutto ciò che ti serve per operare consapevolmente in Borsa Italiana',
     user: req.session.user,
     url: req.url,
     name,

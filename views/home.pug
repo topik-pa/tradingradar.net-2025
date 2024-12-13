@@ -18,18 +18,44 @@ block append meta
   script(src='/scripts/home.js', type='module', defer)
 
 block main
-
   include ../components/hp-header/hp-header.pug
-  
   include ../components/stocks_list/stocks_list.pug
 
   section(class="rounded")
-    h2 I segnali di oggi #[em(id="date")]
+    h2 I segnali di oggi: #[em(id="today")]
+    div(id="extracts")
+      section(class="rounded zoom performance")
+        h3 Performance mensili 
+        div(class="best")
+          p Migliore performance mensile
+          h4 
+          div(class="small") #[span(class="green")]
+        div(class="worst")
+          p Peggiore performance mensile
+          h4 
+          div(class="small") #[span(class="red")]
+      section(class="rounded zoom dividends")
+        h3 Dividendi
+        div(class="ratio")
+          p Migliore rapporto dividendo/prezzo
+          h4 
+          div(class="small") #[small %] #[span]
+        div(class="next")
+          p Prossimo stacco della cedola
+          h4 
+          div(class="small") #[span]
+      section(class="rounded zoom ratings")
+        h3 Migliori rating Borsa Italiana
+        div(class="best")
+          h4 
+          div(class="small") #[span(class="green")]
+      section(class="rounded zoom rankings")
+        h3 Migliori ranking Milano Finanza
+        div(class="best")
+          h4 
+          div(class="small") #[span(class="green")]                  
 
   include ../components/perf-month/perf-month.pug
-
   include ../components/perf-year/perf-year.pug
-
   include ../components/trend/trend.pug
-
   include ../components/inversion/inversion.pug
