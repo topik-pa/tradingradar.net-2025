@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    align-items: flex-start;
   }
   #extracts .rounded {
     width: 100%;
@@ -9,4 +10,10 @@
     min-height: 7rem;
     margin-bottom: 2rem;
     border: 1px solid var(--darkest-gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+  #extracts .rounded h3 {
+    font-weight: bold;
   }

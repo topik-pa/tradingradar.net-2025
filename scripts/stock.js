@@ -89,12 +89,14 @@ function printBorsaItaliana () {
   $wrap.querySelector('#bi-support').innerText = data.analysis.body.borsaIt_support?.value || 'nd'
   $wrap.querySelector('#bi-rsi').innerText = data.analysis.body.borsaIt_rsi?.value || 'nd'
   $wrap.querySelector('#bi-evaluation').innerText = data.analysis.body.borsaIt_evaluation?.value || 'nd'
+  $wrap.querySelector('#bi-evaluation + a').href = data.analysis.body.borsaIt_evaluation?.source
   //$wrap.querySelector('#bi-rating').innerText = data.analysis.body.borsaIt_rating?.value || 'nd'
 
   const $gauge = document.createElement('img')
   $gauge.src='/assets/images/icons/' + data.analysis.body.borsaIt_rating?.value + '.png'
   $gauge.alt = 'Rating: ' + data.analysis.body.borsaIt_rating?.value + '/4'
   $gauge.classList = 'gauge'
+  $wrap.querySelector('#bi-rating').innerText = data.analysis.body.borsaIt_rating?.value + '/4'
   $wrap.querySelector('#bi-rating').appendChild($gauge)
 
   if(data.info.body.lastPrice?.value > data.analysis.body.borsaIt_resistance?.value) {
@@ -116,7 +118,9 @@ function printSole24Ore () {
   $wrap.querySelector('#sol24-med-tend').classList.add(data.analysis.body.sol24_mediumTendency?.value.toLowerCase())
 
   $wrap.querySelector('#sol24-profile').innerText = data.info.body.profile?.value || 'nd'
+  $wrap.querySelector('#sol24-profile + a').href = data.info.body.profile?.source
   $wrap.querySelector('#sol24-comment').innerText = data.info.body.comment?.value || 'nd'
+  $wrap.querySelector('#sol24-comment + a').href = data.info.body.profile?.source
   $wrap.classList.remove(...cls)
   $wrap.classList.add(data.info.status)
 }
@@ -151,7 +155,9 @@ function printMilanoFinanza () {
   $gauge.src='/assets/images/icons/' + getRating(data.analysis.body.milFin_mfRanking?.value) + '.png'
   $gauge.alt = 'Rating: ' + getRating(data.analysis.body.milFin_mfRanking?.value) + '/4'
   $gauge.classList = 'gauge'
+  $wrap.querySelector('#mf-rating').innerText = data.analysis.body.milFin_mfRanking?.value
   $wrap.querySelector('#mf-rating').appendChild($gauge)
+
 
   $wrap.querySelector('#mf-risk').innerText = data.analysis.body.milFin_mfRisk?.value || 'nd'
   $wrap.classList.remove(...cls)
@@ -176,6 +182,7 @@ function printTeleborsa () {
   $wrap.querySelector('#tb-resistance').innerText = data.analysis.body.teleb_tbResistance?.value || 'nd'
   $wrap.querySelector('#tb-support').innerText = data.analysis.body.teleb_tbSupport?.value || 'nd'
   $wrap.querySelector('#tb-trend').innerText = data.analysis.body.teleb_trend?.value || 'nd'
+  $wrap.querySelector('#tb-trend + a').href = data.analysis.body.teleb_trend?.source
 
   if(data.info.body.lastPrice?.value > data.analysis.body.teleb_tbResistance?.value) {
     $wrap.querySelector('#tb-resistance + .note').classList.add('show')

@@ -16,7 +16,7 @@ module.exports = app => {
   router.get('/logout', ctrl.logoutUser)
 
   //home page
-  // app.get('/', isAuthenticated, ctrl.hpView);  
+  // app.get('/', isAuthenticated, ctrl.hpView);
   router.get('/', ctrl.hpView)
 
   //target price e raccommandazioni
@@ -25,15 +25,21 @@ module.exports = app => {
   // dividendi
   router.get('/dividendi', ctrl.dividendsView)
 
+  // best Borsa Italiana
+  router.get('/borsa-italiana-best-ratings', ctrl.borsaItalianaBestRatingsView)
+
+  // best Milano Finanza
+  router.get('/milano-finanza-best-rankings', ctrl.milanoFinanzaBestRankingsView)
+
   //contatti
   router.get('/contatti', ctrl.contactsView)
 
   //stock
-  router.get('/analisi/:stock', ctrl.stockView)  
+  router.get('/analisi/:stock', ctrl.stockView)
 
   //privacy
   router.get('/privacy', ctrl.privacyView)
-  
+
   // Sitemap.xml
   router.get('/sitemap.xml', function (req, res) {
     res.sendFile('public/sitemap.xml', { root: '.' })

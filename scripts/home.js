@@ -1,4 +1,4 @@
-import { getStocks, getLocalData, getStockHref } from '../../scripts/global.js'
+import { getStocks, getLocalData, getStockHref, getNumberFromLetter } from '../../scripts/global.js'
 import stock_list from '../components/stocks_list/stocks_list.js'
 import perf1M from '../components/perf-month/perf-month.js'
 import perf1Y from '../components/perf-year/perf-year.js'
@@ -17,8 +17,8 @@ const shuffleArray = array => {
 const printPerf1MBullet = () => {
   const stocks = getLocalData('perf1M')
   if(stocks.length === 0) return
-  const worst = stocks[0]
-  const best = stocks[stocks.length - 1]
+  const best = stocks[0]
+  const worst = stocks[stocks.length - 1]
   const $extracts = document.getElementById('extracts')
   let $a = document.createElement('a')
   $a.href = getStockHref(worst.name, worst.isin)
@@ -69,16 +69,26 @@ async function callBorsaItalianaRatings () {
   $a.innerText = best.name
   $target.querySelector('.best h4').append($a)
   $target.querySelector('.best span').innerText = best.borsaIt_rating.value
+
+  const $gauge = document.createElement('img')
+  $gauge.src='/assets/images/icons/' + best.borsaIt_rating?.value + '.png'
+  $gauge.alt = 'Rating: ' + best.borsaIt_rating?.value + '/4'
+  $gauge.classList = 'gauge'
+  $target.querySelector('.best').appendChild($gauge)
 }
 async function callMilanoFinanzaRankings () {
 
   const $target = document.querySelector('#extracts .rankings')
   const stocks = await getStocks([$target], 'rankings', '/api/stocks/mfRanking/?order=asc')
   if(stocks.length === 0) return
-  const rankings = stocks.filter((elem) => {
+  let rankings = stocks.filter((elem) => {
     return elem.milFin_mfRanking.value?.includes('A')
   })
-  if(rankings.length === 0) return
+  if(rankings.length === 0) {
+    rankings = stocks.filter((elem) => {
+      return elem.milFin_mfRanking.value?.includes('B')
+    })
+  }
   shuffleArray(rankings)
   const best = rankings[0]
   let $a = document.createElement('a')
@@ -86,6 +96,12 @@ async function callMilanoFinanzaRankings () {
   $a.innerText = best.name
   $target.querySelector('.best h4').append($a)
   $target.querySelector('.best span').innerText = best.milFin_mfRanking.value
+
+  const $gauge = document.createElement('img')
+  $gauge.src='/assets/images/icons/' + getNumberFromLetter(best.milFin_mfRanking.value) + '.png'
+  $gauge.alt = 'Ranking: ' + best.milFin_mfRanking.value
+  $gauge.classList = 'gauge'
+  $target.querySelector('.best').appendChild($gauge)
 }
 const addDate = () => {
   const today = new Date(Date.now()).toLocaleDateString('it-IT')

@@ -1,6 +1,5 @@
 #select_stock .alphabet {
   text-align: center;
-  margin: var(--xx-large-space);
 }
 
 #select_stock .alphabet span {
@@ -24,7 +23,7 @@
 
 #select_stock .stocks {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 #select_stock .stocks .stock {
@@ -48,7 +47,7 @@
 }
 #select_stock .stocks .stock span {
   overflow: visible;
-  width: 21ch;
+  width: 10ch;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

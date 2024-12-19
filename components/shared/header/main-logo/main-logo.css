@@ -1,5 +1,5 @@
 #main-logo {
-  font-size: var(--font-size-huge);
+  font-size: var(--font-size-biggest);
 }
 
 #main-logo span {
@@ -8,6 +8,16 @@
 
 #main-logo img {
   height: var(--xx-large-space);
+  width: auto;
   vertical-align: middle;
   margin-right: var(--small-space);
+}
+
+@media screen and (max-width: 768px) {
+  #main-logo {
+    font-size: var(--font-size-huge);
+  }
+  #main-logo img {
+    height: var(--x-large-space);
+  }
 }

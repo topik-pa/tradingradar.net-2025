@@ -28,6 +28,7 @@
 @media screen and (max-width: 768px) {
   .hamburger {
     display: block;
+    font-size: var(--font-size-bigger);
   }
   #main-menu {
     position: fixed;
@@ -59,7 +60,7 @@
     display: block;
     padding: var(--normal-space);
     font-weight: bold;
-    font-size: var(--font-size-bigger);
+    font-size: var(--font-size-big);
   }
   #main-menu ul {
     padding: var(--xx-large-space) var(--normal-space);

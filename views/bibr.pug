@@ -1,0 +1,31 @@
+extends layout.pug
+
+block append meta
+  title #{title} 
+  meta(name="description" content=description)
+  meta(name="keywords" content="azioni, migliori, rating, borsa, italiana, analisi, tempo, reale")
+
+  link(rel="canonical", href=proj_url)
+
+  meta(name="og:url" content=proj_url)
+  meta(name="og:type" content="website")
+  meta(name="og:title" content=proj_tagline)
+  meta(name="og:site_name" content=proj_name)
+  meta(name="og:description" content=description)
+  meta(name="og:image" content=proj_logo)
+
+  link(rel="stylesheet", href="/styles/views/bibr.css")
+  script(src='/scripts/bibr.js', type='module', defer)
+
+block main
+  section(id=id, class="rounded zoom")
+    h1 #{title}
+    table
+      thead
+        tr
+          th Nome
+          th Rating
+      tbody
+    p I titoli della Borsa Italiana #[em ordinati per rating]
+    p(class="source") Fonte: #[em(class="img_icon borsa-italiana") Borsa Italiana]
+    p(class="detection") Rilevamento: #[em ]

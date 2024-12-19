@@ -11,7 +11,7 @@
 #perf-month h3::before {
   font-family: 'icomoon' !important;
   content: "\e9a5";
-  font-size: var(--font-size-biggest);
+  font-size: var(--font-size-huge);
   margin-right: var(--x-small-space);
   vertical-align: text-bottom;
   display: inline-block;

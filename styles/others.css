@@ -34,7 +34,7 @@ p.source, p.detection {
   margin-bottom: var(--large-space);
 }
 .list-wrapper > div {
-  margin: var(--small-space) 0;
+  margin: var(--large-space) 0;
   width: 48%;
 }
 .list-wrapper .social {
@@ -66,17 +66,21 @@ p.source, p.detection {
 
 table {
   margin-bottom: var(--x-large-space);
-  max-height: 33rem;
+  max-height: 30rem;
   display: inline-block;
   overflow: auto;
   text-shadow: 0 0 var(--light-gray);
   font-weight: 500;
+  width: 100%;
+}
+
+tr:nth-child(even) {
+  background-color: var(--lightest-gray);
 }
 
 th, td {
-  padding: var(--x-small-space) var(--normal-space);
+  padding: var(--small-space) var(--normal-space);
   text-align: left;
-  padding-left: 0;
   min-width: 8rem;
 }
 

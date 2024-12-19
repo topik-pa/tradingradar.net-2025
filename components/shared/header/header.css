@@ -9,3 +9,9 @@ header {
 header a {
   color: var(--secondary);
 }
+
+@media screen and (max-width: 768px) {
+  header {
+    padding: var(--small-space);
+  }
+}

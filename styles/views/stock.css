@@ -25,6 +25,10 @@
   min-height: 7rem;
   margin-bottom: 2rem;
 }
+#top-data .rounded h3 {
+  margin-top: 0;
+  margin-bottom: var(--x-small-space);
+}
 #analyses .rounded {
   max-width: none;
   width: 45%;
@@ -55,6 +59,9 @@
   display: block;
 }
 
-.gauge {
-  width: 8rem;
+
+@media screen and (max-width: 768px) {
+  #analyses .rounded {
+    width: 100%;
+  }
 }

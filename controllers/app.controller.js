@@ -178,7 +178,7 @@ exports.hpView = async (req, res) => {
   res.render('home', {
     id: 'hp',
     title: 'Scopri, in tempo reale, i segnali di Borsa delle tue azioni',
-    description: 'Scopri in tempo reale quali titoli azionari stanno generando segnali cruciali secondo le principali testate del settore e trova ora le azioni più interessanti della Borsa Italiana',
+    description: 'Scopri <em>in tempo reale</em> quali titoli azionari stanno generando segnali cruciali secondo le principali testate del settore e <em>trova ora le azioni più interessanti</em> della Borsa Italiana',
     user: req.session.user,
     url: req.url
   })
@@ -199,6 +199,26 @@ exports.dividendsView = async (req, res) => {
     id: 'dividendi',
     title: 'Data e valore dei Dividendi di Borsa Italiana',
     description: 'Lista dei dividendi ordinata per valore in rapporto al prezzo e date di stacco della cedola delle azioni di Borsa Italiana. Scopri quali sono i dividendi più alti e le date di stacco delle principali azioni italiane',
+    user: req.session.user,
+    url: req.url
+  })
+}
+// best Borsa Italiana view
+exports.borsaItalianaBestRatingsView = async (req, res) => {
+  res.render('bibr', {
+    id: 'bibr',
+    title: 'Le azioni con i migliori rating secondo Borsa Italiana',
+    description: 'Le azioni con i migliori rating selezionati in tempo reale e in base alle analisi di Borsa Italiana',
+    user: req.session.user,
+    url: req.url
+  })
+}
+// best Milano Finanza view
+exports.milanoFinanzaBestRankingsView = async (req, res) => {
+  res.render('mfbr', {
+    id: 'mfbr',
+    title: 'Le azioni con i migliori ranking secondo Milano Finanza',
+    description: 'Le azioni con i migliori ranking selezionati in tempo reale e in base alle analisi di Milano Finanza',
     user: req.session.user,
     url: req.url
   })
@@ -251,7 +271,7 @@ exports.stockView = async (req, res) => {
   const {name, code} = getStockNameAndCode(req.query.isin)
   res.render('stock', {
     id: 'stock',
-    title: ' tutto ciò che devi sapere su analisi tecnica, dividendi e target',
+    title: name + ' tutto ciò che devi sapere su analisi tecnica, dividendi e target',
     description: ' - Tutto in una pagina! Analisi tecnica, medie, performance, target price, tendenze e giudizi dalle principali testate online. Scopri in tempo reale tutto ciò che ti serve per operare consapevolmente in Borsa Italiana',
     user: req.session.user,
     url: req.url,

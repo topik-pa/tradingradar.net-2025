@@ -8,7 +8,7 @@ const STATUS = {
   error: 'error'
 }
 const LOCAL_DATA_KEY = 'trnetLocalData'
-const TIMEOUT_LOCAL_DATA = 1000 * 60 * 10
+const TIMEOUT_LOCAL_DATA = 1000 * 60 * 60
 
 const getStockHref = (name, isin) => {
   return `/analisi/${encodeURI(name?.toLowerCase().replace(/ /g, '-'))}?isin=${isin}`
@@ -56,4 +56,27 @@ const postponedDeleteLocalData = () => {
   }, TIMEOUT_LOCAL_DATA)
 }
 
-export { getStocks, getStockHref, getLocalData }
+const getNumberFromLetter = (letter) => {
+  switch (letter[0]) {
+  case 'A':
+    return 4
+    break
+  case 'B':
+    return 3
+    break
+  case 'C':
+    return 2
+    break
+  case 'D':
+    return 1
+    break
+  case 'E':
+    return 0
+    break
+
+  default:
+    break
+  }
+}
+
+export { getStocks, getStockHref, getLocalData, getNumberFromLetter }

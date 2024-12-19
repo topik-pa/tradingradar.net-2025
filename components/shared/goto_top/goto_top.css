@@ -4,7 +4,7 @@
   bottom: 0;
   right: 0;
   background-color: var(--tertiary);
-  color: var(--secondary);
+  color: var(--primary);
   border-radius: var(--border-radius-small);
   padding: var(--x-small-space);
   margin: var(--small-space);
