@@ -21,7 +21,7 @@ block append meta
 block main
   section(id="head", class="rounded")
     div 
-      img(src=('/assets/images/stocks/' + code + '-min.png'), alt=name)
+      img(src=('/assets/images/stocks/' + code + '-min.png'), alt=name, onerror="this.onerror='';this.src='/assets/images/stocks/company.png';")
       h1 #{name}
     p Tutti i dati sono forniti in #[em tempo reale] interrogando direttamente le fonti originali
 

@@ -23,7 +23,7 @@
 
 #select_stock .stocks {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 #select_stock .stocks .stock {
