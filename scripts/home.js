@@ -77,16 +77,15 @@ async function callBorsaItalianaRatings () {
   $target.querySelector('.best').appendChild($gauge)
 }
 async function callMilanoFinanzaRankings () {
-
   const $target = document.querySelector('#extracts .rankings')
   const stocks = await getStocks([$target], 'rankings', '/api/stocks/mfRanking/?order=asc')
   if(stocks.length === 0) return
   let rankings = stocks.filter((elem) => {
-    return elem.milFin_mfRanking.value?.includes('A')
+    return (elem.milFin_mfRanking.value === 'A+' || elem.milFin_mfRanking.value === 'A' || elem.milFin_mfRanking.value === 'A-')
   })
   if(rankings.length === 0) {
     rankings = stocks.filter((elem) => {
-      return elem.milFin_mfRanking.value?.includes('B')
+      return (elem.milFin_mfRanking.value === 'B+')
     })
   }
   shuffleArray(rankings)

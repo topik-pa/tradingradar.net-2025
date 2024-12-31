@@ -18,6 +18,7 @@
 @import "/components/shared/header/main-menu/main-menu.css";
 @import "/components/shared/header/main-logo/main-logo.css";
 @import "/components/hp-header/hp-header.css";
+@import "/components/hp-rounded/hp-rounded.css";
 @import "/components/stocks_list/stocks_list.css";
 @import "/components/perf-month/perf-month.css";
 @import "/components/perf-year/perf-year.css";

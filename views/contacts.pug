@@ -19,9 +19,10 @@ block append meta
   script(src='/scripts/contacts.js', type='module', defer)
 
 block main
-  h1 #{title}
-  p Contatta #{proj_name} per domande, informazioni o altre necessità.
-  section 
-      h2 Tramite email
-      p E' possibile utilizzare questo indirizzo email: 
-        a(href="mailto:" + proj_email) #{proj_email}
+  section(class="rounded")
+    h1 #{title}
+    p Contatta #{proj_name} per domande, informazioni o altre necessità.
+    section 
+        h2 Tramite email
+        p E' possibile utilizzare questo indirizzo email: 
+          a(href="mailto:" + proj_email) #{proj_email}

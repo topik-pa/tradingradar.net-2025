@@ -28,7 +28,7 @@
 @media screen and (max-width: 768px) {
   .hamburger {
     display: block;
-    font-size: var(--font-size-bigger);
+    font-size: var(--font-size-huge);
   }
   #main-menu {
     position: fixed;

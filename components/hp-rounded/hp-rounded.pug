@@ -1,0 +1,41 @@
+section(class="rounded")
+  h2 I segnali di oggi: #[em(id="today")]
+  div(id="extracts")
+    section(class="rounded zoom performance")
+      h3 Performance mensili 
+      div(class="best")
+        p Migliore performance mensile
+        h4 
+        div(class="small") #[span(class="green")]
+      div(class="worst")
+        p Peggiore performance mensile
+        h4 
+        div(class="small") #[span(class="red")]
+      div(class="more")
+        a(href="#perf-month", title="Vedi tutte le performance mensili") Vedi tutte le performance mensili
+    section(class="rounded zoom dividends loading")
+      h3 Dividendi
+      div(class="ratio")
+        p Migliore rapporto dividendo/prezzo
+        h4 
+        div(class="small") #[span]#[small %]
+      div(class="next")
+        p Ultima comunicazione stacco della cedola
+        h4 
+        div(class="small") #[span]
+      div(class="more")
+        a(href="/dividendi", title="Vedi tutti i dividendi") Vedi tutti i dividendi
+    section(class="rounded zoom ratings loading")
+      h3 Migliori rating Borsa Italiana
+      div(class="best")
+        h4 
+        div(class="small") #[span(class="green")]#[small /4]
+      div(class="more")
+        a(href="/borsa-italiana-best-ratings", title="Vedi tutti i rating di Borsa Italiana") Vedi tutti i rating di Borsa Italiana
+    section(class="rounded zoom rankings loading")
+      h3 Migliori ranking Milano Finanza [A-E]
+      div(class="best")
+        h4 
+        div(class="small") #[span(class="green")]
+      div(class="more")
+        a(href="/milano-finanza-best-rankings", title="Vedi tutti i ranking di Milano Finanza") Vedi tutti i ranking di Milano Finanza     

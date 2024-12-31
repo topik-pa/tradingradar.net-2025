@@ -2,11 +2,11 @@ footer {
   padding: 0 var(--normal-space);
   background: var(--secondary);
   color: #FFFFFF;
-  font-weight: bold;
-  text-align: center;
   display: flex;
   align-items: center;
-  justify-content: center;
   padding: 1rem 0;
   flex-direction: column;
+}
+footer a {
+  color: var(--primary);
 }
