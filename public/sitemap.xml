@@ -130,7 +130,7 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>http://localhost:8080/analisi/bandc-speakers?isin=IT0001268561</loc>
+		<loc>https://tradingradar.net/analisi/bandc-speakers?isin=IT0001268561</loc>
 		<lastmod>2025-01-01T12:00:00+00:00</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>1.0</priority>
@@ -316,7 +316,7 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>http://localhost:8080/analisi/centrale-del-latte-d-italia?isin=IT0003023980</loc>
+		<loc>https://tradingradar.net/analisi/centrale-del-latte-d-italia?isin=IT0003023980</loc>
 		<lastmod>2025-01-01T12:00:00+00:00</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>1.0</priority>
@@ -364,7 +364,7 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>http://localhost:8080/analisi/d-amico?isin=LU2592315662</loc>
+		<loc>https://tradingradar.net/analisi/d-amico?isin=LU2592315662</loc>
 		<lastmod>2025-01-01T12:00:00+00:00</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>1.0</priority>
