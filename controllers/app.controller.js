@@ -271,8 +271,8 @@ exports.stockView = async (req, res) => {
   const {name, code} = getStockNameAndCode(req.query.isin)
   res.render('stock', {
     id: 'stock',
-    title: name + ' tutto ciò che devi sapere su analisi tecnica, dividendi e target',
-    description: ' - Tutto in una pagina! Analisi tecnica, medie, performance, target price, tendenze e giudizi dalle principali testate online. Scopri in tempo reale tutto ciò che ti serve per operare consapevolmente in Borsa Italiana',
+    title: name + ' - tutto su analisi tecnica, dividendi e target',
+    description: 'Tutto in una pagina! Analisi tecnica, medie, performance, target price, tendenze, rassegna stampa e giudizi dalle principali testate online. Scopri in tempo reale tutto ciò che ti serve per operare consapevolmente in Borsa Italiana',
     user: req.session.user,
     url: req.url,
     name,
