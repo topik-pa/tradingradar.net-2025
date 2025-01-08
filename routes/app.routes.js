@@ -48,6 +48,10 @@ module.exports = app => {
   router.get('/robots.txt', function (req, res) {
     res.sendFile('public/robots.txt', { root: '.' })
   })
+  // favicon.ico
+  router.get('/favicon.ico', function (req, res) {
+    res.sendFile('public/favicon.ico', { root: '.' })
+  })
 
   app.use('/', router)
 }
