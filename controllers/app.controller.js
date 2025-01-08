@@ -255,6 +255,7 @@ exports.stockView = async (req, res) => {
         }
       }
     }
+    return {}
   }
   if (!req.query.isin) {
     return res.status(422).send({
@@ -269,6 +270,14 @@ exports.stockView = async (req, res) => {
     })
   }
   const {name, code} = getStockNameAndCode(req.query.isin)
+
+  if (!name || !code) {
+    return res.status(500).send({
+      error: 'No stock found with given ISIN',
+      code: 'noStock'
+    })
+  }
+
   res.render('stock', {
     id: 'stock',
     title: name + ' - tutto su analisi tecnica, dividendi e target',
