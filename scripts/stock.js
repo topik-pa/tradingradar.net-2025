@@ -93,16 +93,23 @@ function printBorsaItaliana () {
   //$wrap.querySelector('#bi-rating').innerText = data.analysis.body.borsaIt_rating?.value || 'nd'
 
   const $gauge = document.createElement('img')
-  $gauge.src='/assets/images/icons/' + data.analysis.body.borsaIt_rating?.value + '.png'
-  $gauge.alt = 'Rating: ' + data.analysis.body.borsaIt_rating?.value + '/4'
-  $gauge.classList = 'gauge'
-  $wrap.querySelector('#bi-rating').innerText = data.analysis.body.borsaIt_rating?.value + '/4'
-  $wrap.querySelector('#bi-rating').appendChild($gauge)
+  const rating = data.analysis.body.borsaIt_rating?.value || null
+  if(rating) {
+    $gauge.src='/assets/images/icons/' + rating + '.png'
+    $gauge.alt = 'Rating: ' + rating + '/4'
+    $gauge.classList = 'gauge'
+    $wrap.querySelector('#bi-rating').innerText = rating + '/4'
+    $wrap.querySelector('#bi-rating').appendChild($gauge)
+  } else {
+    $wrap.querySelector('#bi-rating').innerText = 'nd'
+  }
 
-  if(data.info.body.lastPrice?.value > data.analysis.body.borsaIt_resistance?.value) {
+  if(data.analysis.body.borsaIt_resistance?.value &&
+    data.info.body.lastPrice?.value > data.analysis.body.borsaIt_resistance?.value) {
     $wrap.querySelector('#bi-resistance + .note').classList.add('show')
   }
-  if(data.info.body.lastPrice?.value < data.analysis.body.borsaIt_support?.value) {
+  if(data.analysis.body.borsaIt_support?.value &&
+    data.info.body.lastPrice?.value < data.analysis.body.borsaIt_support?.value) {
     $wrap.querySelector('#bi-support + .note').classList.add('show')
   }
 
@@ -112,10 +119,12 @@ function printBorsaItaliana () {
 
 function printSole24Ore () {
   const $wrap = $root.querySelector('#il-sole-24-ore')
-  $wrap.querySelector('#sol24-short-tend').innerText = data.analysis.body.sol24_shortTendency?.value || 'nd'
-  $wrap.querySelector('#sol24-short-tend').classList.add(data.analysis.body.sol24_shortTendency?.value.toLowerCase())
-  $wrap.querySelector('#sol24-med-tend').innerText = data.analysis.body.sol24_mediumTendency?.value || 'nd'
-  $wrap.querySelector('#sol24-med-tend').classList.add(data.analysis.body.sol24_mediumTendency?.value.toLowerCase())
+  const sol24_shortTendency = data.analysis.body.sol24_shortTendency?.value || 'nd'
+  const sol24_mediumTendency = data.analysis.body.sol24_mediumTendency?.value || 'nd'
+  $wrap.querySelector('#sol24-short-tend').innerText = sol24_shortTendency
+  $wrap.querySelector('#sol24-short-tend').classList.add(sol24_shortTendency.toLowerCase())
+  $wrap.querySelector('#sol24-med-tend').innerText = sol24_mediumTendency
+  $wrap.querySelector('#sol24-med-tend').classList.add(sol24_mediumTendency.toLowerCase())
 
   $wrap.querySelector('#sol24-profile').innerText = data.info.body.profile?.value || 'nd'
   $wrap.querySelector('#sol24-profile + a').href = data.info.body.profile?.source
@@ -157,7 +166,6 @@ function printMilanoFinanza () {
   $gauge.classList = 'gauge'
   $wrap.querySelector('#mf-rating').innerText = data.analysis.body.milFin_mfRanking?.value
   $wrap.querySelector('#mf-rating').appendChild($gauge)
-
 
   $wrap.querySelector('#mf-risk').innerText = data.analysis.body.milFin_mfRisk?.value || 'nd'
   $wrap.classList.remove(...cls)

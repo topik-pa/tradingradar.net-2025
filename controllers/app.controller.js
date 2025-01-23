@@ -280,7 +280,7 @@ exports.stockView = async (req, res) => {
 
   res.render('stock', {
     id: 'stock',
-    title: name + ' - tutto su analisi tecnica, dividendi e target',
+    title: 'Titolo' + name + ': analisi tecnica, dividendi e target',
     description: 'Tutto in una pagina! ' + name + ' analisi tecnica, medie, performance, target price, tendenze, rassegna stampa e giudizi dalle principali testate online. Scopri in tempo reale tutto ciò che ti serve per operare consapevolmente in Borsa Italiana',
     user: req.session.user,
     url: req.url,
@@ -288,4 +288,3 @@ exports.stockView = async (req, res) => {
     code
   })
 }
-
