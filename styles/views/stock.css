@@ -64,6 +64,10 @@
   display: block;
 }
 
+#stock #select_stock {
+  margin-top: var(--xx-large-space);
+}
+
 
 @media screen and (max-width: 768px) {
   #analyses .rounded {

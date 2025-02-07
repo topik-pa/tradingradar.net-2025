@@ -278,6 +278,7 @@ exports.stockView = async (req, res) => {
     })
   }
 
+  res.locals.stocks = stocks
   res.render('stock', {
     id: 'stock',
     title: 'Azioni ' + name + ': analisi tecnica, dividendi e prezzo target',

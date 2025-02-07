@@ -1,4 +1,5 @@
 import proxyFetch from './proxyFetch.js'
+import stock_list from '../components/stocks_list/stocks_list.js'
 
 const data = {
   info: {
@@ -241,7 +242,7 @@ function printNewsData () {
 
 isin = new URLSearchParams(window.location.search).get('isin')
 $root = document.getElementById('stock')
-if (isin) {
+if (false) {
   await callTheApi('info')
   if (data.info.status === 'success') {
     printPrice()
@@ -263,3 +264,4 @@ if (isin) {
     printNewsData()
   }
 }
+stock_list.init()
