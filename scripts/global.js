@@ -8,7 +8,7 @@ const STATUS = {
   error: 'error'
 }
 const LOCAL_DATA_KEY = 'trnetLocalData'
-const TIMEOUT_LOCAL_DATA = 1000 * 60 * 15
+const TIMEOUT_LOCAL_DATA = 1000 * 60 * 5
 
 const getStockHref = (name, isin) => {
   return `/analisi/${encodeURI(name?.toLowerCase().replace(/ /g, '-').replace(/&/g, 'and').replace(/'/g, '-'))}?isin=${isin}`
@@ -40,19 +40,19 @@ const getStocks = async ($root, key, url) => {
 }
 
 const getLocalData = (key) => {
-  const localData = JSON.parse(localStorage.getItem(LOCAL_DATA_KEY)) || {}
+  const localData = JSON.parse(sessionStorage.getItem(LOCAL_DATA_KEY)) || {}
   clearTimeout(deletingData)
   postponedDeleteLocalData()
   return localData[key] || []
 }
 const updateLocalData = (key, data) => {
-  const localData = JSON.parse(localStorage.getItem(LOCAL_DATA_KEY)) || {}
+  const localData = JSON.parse(sessionStorage.getItem(LOCAL_DATA_KEY)) || {}
   localData[key] = data
-  localStorage.setItem(LOCAL_DATA_KEY, JSON.stringify(localData))
+  sessionStorage.setItem(LOCAL_DATA_KEY, JSON.stringify(localData))
 }
 const postponedDeleteLocalData = () => {
   deletingData = setTimeout(() => {
-    localStorage.removeItem(LOCAL_DATA_KEY)
+    sessionStorage.removeItem(LOCAL_DATA_KEY)
   }, TIMEOUT_LOCAL_DATA)
 }
 
