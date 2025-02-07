@@ -15,6 +15,7 @@
 
 @import "/components/shared/header/header.css";
 @import "/components/shared/footer/footer.css";
+@import "/components/shared/share/share.css";
 @import "/components/shared/header/main-menu/main-menu.css";
 @import "/components/shared/header/main-logo/main-logo.css";
 @import "/components/hp-header/hp-header.css";
