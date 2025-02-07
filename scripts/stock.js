@@ -242,7 +242,7 @@ function printNewsData () {
 
 isin = new URLSearchParams(window.location.search).get('isin')
 $root = document.getElementById('stock')
-if (false) {
+if (isin) {
   await callTheApi('info')
   if (data.info.status === 'success') {
     printPrice()
