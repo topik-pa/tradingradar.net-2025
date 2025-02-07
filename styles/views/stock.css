@@ -6,7 +6,7 @@
 }
 #head img {
   border-radius: var(--border-radius-big);
-  margin-right: var(--x-large-space);
+  margin-right: var(--large-space);
 }
 #head h1 {
   margin: 0;
