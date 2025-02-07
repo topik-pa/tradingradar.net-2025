@@ -23,13 +23,13 @@ const printPerf1MBullet = () => {
   let $a = document.createElement('a')
   $a.href = getStockHref(worst.name, worst.isin)
   $a.innerText = worst.name
-  $extracts.querySelector('.performance .worst h4').append($a)
+  $extracts.querySelector('.performance .worst h5').append($a)
   $extracts.querySelector('.performance .worst span').innerText = worst.perf1M.value
 
   $a = document.createElement('a')
   $a.href = getStockHref(best.name, best.isin)
   $a.innerText = best.name
-  $extracts.querySelector('.performance .best h4').append($a)
+  $extracts.querySelector('.performance .best h5').append($a)
   $extracts.querySelector('.performance .best span').innerText = best.perf1M.value
 }
 async function callDivYield () {
@@ -40,7 +40,7 @@ async function callDivYield () {
   let $a = document.createElement('a')
   $a.href = getStockHref(ratio.name, ratio.isin)
   $a.innerText = ratio.name
-  $target.querySelector('.ratio h4').append($a)
+  $target.querySelector('.ratio h5').append($a)
   $target.querySelector('.ratio span').innerText = ratio.divYield.value
 }
 async function callLastDivDate () {
@@ -51,7 +51,7 @@ async function callLastDivDate () {
   let $a = document.createElement('a')
   $a.href = getStockHref(next.name, next.isin)
   $a.innerText = next.name
-  $target.querySelector('.next h4').append($a)
+  $target.querySelector('.next h5').append($a)
   $target.querySelector('.next span').innerText = next.lastDivDate.value
 }
 async function callBorsaItalianaRatings () {
@@ -67,7 +67,7 @@ async function callBorsaItalianaRatings () {
   let $a = document.createElement('a')
   $a.href = getStockHref(best.name, best.isin)
   $a.innerText = best.name
-  $target.querySelector('.best h4').append($a)
+  $target.querySelector('.best h5').append($a)
   $target.querySelector('.best span').innerText = best.borsaIt_rating.value
 
   const $gauge = document.createElement('img')
@@ -93,7 +93,7 @@ async function callMilanoFinanzaRankings () {
   let $a = document.createElement('a')
   $a.href = getStockHref(best.name, best.isin)
   $a.innerText = best.name
-  $target.querySelector('.best h4').append($a)
+  $target.querySelector('.best h5').append($a)
   $target.querySelector('.best span').innerText = best.milFin_mfRanking.value
 
   const $gauge = document.createElement('img')
