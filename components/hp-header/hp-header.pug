@@ -36,8 +36,10 @@ section(id="hp-header", class="rounded")
   p !{description}
 
   p I dati forniti sono presi in tempo reale #[em dai principali media online] del settore finanziario.
-  div
+  div(class="icons")
     each source in sources
       span(class="img_icon " + source.id) #{source.name} 
+  h2(class="caption") Le nostre sorgenti di informazione
+    
         
   

@@ -1,8 +1,9 @@
-#hp-header div {
+#hp-header .icons {
   display: flex;
   justify-content: start;
   flex-wrap: wrap;
   margin-top: var(--large-space);
+  margin-bottom: 0;
  }
 #hp-header span {
   display: flex;
@@ -18,3 +19,9 @@
   width: var(--x-large-space);
   height: var(--x-large-space);
 }
+#hp-header .caption {
+  text-align: center;
+  padding: var(--normal-space);
+  background-color: var(--lightest-gray);
+  border-top: 1px solid var(--white);
+ }
