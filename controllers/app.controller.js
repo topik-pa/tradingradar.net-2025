@@ -183,6 +183,17 @@ exports.hpView = async (req, res) => {
     url: req.url
   })
 }
+// stocks view
+exports.stocksView = async (req, res) => {
+  res.locals.stocks = stocks
+  res.render('stocks', {
+    id: 'stocks',
+    title: 'Titoli azionari del mercato FTSE All-Share Milano',
+    description: 'La lista delle azioni della Borsa Italiana - paniere FTSE All-Share Milano',
+    user: req.session.user,
+    url: req.url
+  })
+}
 //target price e raccommandazioni view
 exports.targetPriceRaccView = async (req, res) => {
   res.render('tpr', {

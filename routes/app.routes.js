@@ -19,6 +19,9 @@ module.exports = app => {
   // app.get('/', isAuthenticated, ctrl.hpView);
   router.get('/', ctrl.hpView)
 
+  //azioni
+  router.get('/azioni', ctrl.stocksView)
+
   //target price e raccommandazioni
   router.get('/target-price-raccomandazioni', ctrl.targetPriceRaccView)
 

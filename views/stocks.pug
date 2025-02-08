@@ -1,0 +1,20 @@
+extends layout.pug
+
+block append meta
+  title #{title  + ' - ' + proj_name} 
+  meta(name="description" content=description)
+  meta(name="keywords" content="lista, azioni, titoli, azionari, mercato, italiano, borsa, milano, ftse, all, share")
+
+  link(rel="canonical", href=proj_url + url)
+
+  meta(name="og:url" content=proj_url + url)
+  meta(name="og:type" content="website")
+  meta(name="og:title" content=title)
+  meta(name="og:site_name" content=proj_name)
+  meta(name="og:description" content=description)
+  meta(name="og:image" content=og_image)
+
+  script(src='/scripts/stocks.js', type='module', defer)
+
+block main
+  include ../components/stocks_list/stocks_list.pug
