@@ -39,6 +39,9 @@ module.exports = app => {
 
   //stock
   router.get('/analisi/:stock', ctrl.stockView)
+  router.get('/stock/:stock', function (req, res) {
+    res.redirect(req.url.replace('stock', 'analisi'))
+  })
 
   //privacy
   router.get('/privacy', ctrl.privacyView)
