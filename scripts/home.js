@@ -31,6 +31,7 @@ const printPerf1MBullet = () => {
   $a.innerText = best.name
   $extracts.querySelector('.performance .best h5').append($a)
   $extracts.querySelector('.performance .best span').innerText = best.perf1M.value
+  $extracts.querySelector('.performance').classList.remove('loading')
 }
 async function callDivYield () {
   const $target = document.querySelector('#extracts .dividends')
