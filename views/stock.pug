@@ -57,6 +57,17 @@ block main
       h3 1 anno
       div(class="small") #[small %] #[span(id="y1")]
 
+    div(id="targetprice", class="rounded loading")
+      h2 Target price e giudizio
+      h3 Giudizio
+      div(class="small") #[small €] #[span(id="judgment")]
+      h3 Target price
+      div(class="small") #[small €] #[span(id="tp")]
+      h3 Banca emittente
+      div(class="small") #[small €] #[span(id="bank")]
+      h3 Data
+      div(class="small") #[small €] #[span(id="date")]
+
   section(id="analyses")
     //- div(id="borsa-italiana", class="rounded loading")
     //-   h2(class="borsa-italiana img_icon") Borsa Italiana
@@ -98,14 +109,16 @@ block main
     div(id="soldi-on-line", class="rounded loading") 
       h2(class="soldi-on-line img_icon") SoldiOnLine
       dl 
-        dt Giudizio
-        dd(class="small") #[span(id="sol-evaluation")]
-        dt Target price
-        dd(class="small") #[small €] #[span(id="sol-target")]
-        dt Banca d'affari
-        dd(class="small") #[span(id="sol-bank")]
-        dt Data
-        dd(class="small") #[span(id="sol-date")]
+        dt Massimo assoluto
+        dd(class="small") #[small €] #[span(id="maxabs")]
+        dt Minimo assoluto
+        dd(class="small") #[small €] #[span(id="minabs")]
+        dt Massimo anno corrente
+        dd(class="small") #[small €] #[span(id="maxy")]
+        dt Minimo anno corrente
+        dd(class="small") #[small €] #[span(id="miny")]
+        dt Volume
+        dd(class="small") #[span(id="volume")]
       a(href="#", title="Continua su portale di origine") -Continua su portale di origine-
 
     div(id="teleborsa", class="rounded loading") 

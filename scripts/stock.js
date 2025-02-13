@@ -178,16 +178,26 @@ function printMilanoFinanza () {
   $wrap.classList.add(data.info.status)
 }
 
+function printTargetAndJudgments () {
+  const $wrap = $root.querySelector('#targetprice')
+
+  $wrap.querySelector('#judgment').innerText = data.analysis.body.sol_lastJudgment?.value[2] || 'nd'
+  $wrap.querySelector('#tp').innerText = data.analysis.body.sol_lastJudgment?.value[3] || 'nd'
+  $wrap.querySelector('#bank').innerText = data.analysis.body.sol_lastJudgment?.value[1] || 'nd'
+  $wrap.querySelector('#date').innerText = data.analysis.body.sol_lastJudgment?.value[0] || 'nd'
+  $wrap.classList.remove(...cls)
+  $wrap.classList.add(data.info.status)
+}
+
 function printSoldiOnLine () {
   const $wrap = $root.querySelector('#soldi-on-line')
-  $wrap.querySelector('#sol-evaluation').innerText = data.analysis.body.sol_lastJudgment?.value[2] || 'nd'
-  if(['Buy', 'Sell'].includes(data.analysis.body.sol_lastJudgment?.value[2])) {  //▲ Buy anche...
-    $wrap.querySelector('#sol-evaluation').classList.add(data.analysis.body.sol_lastJudgment?.value[2].toLowerCase())
-  }
-  $wrap.querySelector('#sol-target').innerText = data.analysis.body.sol_lastJudgment?.value[3] || 'nd'
-  $wrap.querySelector('#sol-bank').innerText = data.analysis.body.sol_lastJudgment?.value[1] || 'nd'
-  $wrap.querySelector('#sol-date').innerText = data.analysis.body.sol_lastJudgment?.value[0] || 'nd'
-  $wrap.querySelector('a').href = data.analysis.body.sol_lastJudgment?.source
+
+  $wrap.querySelector('#maxabs').innerText = data.info.body.absMax?.value || 'nd'
+  $wrap.querySelector('#minabs').innerText = data.info.body.absMin?.value || 'nd'
+  $wrap.querySelector('#maxy').innerText = data.info.body.currentYearMax?.value || 'nd'
+  $wrap.querySelector('#miny').innerText = data.info.body.currentYearMin?.value || 'nd'
+  $wrap.querySelector('#volume').innerText = data.info.body.volume?.value || 'nd'
+  $wrap.querySelector('a').href = data.info.body.volume?.source
 
   $wrap.classList.remove(...cls)
   $wrap.classList.add(data.info.status)
@@ -256,6 +266,7 @@ if (isin) {
     printDividendData()
     printAverageData()
     printPerformanceData()
+    printSoldiOnLine()
   }
   await callTheApi('analysis')
   if (data.analysis.status === 'success') {
@@ -263,7 +274,8 @@ if (isin) {
     //printBorsaItaliana()
     printSole24Ore()
     printMilanoFinanza()
-    printSoldiOnLine()
+    printTargetAndJudgments()
+
     printTeleborsa()
   }
   await callTheApi('news')
