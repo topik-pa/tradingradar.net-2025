@@ -83,10 +83,17 @@
 
 
 @media screen and (max-width: 768px) {
+  #top-data, #analyses {
+    flex-wrap: wrap;
+  }
   #analyses .rounded {
     width: 100%;
+    margin: 0;
+    margin-bottom: var(--large-space);
   }
   #top-data .rounded {
     width: 100%;
-}
+    margin: 0;
+    margin-bottom: var(--large-space);
+  }
 }
