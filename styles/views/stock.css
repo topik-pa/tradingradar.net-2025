@@ -38,6 +38,9 @@
 #analyses .rounded {
   max-width: none;
   width: 47%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 #analyses .img_icon::before {

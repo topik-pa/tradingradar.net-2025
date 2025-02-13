@@ -120,6 +120,9 @@ function printPerformanceData () {
 
 function printSole24Ore () {
   const $wrap = $root.querySelector('#il-sole-24-ore')
+  const extUrl = data.info.body.profile?.source
+  const extUrl2 = extUrl.substr(extUrl.lastIndexOf('=') + 1)
+  const rootExtUrl = 'https://mercati.ilsole24ore.com/azioni/borsa-italiana/dettaglio-completo/'
   const sol24_shortTendency = data.analysis.body.sol24_shortTendency?.value || 'nd'
   const sol24_mediumTendency = data.analysis.body.sol24_mediumTendency?.value || 'nd'
   $wrap.querySelector('#sol24-short-tend').innerText = sol24_shortTendency
@@ -128,9 +131,9 @@ function printSole24Ore () {
   $wrap.querySelector('#sol24-med-tend').classList.add(sol24_mediumTendency.toLowerCase())
 
   $wrap.querySelector('#sol24-profile').innerText = data.info.body.profile?.value || 'nd'
-  $wrap.querySelector('#sol24-profile + a').href = data.info.body.profile?.source
+  $wrap.querySelector('#sol24-profile + a').href = rootExtUrl + extUrl2
   $wrap.querySelector('#sol24-comment').innerText = data.info.body.comment?.value || 'nd'
-  $wrap.querySelector('#sol24-comment + a').href = data.info.body.profile?.source
+  $wrap.querySelector('#sol24-comment + a').href = rootExtUrl + extUrl2
   $wrap.classList.remove(...cls)
   $wrap.classList.add(data.info.status)
 }
@@ -169,6 +172,8 @@ function printMilanoFinanza () {
   $wrap.querySelector('#mf-rating').appendChild($gauge)
 
   $wrap.querySelector('#mf-risk').innerText = data.analysis.body.milFin_mfRisk?.value || 'nd'
+  $wrap.querySelector('a').href = data.analysis.body.milFin_mfRanking?.source
+
   $wrap.classList.remove(...cls)
   $wrap.classList.add(data.info.status)
 }
@@ -182,6 +187,8 @@ function printSoldiOnLine () {
   $wrap.querySelector('#sol-target').innerText = data.analysis.body.sol_lastJudgment?.value[3] || 'nd'
   $wrap.querySelector('#sol-bank').innerText = data.analysis.body.sol_lastJudgment?.value[1] || 'nd'
   $wrap.querySelector('#sol-date').innerText = data.analysis.body.sol_lastJudgment?.value[0] || 'nd'
+  $wrap.querySelector('a').href = data.analysis.body.sol_lastJudgment?.source
+
   $wrap.classList.remove(...cls)
   $wrap.classList.add(data.info.status)
 }

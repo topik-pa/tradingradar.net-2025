@@ -89,7 +89,7 @@ ul li, ol li {
 .gauge {
   width: 100%;
   max-width: 12rem;
-  margin: 0 auto;
+  margin: 2rem auto;
   display: block;
 }
 
