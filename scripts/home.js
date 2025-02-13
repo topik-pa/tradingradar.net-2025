@@ -54,7 +54,7 @@ async function callLastDivDate () {
   $target.querySelector('.next h5').append($a)
   $target.querySelector('.next span').innerText = next.lastDivDate.value
 }
-async function callBorsaItalianaRatings () {
+/* async function callBorsaItalianaRatings () {
   const $target = document.querySelector('#extracts .ratings')
   const stocks = await getStocks([$target], 'rating', '/api/stocks/rating/?order=asc')
   if(stocks.length === 0) return
@@ -75,7 +75,7 @@ async function callBorsaItalianaRatings () {
   $gauge.alt = 'Rating: ' + best.borsaIt_rating?.value + '/4'
   $gauge.classList = 'gauge'
   $target.querySelector('.best').appendChild($gauge)
-}
+} */
 async function callMilanoFinanzaRankings () {
   const $target = document.querySelector('#extracts .rankings')
   const stocks = await getStocks([$target], 'rankings', '/api/stocks/mfRanking/?order=asc')
@@ -114,7 +114,7 @@ printPerf1MBullet()
 
 await callDivYield()
 await callLastDivDate()
-await callBorsaItalianaRatings()
+// await callBorsaItalianaRatings()
 await callMilanoFinanzaRankings()
 
 await perf1Y.init()

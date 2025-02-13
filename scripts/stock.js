@@ -84,7 +84,7 @@ function printPerformanceData () {
   $wrap.classList.add(data.info.status)
 }
 
-function printBorsaItaliana () {
+/* function printBorsaItaliana () {
   const $wrap = $root.querySelector('#borsa-italiana')
   $wrap.querySelector('#bi-resistance').innerText = data.analysis.body.borsaIt_resistance?.value || 'nd'
   $wrap.querySelector('#bi-support').innerText = data.analysis.body.borsaIt_support?.value || 'nd'
@@ -116,7 +116,7 @@ function printBorsaItaliana () {
 
   $wrap.classList.remove(...cls)
   $wrap.classList.add(data.info.status)
-}
+} */
 
 function printSole24Ore () {
   const $wrap = $root.querySelector('#il-sole-24-ore')
@@ -253,7 +253,7 @@ if (isin) {
   await callTheApi('analysis')
   if (data.analysis.status === 'success') {
     //printAnalysisData()
-    printBorsaItaliana()
+    //printBorsaItaliana()
     printSole24Ore()
     printMilanoFinanza()
     printSoldiOnLine()
