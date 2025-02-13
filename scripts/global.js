@@ -8,7 +8,7 @@ const STATUS = {
   error: 'error'
 }
 const LOCAL_DATA_KEY = 'trnetLocalData'
-const TIMEOUT_LOCAL_DATA = 1000 * 60 * 30
+const TIMEOUT_LOCAL_DATA = 1000 * 60 * 5
 
 const getStockHref = (name, isin) => {
   return `/analisi/${encodeURI(name?.toLowerCase().replace(/ /g, '-').replace(/&/g, 'and').replace(/'/g, '-'))}?isin=${isin}`
