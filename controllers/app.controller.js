@@ -292,8 +292,8 @@ exports.stockView = async (req, res) => {
   res.locals.stocks = stocks
   res.render('stock', {
     id: 'stock',
-    title: 'Azioni ' + name + ': analisi tecnica, dividendi e prezzo target',
-    description: 'In tempo reale, il titolo azionario ' + name + ': analisi tecnica, medie, performance, target price, tendenze, rassegna stampa e giudizi dalle principali testate online. Scopri tutto ciò che ti serve per operare consapevolmente in Borsa Italiana',
+    title: 'Azioni ' + name.toUpperCase() + ': analisi e segnali operativi in tempo reale',
+    description: 'Ottieni, in tempo reale, l\'ANALISI TECNICA del titolo ' + name.toUpperCase() + ', la RASSEGNA STAMPA e i GIUDIZI emessi dalle banche d\'affari e testate online. Scopri ora tutto ciò che ti serve per operare consapevolmente.',
     user: req.session.user,
     url: req.url,
     name,

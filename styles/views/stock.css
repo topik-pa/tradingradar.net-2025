@@ -2,15 +2,10 @@
   margin: var(--large-space) 0;
 }
 
-#head div {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-  margin-bottom: var(--x-large-space);
-}
 #head img {
   border-radius: var(--border-radius-big);
-  margin-right: var(--large-space);
+  margin-bottom: var(--large-space);
+  box-shadow: 0 0 4px 2px var(--darker-gray)
 }
 #head h1 {
   margin: 0;
