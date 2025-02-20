@@ -178,7 +178,7 @@ exports.hpView = async (req, res) => {
   res.render('home', {
     id: 'hp',
     title: 'Scopri, in tempo reale, i segnali di Borsa delle tue azioni',
-    description: 'Scopri *in tempo reale* quali titoli azionari stanno generando segnali cruciali secondo le principali testate del settore e *trova ora le azioni più interessanti* della Borsa Italiana',
+    description: 'Scopri in tempo reale quali titoli azionari stanno generando segnali cruciali secondo le principali testate del settore e trova ora le azioni più interessanti della Borsa Italiana',
     user: req.session.user,
     url: req.url
   })
@@ -293,7 +293,7 @@ exports.stockView = async (req, res) => {
   res.render('stock', {
     id: 'stock',
     title: 'Azioni ' + name.toUpperCase() + ': analisi e segnali operativi in tempo reale',
-    description: 'Ottieni, in tempo reale, l\'ANALISI TECNICA del titolo ' + name.toUpperCase() + ', la RASSEGNA STAMPA e i GIUDIZI emessi dalle banche d\'affari e testate online. Scopri ora tutto ciò che ti serve per operare consapevolmente.',
+    description: 'Scopri l\'ANALISI TECNICA del titolo ' + name + ' inclusa RASSEGNA STAMPA, DIVIDENDO, PREZZO TARGET e GIUDIZI emessi dalle banche d\'affari e principali testate online.',
     user: req.session.user,
     url: req.url,
     name,
