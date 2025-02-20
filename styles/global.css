@@ -124,6 +124,7 @@ ul li, ol li {
   margin-left: var(--normal-space);
   margin-top: var(--small-space);
   font-style: italic;
+  line-height: 100%;
 }
 .rounded small {
   color: var(--gray);

@@ -19,11 +19,19 @@ block append meta
   script(src='/scripts/stock.js', type='module', defer)
 
 block main
-  section(id="head", class="rounded")
+  section(id="head", class="rounded loading")
     div 
       img(src=('/assets/images/stocks/' + code + '-min.png'), alt=name, onerror="this.onerror='';this.src='/assets/images/stocks/company.png';")
       h1 #{name}
+    dl 
+      dt Codice ISIN
+      dd(class="small") #[span(id="isin")]
+      dt Indirizzo
+      dd(class="small") #[span(id="address")]
+      dt Website
+      dd(class="small") #[span(id="website")]
     p Tutti i dati sono forniti in #[em tempo reale] interrogando direttamente le fonti originali
+
 
   section(id="top-data")
     div(id="last-price", class="rounded loading")

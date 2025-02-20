@@ -38,6 +38,16 @@ async function callTheApi (type) {
   $wrap.classList.add(data[type].status)
 } */
 
+function printGeneralInfo (isin) {
+  const $head = $root.querySelector('#head')
+  $head.querySelector('#isin').innerText = isin || 'nd'
+  $head.querySelector('#address').innerText = data.info.body.address?.value || 'nd'
+  $head.querySelector('#website').innerText = data.info.body.webSite?.value || 'nd'
+
+  $head.classList.remove(...cls)
+  $head.classList.add(data.info.status)
+}
+
 function printPrice () {
   const $price = $root.querySelector('#last-price')
   $price.getElementsByTagName('span')[0].innerText = data.info.body.lastPrice?.value || 'nd'
@@ -262,6 +272,7 @@ $root = document.getElementById('stock')
 if (isin) {
   await callTheApi('info')
   if (data.info.status === 'success') {
+    printGeneralInfo(isin)
     printPrice()
     printDividendData()
     printAverageData()
