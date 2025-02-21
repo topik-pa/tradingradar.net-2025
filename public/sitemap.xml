@@ -32,7 +32,7 @@
 		<priority>0.5</priority>
 	</url> 
 	<url>
-		<loc>https://www.tradingradar.net/privacy</loc>
+		<loc>https://tradingradar.net/privacy</loc>
 		<lastmod>2025-01-01T12:00:00+00:00</lastmod>
 		<changefreq>yearly</changefreq>
 		<priority>0.5</priority>
@@ -52,8 +52,38 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://tradingradar.net/analisi/abbvie?isin=US00287Y1091</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://tradingradar.net/analisi/acea?isin=IT0001207098</loc>
 		<lastmod>2025-01-01T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://tradingradar.net/analisi/adidas?isin=DE000A1EWWW0</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://tradingradar.net/analisi/adobe?isin=US00724F1012</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://tradingradar.net/analisi/advanced-micro-devices?isin=US0079031078</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://tradingradar.net/analisi/adventure?isin=IT0005607715</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>1.0</priority>
 	</url>
@@ -76,14 +106,111 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://tradingradar.net/analisi/ageas?isin=BE0974264930</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://tradingradar.net/analisi/air-france-klm?isin=FR001400J770</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://tradingradar.net/analisi/air-products-and-chemicals?isin=US0091581068</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://tradingradar.net/analisi/airbus?isin=NL0000235190</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://tradingradar.net/analisi/ala?isin=IT0005446700</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://tradingradar.net/analisi/alcoa?isin=US0138721065</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://tradingradar.net/analisi/alerion-cleanpower?isin=IT0004720733</loc>
 		<lastmod>2025-01-01T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+
+	<url>
+		<loc>https://tradingradar.net/analisi/alfio-bardolla?isin=IT0005244030</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://tradingradar.net/analisi/alfonsino?isin=IT0005466039</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://tradingradar.net/analisi/alkemy?isin=IT0005314635</loc>
 		<lastmod>2025-01-01T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://tradingradar.net/analisi/allcore?isin=IT0005461303</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://tradingradar.net/analisi/allianz?isin=DE0008404005</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://tradingradar.net/analisi/almawave?isin=IT0005434615</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://tradingradar.net/analisi/altea-green-power?isin=IT0005472730</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://tradingradar.net/analisi/amazon?isin=US0231351067</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://tradingradar.net/analisi/ambromobiliare?isin=IT0004779515</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://tradingradar.net/analisi/american-express?isin=US0258161092</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://tradingradar.net/analisi/american-tower-reit?isin=US03027X1000</loc>
+		<lastmod>2025-02-21T12:00:00+00:00</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>1.0</priority>
 	</url>
