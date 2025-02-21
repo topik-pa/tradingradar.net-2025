@@ -11,3 +11,12 @@
 #share p {
   padding-bottom: var(--large-space);
 }
+#share ul.icons {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--large-space);
+}
+#share ul.icons li {
+  margin-bottom: var(--x-large-space);
+}
