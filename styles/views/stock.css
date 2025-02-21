@@ -12,6 +12,9 @@
   font-weight: bold;
   font-size: var(--font-size-biggest);
 }
+#head p {
+  font-style: italic;
+}
 
 #top-data, #analyses {
   display: flex;
@@ -76,6 +79,15 @@
   margin-top: var(--xx-large-space);
 }
 
+#last-price {
+  border: 1px solid var(--bronze);
+}
+
+.general {
+  display: flex;
+  justify-content: space-between;
+}
+
 
 @media screen and (max-width: 768px) {
   #top-data, #analyses {
@@ -90,5 +102,8 @@
     width: 100%;
     margin: 0;
     margin-bottom: var(--large-space);
+  }
+  .general {
+    flex-direction: column;
   }
 }

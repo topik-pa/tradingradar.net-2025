@@ -23,13 +23,21 @@ block main
     div 
       img(src=('/assets/images/stocks/' + code + '-min.png'), alt=name, onerror="this.onerror='';this.src='/assets/images/stocks/company.png';")
       h1 #{name}
-    dl 
-      dt Codice ISIN
-      dd(class="small") #[span(id="isin")]
-      dt Indirizzo
-      dd(class="small") #[span(id="address")]
-      dt Website
-      dd(class="small") #[span(id="website")]
+    div(class="general")
+      dl 
+        dt Codice ISIN
+        dd(class="small") #[span(id="isin")]
+        dt Settore
+        dd(class="small") #[span(id="sector")]
+        dt Mercato
+        dd(class="small") #[span(id="segment")]
+      dl 
+        dt Capitalizzazione
+        dd(class="small") #[small mln.] #[span(id="capital")]
+        dt Indirizzo
+        dd(class="small") #[span(id="address")]
+        dt Website
+        dd(class="small") #[span(id="website")]
     p Tutti i dati sono forniti in #[em tempo reale] interrogando direttamente le fonti originali
 
 
@@ -55,6 +63,8 @@ block main
       div(class="small") #[small €] #[span(id="mm40")]
       h3 100 giorni
       div(class="small") #[small €] #[span(id="mm100")]
+      span(class="green note") Il prezzo attuale è superiore a tutte le medie riportate
+      span(class="red note") Il prezzo attuale è inferiore a tutte le medie riportate
 
     div(id="performance", class="rounded loading")
       h2 Performance
@@ -112,6 +122,8 @@ block main
         dd(class="small") #[span(id="mf-rating")]
         dt Risk [0-100]
         dd(class="small") #[span(id="mf-risk")]
+        dt Volatilità [%]
+        dd(class="small") #[span(id="mf-volatility")]
       a(href="#", title="Continua su portale di origine") -Continua su portale di origine-
 
     div(id="soldi-on-line", class="rounded loading") 

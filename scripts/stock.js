@@ -42,7 +42,11 @@ function printGeneralInfo (isin) {
   const $head = $root.querySelector('#head')
   $head.querySelector('#isin').innerText = isin || 'nd'
   $head.querySelector('#address').innerText = data.info.body.address?.value || 'nd'
-  $head.querySelector('#website').innerText = data.info.body.webSite?.value || 'nd'
+  $head.querySelector('#website').innerText = data.info.body.webSite?.value.replace('http://', '').replace('https://', '') || 'nd'
+
+  $head.querySelector('#sector').innerText = data.info.body.sector?.value || 'nd'
+  $head.querySelector('#segment').innerText = data.info.body.segment?.value || 'nd'
+  $head.querySelector('#capital').innerText = data.info.body.capitalizzazione?.value || 'nd'
 
   $head.classList.remove(...cls)
   $head.classList.add(data.info.status)
@@ -69,6 +73,22 @@ function printAverageData () {
   $wrap.querySelector('#mm20').innerText = data.info.body.mm20days?.value || 'nd'
   $wrap.querySelector('#mm40').innerText = data.info.body.mm40days?.value || 'nd'
   $wrap.querySelector('#mm100').innerText = data.info.body.mm100days?.value || 'nd'
+
+  if(
+    data.info.body.lastPrice?.value > data.info.body.mm20days?.value &&
+    data.info.body.lastPrice?.value > data.info.body.mm40days?.value &&
+    data.info.body.lastPrice?.value > data.info.body.mm100days?.value
+  ) {
+    $wrap.querySelector('.note.green').classList.add('show')
+  }
+  if(
+    data.info.body.lastPrice?.value < data.info.body.mm20days?.value &&
+    data.info.body.lastPrice?.value < data.info.body.mm40days?.value &&
+    data.info.body.lastPrice?.value < data.info.body.mm100days?.value
+  ) {
+    $wrap.querySelector('.note.red').classList.add('show')
+  }
+
   $wrap.classList.remove(...cls)
   $wrap.classList.add(data.info.status)
 }
@@ -182,6 +202,8 @@ function printMilanoFinanza () {
   $wrap.querySelector('#mf-rating').appendChild($gauge)
 
   $wrap.querySelector('#mf-risk').innerText = data.analysis.body.milFin_mfRisk?.value || 'nd'
+  $wrap.querySelector('#mf-volatility').innerText = data.info.body.mfVolatility?.value || 'nd'
+
   $wrap.querySelector('a').href = data.analysis.body.milFin_mfRanking?.source
 
   $wrap.classList.remove(...cls)
