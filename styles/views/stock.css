@@ -2,6 +2,10 @@
   margin: var(--large-space) 0;
 }
 
+#stock .source header {
+  display: block;
+}
+
 #head img {
   border-radius: var(--border-radius-big);
   margin-bottom: var(--large-space);
