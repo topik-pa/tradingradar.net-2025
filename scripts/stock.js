@@ -24,6 +24,8 @@ async function callTheApi (type) {
   try {
     const request = await proxyFetch(`/api/${type}/${isin}`)
     data[type].body = request.body
+
+    //if(type === 'info') data.info.body.lastPrice = 'nd'
     data[type].status = 'success'
   } catch (error) {
     data[type].status = 'error'
@@ -70,23 +72,28 @@ function printDividendData () {
 
 function printAverageData () {
   const $wrap = $root.querySelector('#average')
+  if(data.info.body.mm20days?.value && data.info.body.mm40days?.value && data.info.body.mm100days?.value) {
+    $wrap.classList.remove('hide')
+  }
   $wrap.querySelector('#mm20').innerText = data.info.body.mm20days?.value || 'nd'
   $wrap.querySelector('#mm40').innerText = data.info.body.mm40days?.value || 'nd'
   $wrap.querySelector('#mm100').innerText = data.info.body.mm100days?.value || 'nd'
 
-  if(
-    data.info.body.lastPrice?.value > data.info.body.mm20days?.value &&
-    data.info.body.lastPrice?.value > data.info.body.mm40days?.value &&
-    data.info.body.lastPrice?.value > data.info.body.mm100days?.value
-  ) {
-    $wrap.querySelector('.note.green').classList.add('show')
-  }
-  if(
-    data.info.body.lastPrice?.value < data.info.body.mm20days?.value &&
-    data.info.body.lastPrice?.value < data.info.body.mm40days?.value &&
-    data.info.body.lastPrice?.value < data.info.body.mm100days?.value
-  ) {
-    $wrap.querySelector('.note.red').classList.add('show')
+  if(data.info.body.mm20days?.value && data.info.body.mm40days?.value && data.info.body.mm100days?.value) {
+    if(
+      data.info.body.lastPrice?.value > data.info.body.mm20days?.value &&
+      data.info.body.lastPrice?.value > data.info.body.mm40days?.value &&
+      data.info.body.lastPrice?.value > data.info.body.mm100days?.value
+    ) {
+      $wrap.querySelector('.note.green').classList.add('show')
+    }
+    if(
+      data.info.body.lastPrice?.value < data.info.body.mm20days?.value &&
+      data.info.body.lastPrice?.value < data.info.body.mm40days?.value &&
+      data.info.body.lastPrice?.value < data.info.body.mm100days?.value
+    ) {
+      $wrap.querySelector('.note.red').classList.add('show')
+    }
   }
 
   $wrap.classList.remove(...cls)
@@ -150,6 +157,16 @@ function printPerformanceData () {
 
 function printSole24Ore () {
   const $wrap = $root.querySelector('#il-sole-24-ore')
+
+  if(
+    data.analysis.body.sol24_shortTendency?.value &&
+    data.analysis.body.sol24_mediumTendency?.value &&
+    data.info.body.profile?.value &&
+    data.info.body.comment?.value
+  ) {
+    $wrap.classList.remove('hide')
+  }
+
   const extUrl = data.info.body.profile?.source
   const extUrl2 = extUrl.substr(extUrl.lastIndexOf('=') + 1)
   const rootExtUrl = 'https://mercati.ilsole24ore.com/azioni/borsa-italiana/dettaglio-completo/'
@@ -212,6 +229,14 @@ function printMilanoFinanza () {
 
 function printTargetAndJudgments () {
   const $wrap = $root.querySelector('#targetprice')
+
+  if(
+    data.analysis.body.sol_lastJudgment?.value[0] &&
+    data.analysis.body.sol_lastJudgment?.value[1] &&
+    data.analysis.body.sol_lastJudgment?.value[2] &&
+    data.analysis.body.sol_lastJudgment?.value[3]) {
+    $wrap.classList.remove('hide')
+  }
 
   $wrap.querySelector('#judgment').innerText = data.analysis.body.sol_lastJudgment?.value[2] || 'nd'
   $wrap.querySelector('#tp').innerText = data.analysis.body.sol_lastJudgment?.value[3] || 'nd'

@@ -5,6 +5,15 @@
 #stock .source header {
   display: block;
 }
+#stock .source header span {
+  font-style: italic;
+  color: var(--dark-gray);
+}
+#stock .source header h2 {
+  display: flex;
+  align-items: center;
+}
+
 
 #head img {
   border-radius: var(--border-radius-big);
@@ -59,6 +68,9 @@
   height: var(--x-large-space);
   vertical-align: text-bottom;
   margin-right: var(--small-space);
+  border: 1px solid gray;
+  border-radius: 50%;
+  padding: var(--x-small-space);
 }
 
 #news h3 {

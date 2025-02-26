@@ -53,7 +53,7 @@ block main
       h3 Data dividendo
       div(class="small") #[span(id="last")]
 
-    div(id="average", class="rounded loading")
+    div(id="average", class="hide rounded loading")
       h2 Medie mobili
       h3 20 giorni
       div(class="small") #[small €] #[span(id="mm20")]
@@ -73,7 +73,7 @@ block main
       h3 1 anno
       div(class="small") #[small %] #[span(id="y1")]
 
-    div(id="targetprice", class="rounded loading")
+    div(id="targetprice", class="hide rounded loading")
       h2 Target price e giudizio
       h3 Giudizio
       div(class="small") #[small €] #[span(id="judgment")]
@@ -101,7 +101,7 @@ block main
     //-     dt Rating
     //-     dd(class="small") #[span(id="bi-rating")]
 
-    div(id="il-sole-24-ore", class="source rounded loading")
+    div(id="il-sole-24-ore", class="hide source rounded loading")
       header 
         span Analisi in tempo reale da:
         h2(class="il-sole-24-ore img_icon") Il Sole 24 Ore
