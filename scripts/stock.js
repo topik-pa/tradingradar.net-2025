@@ -81,6 +81,7 @@ function printAverageData () {
 
   if(data.info.body.mm20days?.value && data.info.body.mm40days?.value && data.info.body.mm100days?.value) {
     if(
+      data.info.body.lastPrice?.value &&
       data.info.body.lastPrice?.value > data.info.body.mm20days?.value &&
       data.info.body.lastPrice?.value > data.info.body.mm40days?.value &&
       data.info.body.lastPrice?.value > data.info.body.mm100days?.value
@@ -88,6 +89,7 @@ function printAverageData () {
       $wrap.querySelector('.note.green').classList.add('show')
     }
     if(
+      data.info.body.lastPrice?.value &&
       data.info.body.lastPrice?.value < data.info.body.mm20days?.value &&
       data.info.body.lastPrice?.value < data.info.body.mm40days?.value &&
       data.info.body.lastPrice?.value < data.info.body.mm100days?.value
@@ -267,10 +269,10 @@ function printTeleborsa () {
   $wrap.querySelector('#tb-trend').innerText = data.analysis.body.teleb_trend?.value || 'nd'
   $wrap.querySelector('#tb-trend + a').href = data.analysis.body.teleb_trend?.source
 
-  if(data.info.body.lastPrice?.value > data.analysis.body.teleb_tbResistance?.value) {
+  if(data.info.body.lastPrice?.value && data.info.body.lastPrice?.value > data.analysis.body.teleb_tbResistance?.value) {
     $wrap.querySelector('#tb-resistance + .note').classList.add('show')
   }
-  if(data.info.body.lastPrice?.value < data.analysis.body.teleb_tbSupport?.value) {
+  if(data.info.body.lastPrice?.value && data.info.body.lastPrice?.value < data.analysis.body.teleb_tbSupport?.value) {
     $wrap.querySelector('#tb-support + .note').classList.add('show')
   }
 
