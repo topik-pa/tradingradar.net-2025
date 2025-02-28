@@ -17,7 +17,7 @@ module.exports = app => {
     '/news/:isin'
   ]
 
-  // apiUrls
+  // api urls
   router.get(apiUrls, ctrl.get)
 
   app.use('/api', router)

@@ -1,9 +1,9 @@
 const http = require('https')
 const options = {
-  hostname: 'tradingradar-v3.herokuapp.com',
+  hostname: process.env.API_HOST,
   port: null,
   headers: {
-    'x-rapidapi-host': 'tradingradar-v3.herokuapp.com',
+    'x-rapidapi-host': process.env.API_HOST,
     'x-rapidapi-key': process.env.X_RAPIDAPI_KEY,
     useQueryString: true
   }

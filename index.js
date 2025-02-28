@@ -1,6 +1,6 @@
 const express = require('express')
 const http = require('http')
-const session = require('express-session')
+//const session = require('express-session')
 const path = require('path')
 const compression = require('compression')
 // const { I18n } = require('i18n')
@@ -16,13 +16,13 @@ app.use(express.urlencoded({
 }))
 
 //session
-let oneDay = 1000 * 60 * 60 * 24
-app.use(session({
+//let oneDay = 1000 * 60 * 60 * 24
+/*app.use(session({
   secret: 'FoFiCiEf707PiGi', //TODO randomly generated in production
   resave: false,
   saveUninitialized: true,
   cookie: { maxAge: oneDay }
-}))
+}))*/
 
 // Compress responses if browser is capable
 app.use(compression({ filter: shouldCompress }))

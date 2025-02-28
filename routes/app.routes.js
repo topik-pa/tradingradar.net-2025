@@ -9,11 +9,11 @@ const router = require('express').Router()
 
 module.exports = app => {
   //login
-  router.get('/login', ctrl.loginView)
-  router.post('/login', ctrl.loginUser)
+  //router.get('/login', ctrl.loginView)
+  //router.post('/login', ctrl.loginUser)
 
   //logout
-  router.get('/logout', ctrl.logoutUser)
+  //router.get('/logout', ctrl.logoutUser)
 
   //home page
   // app.get('/', isAuthenticated, ctrl.hpView);
@@ -29,7 +29,7 @@ module.exports = app => {
   router.get('/dividendi', ctrl.dividendsView)
 
   // best Borsa Italiana
-  router.get('/borsa-italiana-best-ratings', ctrl.borsaItalianaBestRatingsView)
+  //router.get('/borsa-italiana-best-ratings', ctrl.borsaItalianaBestRatingsView)
 
   // best Milano Finanza
   router.get('/milano-finanza-best-rankings', ctrl.milanoFinanzaBestRankingsView)
@@ -39,6 +39,7 @@ module.exports = app => {
 
   //stock
   router.get('/analisi/:stock', ctrl.stockView)
+  // redirect to stock page if old url
   router.get('/stock/:stock', function (req, res) {
     res.redirect(req.url.replace('stock', 'analisi'))
   })

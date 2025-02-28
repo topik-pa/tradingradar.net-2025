@@ -39,11 +39,11 @@ function getStocks () {
   console.log('GET STOCKS FROM REMOTE')
   const options = {
     method: 'GET',
-    hostname: 'tradingradar-v3.herokuapp.com',
+    hostname: process.env.API_HOST,
     port: null,
     path: '/api/stocks',
     headers: {
-      'x-rapidapi-host': 'tradingradar-v3.herokuapp.com',
+      'x-rapidapi-host': process.env.API_HOST,
       'x-rapidapi-key': process.env.X_RAPIDAPI_KEY,
       useQueryString: true
     }
@@ -71,7 +71,7 @@ getStocks()
 //Get stocks
 
 // Regenerate session
-const regenerateSession = async (req) => {
+/* const regenerateSession = async (req) => {
   await new Promise((resolve, reject) => {
     req.session.regenerate((err) => {
       if (err) {
@@ -81,11 +81,11 @@ const regenerateSession = async (req) => {
       }
     })
   })
-}
+} */
 
 // Functions
 // login
-exports.loginUser = async (req, res, next) => {
+/* exports.loginUser = async (req, res, next) => {
   const findUserByEmail = async (email) => {
     return await Users.find((user) => {
       return user.email === email
@@ -143,9 +143,9 @@ exports.loginUser = async (req, res, next) => {
     // return res.status(200).send({});
   })
 
-}
+} */
 // logout
-exports.logoutUser = async (req, res, next) => {
+/* exports.logoutUser = async (req, res, next) => {
   // clear the user from the session object and save.
   // this will ensure that re-using the old session id
   // does not have a logged in user
@@ -160,18 +160,18 @@ exports.logoutUser = async (req, res, next) => {
       res.redirect('/login')
     })
   })
-}
+} */
 
 // Views
 // login view
-exports.loginView = async (req, res) => {
+/* exports.loginView = async (req, res) => {
   res.render('login', {
     id: 'login',
     title: 'Login',
     description: 'Login',
     url: req.url
   })
-}
+} */
 // home page view
 exports.hpView = async (req, res) => {
   res.locals.stocks = stocks
@@ -179,7 +179,7 @@ exports.hpView = async (req, res) => {
     id: 'hp',
     title: 'Scopri, in tempo reale, i segnali di Borsa delle tue azioni',
     description: 'Scopri in tempo reale quali titoli azionari stanno generando segnali cruciali secondo le principali testate del settore e trova ora le azioni più interessanti della Borsa Italiana',
-    user: req.session.user,
+    //user: req.session.user,
     url: req.url
   })
 }
@@ -190,7 +190,6 @@ exports.stocksView = async (req, res) => {
     id: 'stocks',
     title: 'Titoli azionari del mercato FTSE All-Share Milano',
     description: 'La lista delle azioni della Borsa Italiana - paniere FTSE All-Share Milano',
-    user: req.session.user,
     url: req.url
   })
 }
@@ -200,7 +199,7 @@ exports.targetPriceRaccView = async (req, res) => {
     id: 'tpr',
     title: 'Target Price e ultime raccomandazioni dalle Banche di Affari',
     description: 'I target price e le raccomandazioni operative delle principali banche di affari ordinati per data. Scopri gli ultimi giudizi e il prezzo obiettivo delle azioni di Borsa Italiana',
-    user: req.session.user,
+    //user: req.session.user,
     url: req.url
   })
 }
@@ -210,27 +209,27 @@ exports.dividendsView = async (req, res) => {
     id: 'dividendi',
     title: 'Data e valore dei Dividendi di Borsa Italiana',
     description: 'Lista dei dividendi ordinata per valore in rapporto al prezzo e date di stacco della cedola delle azioni di Borsa Italiana. Scopri quali sono i dividendi più alti e le date di stacco delle principali azioni italiane',
-    user: req.session.user,
+    //user: req.session.user,
     url: req.url
   })
 }
 // best Borsa Italiana view
-exports.borsaItalianaBestRatingsView = async (req, res) => {
+/*exports.borsaItalianaBestRatingsView = async (req, res) => {
   res.render('bibr', {
     id: 'bibr',
     title: 'Le azioni con i migliori rating secondo Borsa Italiana',
     description: 'Le azioni con i migliori rating selezionati in tempo reale e in base alle analisi di Borsa Italiana',
-    user: req.session.user,
+    //user: req.session.user,
     url: req.url
   })
-}
+}*/
 // best Milano Finanza view
 exports.milanoFinanzaBestRankingsView = async (req, res) => {
   res.render('mfbr', {
     id: 'mfbr',
     title: 'Le azioni con i migliori ranking secondo Milano Finanza',
     description: 'Le azioni con i migliori ranking selezionati in tempo reale e in base alle analisi di Milano Finanza',
-    user: req.session.user,
+    //user: req.session.user,
     url: req.url
   })
 }
@@ -240,7 +239,6 @@ exports.contactsView = async (req, res) => {
     id: 'contatti',
     title: 'Contattaci',
     description: 'Contattaci per domande e suggerimenti',
-    user: req.session.user,
     url: req.url
   })
 }
@@ -250,7 +248,6 @@ exports.privacyView = async (req, res) => {
     id: 'privacy',
     title: 'Privacy',
     description: 'La nostra privacy page',
-    user: req.session.user,
     url: req.url
   })
 }
@@ -294,7 +291,7 @@ exports.stockView = async (req, res) => {
     id: 'stock',
     title: 'Azioni ' + name.toUpperCase() + ': analisi e segnali operativi in tempo reale',
     description: 'Scopri l\'ANALISI TECNICA del titolo ' + name + ' inclusa RASSEGNA STAMPA, DIVIDENDO, PREZZO TARGET e GIUDIZI emessi dalle banche d\'affari e principali testate online.',
-    user: req.session.user,
+    //user: req.session.user,
     url: req.url,
     name,
     code
