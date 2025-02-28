@@ -1,0 +1,30 @@
+#stock-head {
+  img {
+    border-radius: var(--border-radius-big);
+    margin-bottom: var(--large-space);
+    box-shadow: 0 0 4px 2px var(--darker-gray)
+  }
+  h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: var(--font-size-biggest);
+  }
+  p {
+    font-style: italic;
+  }
+  &.rounded h3 {
+    margin-top: 0;
+    margin-bottom: var(--x-small-space);
+  }
+  .general {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  #stock-head .general {
+    flex-direction: column;
+  }
+}

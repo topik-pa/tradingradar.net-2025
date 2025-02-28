@@ -1,0 +1,19 @@
+section(id="stock-head", class="rounded loading")
+  div 
+    img(src=('/assets/images/stocks/' + code + '-min.png'), alt=name, onerror="this.onerror='';this.src='/assets/images/stocks/company.png';")
+    h1 #{name}
+  div(class="general")
+    dl 
+      dt Codice ISIN
+      dd(class="small") #[span(id="isin")]
+      dt Settore
+      dd(class="small") #[span(id="sector")]
+      dt Mercato
+      dd(class="small") #[span(id="segment")]
+    dl 
+      dt Capitalizzazione
+      dd(class="small") #[small mln.] #[span(id="capital")]
+      dt Indirizzo
+      dd(class="small") #[span(id="address")]
+      dt Website
+      dd(class="small") #[span(id="website")]

@@ -1,0 +1,8 @@
+#stock-news h3 {
+  margin: var(--x-large-space) 0;
+}
+#stock-news .img_icon::before {
+  width: var(--x-large-space);
+  height: var(--x-large-space);
+  margin-right: var(--small-space);
+}

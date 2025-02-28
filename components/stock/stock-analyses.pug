@@ -1,0 +1,58 @@
+section(id="stock-analyses")
+  div(id="il-sole-24-ore", class="hide source rounded loading")
+    header 
+      span Analisi in tempo reale da:
+      h2(class="il-sole-24-ore img_icon") Il Sole 24 Ore
+    dl 
+      dt Tendenza #[em breve] periodo
+      dd(class="small") #[span(id="sol24-short-tend")]
+      dt Tendenza #[em medio] periodo
+      dd(class="small") #[span(id="sol24-med-tend")]
+      dt Profilo
+      dd #[span(id="sol24-profile")] #[a(href="#", title="Continua su portale di origine") -Continua su portale di origine-]
+      dt Commento
+      dd #[span(id="sol24-comment")] #[a(href="#", title="Continua su portale di origine") -Continua su portale di origine-]
+
+  div(id="milano-finanza", class="source rounded loading") 
+    header 
+      span Analisi in tempo reale da:
+      h2(class="milano-finanza img_icon") Milano Finanza
+    dl 
+      dt Rating [A-E]
+      dd(class="small") #[span(id="mf-rating")]
+      dt Risk [0-100]
+      dd(class="small") #[span(id="mf-risk")]
+      dt Volatilità [%]
+      dd(class="small") #[span(id="mf-volatility")]
+    a(href="#", title="Continua su portale di origine") -Continua su portale di origine-
+
+  div(id="soldi-on-line", class="source rounded loading") 
+    header 
+      span Analisi in tempo reale da:
+      h2(class="soldi-on-line img_icon") SoldiOnLine
+    dl 
+      dt Massimo assoluto
+      dd(class="small") #[small €] #[span(id="maxabs")]
+      dt Minimo assoluto
+      dd(class="small") #[small €] #[span(id="minabs")]
+      dt Massimo anno corrente
+      dd(class="small") #[small €] #[span(id="maxy")]
+      dt Minimo anno corrente
+      dd(class="small") #[small €] #[span(id="miny")]
+      dt Volume
+      dd(class="small") #[span(id="volume")]
+    a(href="#", title="Continua su portale di origine") -Continua su portale di origine-
+
+  div(id="teleborsa", class="source rounded loading") 
+    header 
+      span Analisi in tempo reale da:
+      h2(class="teleborsa img_icon") Teleborsa
+    dl 
+      dt Resistenza
+      dd(class="small") #[small €] #[span(id="tb-resistance")]
+        span(class="green note") Il prezzo attuale è superiore alla resistenza
+      dt Supporto
+      dd(class="small") #[small €] #[span(id="tb-support")]
+        span(class="red note") Il prezzo attuale è inferiore al supporto
+      dt Trend
+      dd #[span(id="tb-trend")] #[a(href="#", title="Continua su portale di origine") -Continua su portale di origine-]

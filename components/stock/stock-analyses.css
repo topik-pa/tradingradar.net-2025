@@ -1,0 +1,50 @@
+#stock-analyses {
+  display: flex;
+  justify-content: space-between;
+
+  .rounded {
+    max-width: 21rem;
+    min-height: 7rem;
+    margin-right: var(--large-space);
+    max-width: none;
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .img_icon::before {
+    width: var(--x-large-space);
+    height: var(--x-large-space);
+    vertical-align: text-bottom;
+    margin-right: var(--small-space);
+    border: 1px solid gray;
+    border-radius: 50%;
+    padding: var(--x-small-space);
+  }
+  .source header {
+    display: block;
+    span {
+      font-style: italic;
+      color: var(--dark-gray);
+    }
+    h2 {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #stock-analyses {
+    flex-wrap: wrap;
+
+    .rounded {
+      width: 100%;
+      margin: 0;
+      margin-bottom: var(--large-space);
+    }
+  }
+}

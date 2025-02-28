@@ -1,4 +1,4 @@
-import { getStocks, getStockHref } from '../../scripts/global.js'
+import { getStocks, getStockHref, getLocalData } from '../../scripts/global.js'
 const key = 'perf1M'
 const url = `/api/stocks/${key}/?order=desc`
 
@@ -43,9 +43,9 @@ const perfMonth = {
   init: async (rootId = 'perf-month') => {
     const $root = document.getElementById(rootId)
     const stocks = await getStocks([$root], key, url)
+    printPerfMonthPerformance()
     printData(stocks.slice(0, 10), $root.querySelector('ul.up'))
     printData(stocks.reverse().slice(0, 10), $root.querySelector('ul.down'))
-    printPerfMonthPerformance()
   }
 }
 

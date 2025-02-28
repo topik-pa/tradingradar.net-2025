@@ -1,125 +1,16 @@
-#stock section {
-  margin: var(--large-space) 0;
-}
-
-#stock .source header {
-  display: block;
-}
-#stock .source header span {
-  font-style: italic;
-  color: var(--dark-gray);
-}
-#stock .source header h2 {
-  display: flex;
-  align-items: center;
-}
-
-
-#head img {
-  border-radius: var(--border-radius-big);
-  margin-bottom: var(--large-space);
-  box-shadow: 0 0 4px 2px var(--darker-gray)
-}
-#head h1 {
-  margin: 0;
-  font-weight: bold;
-  font-size: var(--font-size-biggest);
-}
-#head p {
-  font-style: italic;
-}
-
-#top-data, #analyses {
-  display: flex;
-  justify-content: space-between;
-}
-
-#top-data .rounded {
-  width: 100%;
-  margin-right: var(--large-space);
-}
-#top-data .rounded:last-child {
-  margin-right: 0;
-}
-
-#analyses .rounded {
-  width: 100%;
-  max-width: 21rem;
-  min-height: 7rem;
-  margin-right: var(--large-space);
-}
-#analyses .rounded:last-child {
-  margin-right: 0;
-}
-#top-data .rounded h3, #head.rounded h3 {
-  margin-top: 0;
-  margin-bottom: var(--x-small-space);
-}
-#analyses .rounded {
-  max-width: none;
-  width: 47%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-#analyses .img_icon::before {
-  width: var(--x-large-space);
-  height: var(--x-large-space);
-  vertical-align: text-bottom;
-  margin-right: var(--small-space);
-  border: 1px solid gray;
-  border-radius: 50%;
-  padding: var(--x-small-space);
-}
-
-#news h3 {
-  margin: var(--x-large-space) 0;
-}
-#news .img_icon::before {
-  width: var(--x-large-space);
-  height: var(--x-large-space);
-  margin-right: var(--small-space);
-}
-
-.note {
-  display: none;
-  font-size: var(--font-size-normal);
-  font-style: italic;
-}
-.note.show {
-  display: block;
-}
-
-#stock #select_stock {
-  margin-top: var(--xx-large-space);
-}
-
-#last-price {
-  border: 1px solid var(--bronze);
-}
-
-.general {
-  display: flex;
-  justify-content: space-between;
-}
-
-
-@media screen and (max-width: 768px) {
-  #top-data, #analyses {
-    flex-wrap: wrap;
+#stock {
+  section {
+    margin: var(--large-space) 0;
   }
-  #analyses .rounded {
-    width: 100%;
-    margin: 0;
-    margin-bottom: var(--large-space);
+  .note {
+    display: none;
+    font-size: var(--font-size-normal);
+    font-style: italic;
+    &.show {
+      display: block;
+    }
   }
-  #top-data .rounded {
-    width: 100%;
-    margin: 0;
-    margin-bottom: var(--large-space);
-  }
-  .general {
-    flex-direction: column;
+  #select_stock {
+    margin-top: var(--xx-large-space);
   }
 }

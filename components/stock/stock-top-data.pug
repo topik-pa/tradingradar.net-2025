@@ -1,0 +1,44 @@
+section(id="stock-top-data")
+  div(id="last-price", class="rounded loading")
+    h2 Ultimo prezzo rilevato 
+    div(class="big") #[small €] #[span]
+
+  div(id="dividend", class="rounded loading")
+    h2 Dividendo
+    h3 Div. Yield
+    div(class="small") #[small %] #[span(id="yeld")]
+    h3 Valore dividendo
+    div(class="small") #[small €] #[span(id="value")]
+    h3 Data dividendo
+    div(class="small") #[span(id="last")]
+
+  div(id="average", class="hide rounded loading")
+    h2 Medie mobili
+    h3 20 giorni
+    div(class="small") #[small €] #[span(id="mm20")]
+    h3 40 giorni
+    div(class="small") #[small €] #[span(id="mm40")]
+    h3 100 giorni
+    div(class="small") #[small €] #[span(id="mm100")]
+    span(class="green note") Il prezzo attuale è superiore a tutte le medie riportate
+    span(class="red note") Il prezzo attuale è inferiore a tutte le medie riportate
+
+  div(id="performance", class="rounded loading")
+    h2 Performance
+    h3 1 mese
+    div(class="small") #[small %] #[span(id="m1")]
+    h3 6 mesi
+    div(class="small") #[small %] #[span(id="m6")]
+    h3 1 anno
+    div(class="small") #[small %] #[span(id="y1")]
+
+  div(id="targetprice", class="hide rounded loading")
+    h2 Target price e giudizio
+    h3 Giudizio
+    div(class="small") #[small €] #[span(id="judgment")]
+    h3 Target price
+    div(class="small") #[small €] #[span(id="tp")]
+    h3 Banca emittente
+    div(class="small") #[small €] #[span(id="bank")]
+    h3 Data
+    div(class="small") #[small €] #[span(id="date")]

@@ -1,10 +1,9 @@
-
 extends layout.pug
 
 block append meta
   title #{title}
   meta(name="description" content=description)
-  meta(name="keywords" content=name + ", prezzo, dividendo, medie, performance, resistenze, supporti, valutazione, rating, tendenze, commento, trend")
+  meta(name="keywords" content=name + ", azioni, prezzo, dividendo, medie, performance, resistenze, supporti, valutazione, rating, tendenze, commento, trend")
 
   link(rel="canonical", href=proj_url + url)
 
@@ -19,150 +18,10 @@ block append meta
   script(src='/scripts/stock.js', type='module', defer)
 
 block main
-  section(id="head", class="rounded loading")
-    div 
-      img(src=('/assets/images/stocks/' + code + '-min.png'), alt=name, onerror="this.onerror='';this.src='/assets/images/stocks/company.png';")
-      h1 #{name}
-    div(class="general")
-      dl 
-        dt Codice ISIN
-        dd(class="small") #[span(id="isin")]
-        dt Settore
-        dd(class="small") #[span(id="sector")]
-        dt Mercato
-        dd(class="small") #[span(id="segment")]
-      dl 
-        dt Capitalizzazione
-        dd(class="small") #[small mln.] #[span(id="capital")]
-        dt Indirizzo
-        dd(class="small") #[span(id="address")]
-        dt Website
-        dd(class="small") #[span(id="website")]
-
-  section(id="top-data")
-    div(id="last-price", class="rounded loading")
-      h2 Ultimo prezzo rilevato 
-      div(class="big") #[small €] #[span]
-
-    div(id="dividend", class="rounded loading")
-      h2 Dividendo
-      h3 Div. Yield
-      div(class="small") #[small %] #[span(id="yeld")]
-      h3 Valore dividendo
-      div(class="small") #[small €] #[span(id="value")]
-      h3 Data dividendo
-      div(class="small") #[span(id="last")]
-
-    div(id="average", class="hide rounded loading")
-      h2 Medie mobili
-      h3 20 giorni
-      div(class="small") #[small €] #[span(id="mm20")]
-      h3 40 giorni
-      div(class="small") #[small €] #[span(id="mm40")]
-      h3 100 giorni
-      div(class="small") #[small €] #[span(id="mm100")]
-      span(class="green note") Il prezzo attuale è superiore a tutte le medie riportate
-      span(class="red note") Il prezzo attuale è inferiore a tutte le medie riportate
-
-    div(id="performance", class="rounded loading")
-      h2 Performance
-      h3 1 mese
-      div(class="small") #[small %] #[span(id="m1")]
-      h3 6 mesi
-      div(class="small") #[small %] #[span(id="m6")]
-      h3 1 anno
-      div(class="small") #[small %] #[span(id="y1")]
-
-    div(id="targetprice", class="hide rounded loading")
-      h2 Target price e giudizio
-      h3 Giudizio
-      div(class="small") #[small €] #[span(id="judgment")]
-      h3 Target price
-      div(class="small") #[small €] #[span(id="tp")]
-      h3 Banca emittente
-      div(class="small") #[small €] #[span(id="bank")]
-      h3 Data
-      div(class="small") #[small €] #[span(id="date")]
-
-  section(id="analyses")
-    //- div(id="borsa-italiana", class="rounded loading")
-    //-   h2(class="borsa-italiana img_icon") Borsa Italiana
-    //-   dl 
-    //-     dt Resistenza
-    //-     dd(class="small") #[small €] #[span(id="bi-resistance")]
-    //-       span(class="green note") Il prezzo attuale è superiore alla resistenza
-    //-     dt Supporto
-    //-     dd(class="small") #[small €] #[span(id="bi-support")]
-    //-       span(class="red note") Il prezzo attuale è inferiore al supporto
-    //-     dt RSI
-    //-     dd(class="small") #[span(id="bi-rsi")]
-    //-     dt Valutazione
-    //-     dd #[span(id="bi-evaluation")] #[a(href="#", title="Continua su portale di origine") -Continua su portale di origine-]
-    //-     dt Rating
-    //-     dd(class="small") #[span(id="bi-rating")]
-
-    div(id="il-sole-24-ore", class="hide source rounded loading")
-      header 
-        span Analisi in tempo reale da:
-        h2(class="il-sole-24-ore img_icon") Il Sole 24 Ore
-      dl 
-        dt Tendenza #[em breve] periodo
-        dd(class="small") #[span(id="sol24-short-tend")]
-        dt Tendenza #[em medio] periodo
-        dd(class="small") #[span(id="sol24-med-tend")]
-        dt Profilo
-        dd #[span(id="sol24-profile")] #[a(href="#", title="Continua su portale di origine") -Continua su portale di origine-]
-        dt Commento
-        dd #[span(id="sol24-comment")] #[a(href="#", title="Continua su portale di origine") -Continua su portale di origine-]
-
-    div(id="milano-finanza", class="source rounded loading") 
-      header 
-        span Analisi in tempo reale da:
-        h2(class="milano-finanza img_icon") Milano Finanza
-      dl 
-        dt Rating [A-E]
-        dd(class="small") #[span(id="mf-rating")]
-        dt Risk [0-100]
-        dd(class="small") #[span(id="mf-risk")]
-        dt Volatilità [%]
-        dd(class="small") #[span(id="mf-volatility")]
-      a(href="#", title="Continua su portale di origine") -Continua su portale di origine-
-
-    div(id="soldi-on-line", class="source rounded loading") 
-      header 
-        span Analisi in tempo reale da:
-        h2(class="soldi-on-line img_icon") SoldiOnLine
-      dl 
-        dt Massimo assoluto
-        dd(class="small") #[small €] #[span(id="maxabs")]
-        dt Minimo assoluto
-        dd(class="small") #[small €] #[span(id="minabs")]
-        dt Massimo anno corrente
-        dd(class="small") #[small €] #[span(id="maxy")]
-        dt Minimo anno corrente
-        dd(class="small") #[small €] #[span(id="miny")]
-        dt Volume
-        dd(class="small") #[span(id="volume")]
-      a(href="#", title="Continua su portale di origine") -Continua su portale di origine-
-
-    div(id="teleborsa", class="source rounded loading") 
-      header 
-        span Analisi in tempo reale da:
-        h2(class="teleborsa img_icon") Teleborsa
-      dl 
-        dt Resistenza
-        dd(class="small") #[small €] #[span(id="tb-resistance")]
-          span(class="green note") Il prezzo attuale è superiore alla resistenza
-        dt Supporto
-        dd(class="small") #[small €] #[span(id="tb-support")]
-          span(class="red note") Il prezzo attuale è inferiore al supporto
-        dt Trend
-        dd #[span(id="tb-trend")] #[a(href="#", title="Continua su portale di origine") -Continua su portale di origine-]
-
-  section(id="news", class="rounded zoom loading")
-    h2 Rassegna Stampa #{name}
-    ul 
-
+  include ../components/stock/stock-head.pug
+  include ../components/stock/stock-top-data.pug
+  include ../components/stock/stock-analyses.pug
+  include ../components/stock/stock-news.pug
 
   include ../components/stocks_list/stocks_list.pug 
   
