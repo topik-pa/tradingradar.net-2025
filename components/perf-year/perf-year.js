@@ -19,7 +19,7 @@ function printData (stocks, $target) {
   })
 }
 
-const perf1Y = {
+const perfYear = {
   init: async (rootId = 'perf-year') => {
     const $root = document.getElementById(rootId)
     const stocks = await getStocks([$root], key, url)
@@ -28,4 +28,4 @@ const perf1Y = {
   }
 }
 
-export default perf1Y
+export default perfYear

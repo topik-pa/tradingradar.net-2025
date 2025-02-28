@@ -14,13 +14,15 @@ block append meta
   meta(name="og:description" content=description)
   meta(name="og:image" content=og_image)
 
-  link(rel="stylesheet", href="/styles/views/home.css")
   script(src='/scripts/home.js', type='module', defer)
 
 block main
   include ../components/hp-header/hp-header.pug
-  include ../components/hp-rounded/hp-rounded.pug
-  include ../components/stocks_list/stocks_list.pug      
+
+  include ../components/hp-signals/hp-signals.pug
+
+  include ../components/stocks_list/stocks_list.pug 
+       
   include ../components/perf-month/perf-month.pug
   include ../components/perf-year/perf-year.pug
   include ../components/trend/trend.pug
