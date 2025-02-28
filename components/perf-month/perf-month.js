@@ -19,12 +19,33 @@ function printData (stocks, $target) {
   })
 }
 
+function printPerfMonthPerformance() {
+  const stocks = getLocalData('perf1M')
+  if(stocks.length === 0) return
+  const best = stocks[0]
+  const worst = stocks[stocks.length - 1]
+  const $extracts = document.getElementById('extracts')
+  let $a = document.createElement('a')
+  $a.href = getStockHref(worst.name, worst.isin)
+  $a.innerText = worst.name
+  $extracts.querySelector('.performance .worst h5').append($a)
+  $extracts.querySelector('.performance .worst span').innerText = worst.perf1M.value
+
+  $a = document.createElement('a')
+  $a.href = getStockHref(best.name, best.isin)
+  $a.innerText = best.name
+  $extracts.querySelector('.performance .best h5').append($a)
+  $extracts.querySelector('.performance .best span').innerText = best.perf1M.value
+  $extracts.querySelector('.performance').classList.remove('loading')
+}
+
 const perfMonth = {
   init: async (rootId = 'perf-month') => {
     const $root = document.getElementById(rootId)
     const stocks = await getStocks([$root], key, url)
     printData(stocks.slice(0, 10), $root.querySelector('ul.up'))
     printData(stocks.reverse().slice(0, 10), $root.querySelector('ul.down'))
+    printPerfMonthPerformance()
   }
 }
 
