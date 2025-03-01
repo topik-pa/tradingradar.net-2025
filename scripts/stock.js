@@ -69,10 +69,7 @@ function printAverageData () {
   const source = data.info.body
   const isDataAvailable = source.mm20days?.value && source.mm40days?.value && source.mm100days?.value
   const lastPrice = source.lastPrice?.value
-  if(!isDataAvailable) {
-    $wrap.classList.remove('hide')
-    return
-  }
+  if(!isDataAvailable)  return
   $wrap.querySelector('#mm20').innerText = source.mm20days.value || ND
   $wrap.querySelector('#mm40').innerText = source.mm40days.value || ND
   $wrap.querySelector('#mm100').innerText = source.mm100days.value || ND
