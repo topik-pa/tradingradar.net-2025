@@ -188,14 +188,16 @@ function printMilanoFinanzaData () {
   }
   const $wrap = $root.querySelector('#milano-finanza')
   const source = data.analysis.body
+  const mfRanking = getRating(source.milFin_mfRanking?.value)
 
-  const $gauge = document.createElement('img')
-  $gauge.src='/assets/images/icons/' + getRating(source.milFin_mfRanking?.value) + '.png'
-  $gauge.alt = 'Rating: ' + getRating(source.milFin_mfRanking?.value) + '/4'
-  $gauge.classList = 'gauge'
-  $wrap.querySelector('#mf-rating').innerText = source.milFin_mfRanking?.value
-  $wrap.querySelector('#mf-rating').appendChild($gauge)
-
+  if(mfRanking) {
+    const $gauge = document.createElement('img')
+    $gauge.src='/assets/images/icons/' + mfRanking + '.png'
+    $gauge.alt = 'Rating: ' + mfRanking + '/4'
+    $gauge.classList = 'gauge'
+    $wrap.querySelector('#mf-rating').appendChild($gauge)
+  }
+  $wrap.querySelector('#mf-rating').innerText = mfRanking || ND
   $wrap.querySelector('#mf-risk').innerText = source.milFin_mfRisk?.value || ND
   $wrap.querySelector('#mf-volatility').innerText = source.mfVolatility?.value || ND
 
