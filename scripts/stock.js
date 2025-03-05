@@ -165,8 +165,9 @@ function printSole24OreData () {
 
 function printMilanoFinanzaData () {
   const getRating = (value) => {
-    let rating = value[0]
+    let rating = value[0] // Rating can be something like: D+ or N/A or ""
     let returned
+    if (rating === undefined) return null
     switch (rating) {
     case 'A':
       returned = 4
@@ -180,8 +181,11 @@ function printMilanoFinanzaData () {
     case 'D':
       returned =  1
       break
+    case 'E':
+      returned =  0
+      break
     default:
-      returned = 0
+      returned = null
       break
     }
     return returned
@@ -190,14 +194,15 @@ function printMilanoFinanzaData () {
   const source = data.analysis.body
   const mfRanking = getRating(source.milFin_mfRanking?.value)
 
-  if(mfRanking) {
+  $wrap.querySelector('#mf-rating').innerText = source.milFin_mfRanking?.value || ND
+  if(mfRanking !== null) {
     const $gauge = document.createElement('img')
     $gauge.src='/assets/images/icons/' + mfRanking + '.png'
     $gauge.alt = 'Rating: ' + mfRanking + '/4'
     $gauge.classList = 'gauge'
     $wrap.querySelector('#mf-rating').appendChild($gauge)
   }
-  $wrap.querySelector('#mf-rating').innerText = mfRanking || ND
+
   $wrap.querySelector('#mf-risk').innerText = source.milFin_mfRisk?.value || ND
   $wrap.querySelector('#mf-volatility').innerText = source.mfVolatility?.value || ND
 
