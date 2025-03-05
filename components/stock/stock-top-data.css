@@ -3,6 +3,9 @@
   justify-content: space-between;
   #last-price {
     border: 1px solid var(--bronze);
+    p {
+      font-style: italic;
+    }
   }
   .rounded {
     width: 100%;

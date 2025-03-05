@@ -50,6 +50,9 @@ function printPriceData () {
   const $price = $root.querySelector('#last-price')
   const source = data.info.body
   $price.getElementsByTagName('span')[0].innerText = source.lastPrice?.value || ND
+
+  $price.querySelector('#lp-date').innerText = new Date(source.lastPrice.now).toLocaleString()
+
   $price.classList.remove(...cls)
   $price.classList.add(data.info.status)
 }
