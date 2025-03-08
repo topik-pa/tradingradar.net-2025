@@ -24,19 +24,24 @@ function printPerfMonthPerformance() {
   if(stocks.length === 0) return
   const best = stocks[0]
   const worst = stocks[stocks.length - 1]
-  const $extracts = document.getElementById('extracts')
+
+  const $performance = document.querySelectorAll('#extracts .performance')
+
   let $a = document.createElement('a')
+
   $a.href = getStockHref(worst.name, worst.isin)
   $a.innerText = worst.name
-  $extracts.querySelector('.performance .worst h5').append($a)
-  $extracts.querySelector('.performance .worst span').innerText = worst.perf1M.value
+  $performance[1].getElementsByTagName('h4')[0].append($a)
+  $performance[1].getElementsByTagName('span')[0].innerText = worst.perf1M.value
 
   $a = document.createElement('a')
   $a.href = getStockHref(best.name, best.isin)
   $a.innerText = best.name
-  $extracts.querySelector('.performance .best h5').append($a)
-  $extracts.querySelector('.performance .best span').innerText = best.perf1M.value
-  $extracts.querySelector('.performance').classList.remove('loading')
+  $performance[0].getElementsByTagName('h4')[0].append($a)
+  $performance[0].getElementsByTagName('span')[0].innerText = best.perf1M.value
+
+  $performance[0].classList.remove('loading')
+  $performance[1].classList.remove('loading')
 }
 
 const perfMonth = {

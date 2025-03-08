@@ -10,8 +10,5 @@
     min-height: 7rem;
     margin-bottom: 2rem;
     border: 1px solid var(--darkest-gray);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
   }
 }

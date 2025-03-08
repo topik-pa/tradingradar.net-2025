@@ -1,16 +1,18 @@
 section(class="rounded zoom dividends loading")
-  h3 Dividendi
+  img(src="/assets/images/icons/percent.webp", class="icon", alt="Percent icon")
+  h3 Migliore rapporto dividendo/prezzo
   div(class="ratio")
-    div 
-      img(src="/assets/images/icons/percent.webp", class="icon", alt="Percent icon")
-      h4 Migliore rapporto dividendo/prezzo
-    h5
+    h4
     div(class="small") #[span]#[small %]
-  div(class="next")
-    div 
-      img(src="/assets/images/icons/dividend.webp", class="icon", alt="Dividend icon")
-      h4 Ultima comunicazione stacco della cedola
-    h5
-    div(class="small") #[span]
   div(class="more")
     a(href="/dividendi", title="Vedi tutti i dividendi") Vedi tutti i dividendi
+
+
+section(class="rounded zoom dividends loading")
+  img(src="/assets/images/icons/dividend.webp", class="icon", alt="Dividend icon")
+  h3 Ultima comunicazione stacco della cedola
+  div(class="next")
+    h4
+    div(class="small") #[span]
+  div(class="more")
+    a(href="/dividendi", title="Vedi tutti i dividendi") Vedi tutte le date di stacco della cedola

@@ -109,25 +109,18 @@ ul li, ol li {
 .rounded > div, .rounded dd {
   margin-bottom: var(--xx-large-space);
 }
-.rounded header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
 .rounded h1, .rounded h2, .rounded h3 {
   margin-top: 0;
   margin-bottom: var(--x-large-space);
 }
 .rounded h4 {
   margin-bottom: var(--normal-space);
-}
-.rounded h5 {
   font-size: var(--font-size-bigger);
 }
 .rounded .icon {
   width: auto;
   height: var(--xx-large-space);
-  margin-bottom: var(--x-small-space);;
+  margin-bottom: var(--x-small-space);
 }
 .rounded .big {
   font-size: var(--font-size-biggest);
