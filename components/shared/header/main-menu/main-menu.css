@@ -3,6 +3,11 @@
   padding-right: var(--normal-space);
   font-weight: 500;
   text-transform: uppercase;
+
+  max-width: 33ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #main-menu li:last-child {
   padding-right: 0;
@@ -25,6 +30,12 @@
   font-size: var(--font-size-huge);
 }
 
+@media screen and (max-width: 1024px) {
+  #main-menu li {
+    max-width: 13ch;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .hamburger {
     display: block;
@@ -35,8 +46,8 @@
   }
   #main-menu > div {
     top: 7rem;
-    width: 70%;
-    right: -70%;
+    width: 35ch;
+    right: -35ch;
     position: fixed;
     transition: right .4s ease-out;
     background-color: var(--lighter-gray);
@@ -70,6 +81,7 @@
     align-items: center;
     border-bottom: 1px solid var(--light-gray);
     padding: var(--small-space) 0;
+    max-width: 33ch;
   }
   #main-menu li a {
     padding: var(--normal-space) 0;
