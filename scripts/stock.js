@@ -209,6 +209,9 @@ function printMilanoFinanzaData () {
 
   $wrap.querySelector('a').href = source.milFin_mfRanking?.source
 
+  $wrap.querySelector('#mf-comment').innerText = source.milFin_mfComment?.value || ND
+  $wrap.querySelector('#mf-comment + a').href = source.milFin_mfComment?.source
+
   $wrap.classList.remove(...cls)
   $wrap.classList.add(data.analysis.status)
 }
