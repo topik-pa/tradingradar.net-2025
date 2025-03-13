@@ -140,17 +140,15 @@ function printSole24OreData () {
   const source = data.analysis.body
 
   if(
-    source.sol24_shortTendency?.value &&
-    source.sol24_mediumTendency?.value &&
-    source.profile?.value &&
-    source.comment?.value
+    !source.sol24_shortTendency?.value &&
+    !source.sol24_mediumTendency?.value
   ) {
-    $wrap.classList.remove('hide')
+    $wrap.classList.add('hide')
   }
 
-  const extUrl = data.info.body.profile?.value
-  const extUrl2 = extUrl.substr(extUrl.lastIndexOf('=') + 1)
-  const rootExtUrl = 'https://mercati.ilsole24ore.com/azioni/borsa-italiana/dettaglio-completo/'
+  //const extUrl = data.info.body.profile?.value
+  //const extUrl2 = extUrl.substr(extUrl.lastIndexOf('=') + 1)
+  //const rootExtUrl = 'https://mercati.ilsole24ore.com/azioni/borsa-italiana/dettaglio-completo/'
   const sol24_shortTendency = source.sol24_shortTendency?.value || ND
   const sol24_mediumTendency = source.sol24_mediumTendency?.value || ND
   $wrap.querySelector('#sol24-short-tend').innerText = sol24_shortTendency
@@ -158,10 +156,10 @@ function printSole24OreData () {
   $wrap.querySelector('#sol24-med-tend').innerText = sol24_mediumTendency
   $wrap.querySelector('#sol24-med-tend').classList.add(sol24_mediumTendency.toLowerCase())
 
-  $wrap.querySelector('#sol24-profile').innerText = source.profile?.value || ND
-  $wrap.querySelector('#sol24-profile + a').href = rootExtUrl + extUrl2
-  $wrap.querySelector('#sol24-comment').innerText = source.comment?.value || ND
-  $wrap.querySelector('#sol24-comment + a').href = rootExtUrl + extUrl2
+  //$wrap.querySelector('#sol24-profile').innerText = source.profile?.value || ND
+  //$wrap.querySelector('#sol24-profile + a').href = rootExtUrl + extUrl2
+  $wrap.querySelector('#sol24-comment').innerText = data.info.body.comment?.value || ND
+  $wrap.querySelector('#sol24-comment + a').href = data.info.body.comment?.source
   $wrap.classList.remove(...cls)
   $wrap.classList.add(data.analysis.status)
 }
