@@ -28,7 +28,7 @@
   --background: var(--primary);
 
   /* TRANSPARENCIES */
-  --transparent: .2;
+  --transparent: .1;
   --semi-transparent: .7;
   --wt: rgba(255, 255, 255, var(--transparent));
   --wst: rgba(255, 255, 255, var(--semi-transparent));

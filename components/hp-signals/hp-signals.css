@@ -1,14 +1,20 @@
 #extracts {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items: stretch;
+  justify-content: space-between;
   
   .rounded {
-    width: 100%;
-    max-width: 21rem;
-    min-height: 7rem;
-    margin-bottom: 2rem;
     border: 1px solid var(--darkest-gray);
+    width: 23%;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #extracts {
+    flex-direction: column;
+    
+    .rounded {
+      width: 100%;
+    }
   }
 }
