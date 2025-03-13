@@ -34,6 +34,7 @@ async function callTheApi (type) {
 function printStockHeadData (isin) {
   const $head = $root.querySelector('#stock-head')
   const source = data.info.body
+  $head.querySelector('#profile').innerText = source.profile?.value || ND
   $head.querySelector('#isin').innerText = isin || ND
   $head.querySelector('#address').innerText = source.address?.value || ND
   $head.querySelector('#website').innerText = source.webSite?.value.replace('http://', '').replace('https://', '') || ND

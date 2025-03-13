@@ -2,6 +2,7 @@ section(id="stock-head", class="rounded loading")
   div 
     img(src=('/assets/images/stocks/' + code + '-min.png'), alt=name, onerror="this.onerror='';this.src='/assets/images/stocks/company.png';")
     h1 #{name}
+    p(id="profile") 
   div(class="general")
     dl 
       dt Codice ISIN
