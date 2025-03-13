@@ -177,8 +177,8 @@ exports.hpView = async (req, res) => {
   res.locals.stocks = stocks
   res.render('home', {
     id: 'hp',
-    title: 'Scopri, in tempo reale, i segnali di Borsa delle tue azioni',
-    description: 'Scopri in tempo reale quali titoli azionari stanno generando segnali cruciali secondo le principali testate del settore e trova ora le azioni più interessanti della Borsa Italiana',
+    title: 'Scopri i segnali di Borsa delle tue azioni',
+    description: 'Ottieni, in tempo reale, segnali cruciali di trading secondo le principali testate del settore e trova ora le azioni più interessanti della Borsa Italiana',
     //user: req.session.user,
     url: req.url
   })
