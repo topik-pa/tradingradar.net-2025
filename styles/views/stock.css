@@ -42,3 +42,66 @@
   left: var(--risk);
   color: var(--blue);
 }
+
+
+.widget {
+  position: relative;
+  font-family: monospace;
+  height: 7rem;
+}
+.widget > div {
+  width: 85%;
+  height: 7rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.absolute {
+  background: rgb(255,0,0);
+  background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,253,61,1) 50%, rgba(0,255,0,1) 100%);
+}
+.absolute:after, .absolute:before, .relative:after, .relative:before, .current:after {
+  position: absolute;
+  height: 100%;
+  border-left: 3px solid black;
+  top: 0;
+  font-weight: bold;
+}
+.absolute:after {
+  content: attr(data-max);
+  left: 100%;
+}
+.absolute:before {
+  content: attr(data-min);
+  left: 0;
+}
+.relative:after, .relative:before {
+  border-width: 1px;
+  line-height: 7rem;
+  font-weight: normal;
+  border-color: var(--darker-gray);
+  color: var(--darker-gray);
+}
+.relative:after {
+  line-height: 10rem;
+}
+.relative:after {
+  content: attr(data-max);
+  left: var(--maxpath);
+}
+.relative:before {
+  content: attr(data-min);
+  left: var(--minpath);
+}
+.current:after {
+  content: attr(data-price);
+  border-left: 1px dashed blue;
+  color: blue;
+  left: var(--price);
+  line-height: 15rem;
+  font-style: italic;
+  font-weight: normal;
+}
+.data {
+  margin-top: 1.8rem;
+}

@@ -40,6 +40,16 @@ section(id="stock-analyses")
       dd(class="small") #[small €] #[span(id="miny")]
       dt Volume
       dd(class="small") #[span(id="volume")]
+    div(id="sol-gradient" class="hide")
+      h3 Posizionamento dei prezzi
+      div(class="widget")
+        div(class="absolute")
+        div(class="relative") 
+        div(class="current")
+      div(class="data")
+        p MAX: #[span(id="absmax")] &nbsp;MIN: #[span(id="absmin")]
+        p max (anno): #[span(id="currmax")] &nbsp;min (anno): #[span(id="currmin")]
+        p Prezzo corrente: #[span(id="currprice")]
     a(href="#", title="Continua su portale di origine") -Continua su portale di origine-
 
   div(id="teleborsa", class="source rounded loading") 

@@ -129,8 +129,44 @@ function printSoldiOnLine () {
   $wrap.querySelector('#minabs').innerText = source.absMin?.value || ND
   $wrap.querySelector('#maxy').innerText = source.currentYearMax?.value || ND
   $wrap.querySelector('#miny').innerText = source.currentYearMin?.value || ND
+
   $wrap.querySelector('#volume').innerText = source.volume?.value || ND
   $wrap.querySelector('a').href = source.volume?.source
+
+  const MAX = parseFloat(source.absMax?.value.substring(0, source.absMax?.value.lastIndexOf('-')).trim().replace(',', '.'))
+  const MIN = parseFloat(source.absMin?.value.substring(0, source.absMin?.value.lastIndexOf('-')).trim().replace(',', '.'))
+  const max = parseFloat(source.currentYearMax?.value.substring(0, source.currentYearMax?.value.lastIndexOf('-')).trim().replace(',', '.'))
+  const min = parseFloat(source.currentYearMin?.value.substring(0, source.currentYearMin?.value.lastIndexOf('-')).trim().replace(',', '.'))
+  const PRICE = parseFloat(source.lastPrice?.value)
+
+  $wrap.querySelector('#absmax').innerText = MAX
+  $wrap.querySelector('#absmin').innerText = MIN
+  $wrap.querySelector('#currmax').innerText = max
+  $wrap.querySelector('#currmin').innerText = min
+  $wrap.querySelector('#currprice').innerText = PRICE
+
+  //debugger
+  const $solGradient = $wrap.querySelector('#sol-gradient')
+  const $absolute = $wrap.querySelector('.absolute')
+  $absolute.dataset.max = MAX + '€'
+  $absolute.dataset.min = MIN + '€'
+  const $relative = $wrap.querySelector('.relative')
+  $relative.dataset.max = max + '€'
+  $relative.dataset.min = min + '€'
+
+  const $current = $wrap.querySelector('.current')
+  $current.dataset.price = PRICE + '€'
+
+  const step = ((MAX - MIN) / 100)
+  const maxpath = (max - MIN) / step
+  const minpath = (min - MIN) / step
+  const price = (PRICE - MIN) / step
+
+  $relative.style.setProperty('--maxpath', maxpath + '%')
+  $relative.style.setProperty('--minpath', minpath + '%')
+  $current.style.setProperty('--price', price + '%')
+
+  $solGradient.classList.remove('hide')
 
   $wrap.classList.remove(...cls)
   $wrap.classList.add(data.info.status)
@@ -147,9 +183,6 @@ function printSole24OreData () {
     $wrap.classList.add('hide')
   }
 
-  //const extUrl = data.info.body.profile?.value
-  //const extUrl2 = extUrl.substr(extUrl.lastIndexOf('=') + 1)
-  //const rootExtUrl = 'https://mercati.ilsole24ore.com/azioni/borsa-italiana/dettaglio-completo/'
   const sol24_shortTendency = source.sol24_shortTendency?.value || ND
   const sol24_mediumTendency = source.sol24_mediumTendency?.value || ND
   $wrap.querySelector('#sol24-short-tend').innerText = sol24_shortTendency
@@ -157,8 +190,6 @@ function printSole24OreData () {
   $wrap.querySelector('#sol24-med-tend').innerText = sol24_mediumTendency
   $wrap.querySelector('#sol24-med-tend').classList.add(sol24_mediumTendency.toLowerCase())
 
-  //$wrap.querySelector('#sol24-profile').innerText = source.profile?.value || ND
-  //$wrap.querySelector('#sol24-profile + a').href = rootExtUrl + extUrl2
   $wrap.querySelector('#sol24-comment').innerText = data.info.body.comment?.value || ND
   $wrap.querySelector('#sol24-comment + a').href = data.info.body.comment?.source
   $wrap.classList.remove(...cls)
