@@ -193,19 +193,34 @@ function printMilanoFinanzaData () {
     return returned
   }
   const $wrap = $root.querySelector('#milano-finanza')
+  const $mfRating = $wrap.querySelector('#mf-rating')
   const source = data.analysis.body
   const mfRanking = getRating(source.milFin_mfRanking?.value)
 
-  $wrap.querySelector('#mf-rating').innerText = source.milFin_mfRanking?.value || ND
+  $mfRating.innerText = source.milFin_mfRanking?.value || ND
+  if(source.milFin_mfRanking?.value[0]==='A') {
+    $mfRating.classList.add('green')
+  }
+  if(source.milFin_mfRanking?.value[0]==='E') {
+    $mfRating.classList.add('red')
+  }
   if(mfRanking !== null) {
     const $gauge = document.createElement('img')
     $gauge.src='/assets/images/icons/' + mfRanking + '.png'
     $gauge.alt = 'Rating: ' + mfRanking + '/4'
     $gauge.classList = 'gauge'
-    $wrap.querySelector('#mf-rating').appendChild($gauge)
+    $mfRating.appendChild($gauge)
   }
 
   $wrap.querySelector('#mf-risk').innerText = source.milFin_mfRisk?.value || ND
+  if(source.milFin_mfRisk?.value) {
+    const $gradient = $wrap.querySelector('#mf-risk-gradient')
+    const RISK = source.milFin_mfRisk?.value + '%'
+    $gradient.style.setProperty('--risk', RISK)
+    $gradient.dataset.risk = RISK
+    $gradient.classList.remove('hide')
+  }
+
   $wrap.querySelector('#mf-volatility').innerText = source.mfVolatility?.value || ND
 
   $wrap.querySelector('a').href = source.milFin_mfRanking?.source

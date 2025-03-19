@@ -14,3 +14,31 @@
     margin-top: var(--xx-large-space);
   }
 }
+
+
+#mf-risk-gradient {
+  display: block;
+  font-family: monospace;
+  background: var(--green);
+  background: linear-gradient(90deg, #2CBA0F 0%, #FFEF28 33%, #FE0506 100%);
+  width: 80%;
+  height: var(--xx-large-space);
+  margin: var(--normal-space) 0;
+  border: 1px solid var(--black);
+  position: relative;
+}
+#mf-risk-gradient:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  border-right: 2px solid var(--blue);
+  left: var(--risk);
+}
+#mf-risk-gradient:before {
+  content: attr(data-risk);
+  font-size: var(--font-size-small);
+  position: absolute;
+  bottom: calc(var(--font-size-small) * -2);
+  left: var(--risk);
+  color: var(--blue);
+}
