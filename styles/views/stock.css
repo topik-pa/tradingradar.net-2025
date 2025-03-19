@@ -20,7 +20,7 @@
   display: block;
   font-family: monospace;
   background: var(--green);
-  background: linear-gradient(90deg, #2CBA0F 0%, #FFEF28 33%, #FE0506 100%);
+  background: linear-gradient(90deg, #2CBA0F 0%, #FFEF28 25%, #FE0506 100%);
   width: 80%;
   height: var(--xx-large-space);
   margin: var(--normal-space) 0;
@@ -47,14 +47,15 @@
 .widget {
   position: relative;
   font-family: monospace;
-  height: 7rem;
+  height: var(--xx-large-space);
+  border: 1px solid var(--black);
+  margin: var(--normal-space) 0;
 }
 .widget > div {
-  width: 85%;
-  height: 7rem;
+  width: 100%;
+  height: var(--xx-large-space);
   position: absolute;
   top: 0;
-  left: 0;
 }
 .absolute {
   background: rgb(255,0,0);
@@ -63,42 +64,39 @@
 .absolute:after, .absolute:before, .relative:after, .relative:before, .current:after {
   position: absolute;
   height: 100%;
-  border-left: 3px solid black;
-  top: 0;
-  font-weight: bold;
 }
 .absolute:after {
   content: attr(data-max);
-  left: 100%;
+  right: 0;
+  border-right: 2px solid black;
 }
 .absolute:before {
   content: attr(data-min);
   left: 0;
+  border-left: 3px solid black;
 }
 .relative:after, .relative:before {
-  border-width: 1px;
-  line-height: 7rem;
   font-weight: normal;
-  border-color: var(--darker-gray);
   color: var(--darker-gray);
-}
-.relative:after {
-  line-height: 10rem;
+  line-height: 3.4rem;
 }
 .relative:after {
   content: attr(data-max);
   left: var(--maxpath);
+  border-left: 1px solid var(--darker-gray);
+  line-height: 5.2rem;
 }
 .relative:before {
   content: attr(data-min);
   left: var(--minpath);
+  border-left: 1px solid var(--darker-gray);
 }
 .current:after {
   content: attr(data-price);
   border-left: 1px dashed blue;
   color: blue;
   left: var(--price);
-  line-height: 15rem;
+  line-height: 9rem;
   font-style: italic;
   font-weight: normal;
 }
