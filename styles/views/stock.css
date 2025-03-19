@@ -64,6 +64,7 @@
 .absolute:after, .absolute:before, .relative:after, .relative:before, .current:after {
   position: absolute;
   height: 100%;
+  letter-spacing: -1px;
 }
 .absolute:after {
   content: attr(data-max);
@@ -83,13 +84,13 @@
 .relative:after {
   content: attr(data-max);
   left: var(--maxpath);
-  border-left: 1px solid var(--darker-gray);
+  border-left: 2px solid var(--darker-gray);
   line-height: 5.2rem;
 }
 .relative:before {
   content: attr(data-min);
   left: var(--minpath);
-  border-left: 1px solid var(--darker-gray);
+  border-left: 2px solid var(--darker-gray);
 }
 .current:after {
   content: attr(data-price);
