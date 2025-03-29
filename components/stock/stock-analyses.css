@@ -26,14 +26,18 @@
     padding: var(--x-small-space);
   }
   .source header {
-    display: block;
+    background-color: var(--light-gray);
+    padding: var(--x-small-space);
+    color: var(--white);
+    margin-bottom: var(--x-large-space);
     span {
       font-style: italic;
-      color: var(--dark-gray);
+      color: var(--white);
     }
     h2 {
       display: flex;
       align-items: center;
+      margin-bottom: 0;
     }
   }
 }

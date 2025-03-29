@@ -1,4 +1,4 @@
-header {
+#header {
   padding: var(--x-small-space) var(--view-padding);
   border-bottom: 1px solid var(--gray);
   background: var(--primary);
@@ -7,12 +7,12 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-header a {
+#header a {
   color: var(--secondary);
 }
 
 @media screen and (max-width: 768px) {
-  header {
+  #header {
     padding: var(--small-space);
   }
 }
