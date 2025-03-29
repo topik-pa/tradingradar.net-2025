@@ -1,5 +1,13 @@
 #hp-header {
-  .icons {
+  display: flex;
+  justify-content: space-between;
+  .rounded {
+    width: 100%;
+    &:first-child {
+      margin-right: calc(var(--view-padding) * 2);
+    }
+  }
+  .sources, .socials {
     display: flex;
     justify-content: start;
     flex-wrap: wrap;
@@ -31,5 +39,21 @@
     padding: var(--small-space);
     background-color: var(--lightest-gray);
     border-top: 1px solid var(--white);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #hp-header {
+    flex-direction: column;
+    .rounded {
+      margin: var(--view-padding) 0!important;
+      width: inherit;
+    }
+    .socials {
+      flex-direction: column;
+      li {
+        width: 100%;
+      }
+    }
   }
 }
