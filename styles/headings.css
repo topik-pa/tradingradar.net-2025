@@ -3,6 +3,7 @@ h1 {
   letter-spacing: .1rem;
   margin-top: var(--large-space);
   line-height: 100%;
+  font-weight: 500;
 }
 h2 {
   font-size: var(--font-size-bigger);

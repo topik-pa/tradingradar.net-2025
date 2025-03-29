@@ -1,5 +1,6 @@
 header {
   padding: var(--x-small-space) var(--view-padding);
+  border-bottom: 1px solid var(--gray);
   background: var(--primary);
   font-weight: 500;
   display: flex;

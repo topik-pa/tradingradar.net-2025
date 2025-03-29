@@ -27,7 +27,7 @@ main {
   line-height: 120%;
 }
 main section {
-  margin: var(--section-margin) 0;
+  margin: var(--view-padding) 0;
 }
 
 a {
@@ -106,7 +106,7 @@ ul li, ol li {
   transform: scale(1.01);
   box-shadow: 0px 5px 20px 0px var(--darkest-gray);
 }
-.rounded > div, .rounded dd {
+.rounded > div, .rounded > section, .rounded dd {
   margin-bottom: var(--xx-large-space);
 }
 .rounded h1, .rounded h2, .rounded h3 {
@@ -119,8 +119,8 @@ ul li, ol li {
 }
 .rounded .icon {
   width: auto;
-  height: var(--xx-large-space);
-  margin-bottom: var(--x-small-space);
+  height: var(--x-large-space);
+  float: right;
 }
 .rounded .big {
   font-size: var(--font-size-biggest);
