@@ -27,6 +27,7 @@
 
 @import "/components/hp-signals/hp-signals.css";
 @import "/components/hp-signals/best-mf.css";
+@import "/components/hp-signals/next-dividend.css";
 @import "/components/stocks_list/stocks_list.css";
 @import "/components/perf-month/perf-month.css";
 @import "/components/perf-year/perf-year.css";
