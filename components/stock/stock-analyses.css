@@ -26,13 +26,11 @@
     padding: var(--x-small-space);
   }
   .source header {
-    background-color: var(--light-gray);
     padding: var(--x-small-space);
-    color: var(--white);
     margin-bottom: var(--x-large-space);
+    font-weight: bold;
     span {
       font-style: italic;
-      color: var(--white);
     }
     h2 {
       display: flex;

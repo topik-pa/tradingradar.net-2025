@@ -48,18 +48,18 @@
   position: relative;
   font-family: monospace;
   height: var(--xx-large-space);
-  border: 1px solid var(--black);
   margin: var(--normal-space) 0;
 }
 .widget > div {
   width: 100%;
-  height: var(--xx-large-space);
   position: absolute;
   top: 0;
 }
 .absolute {
   background: rgb(255,0,0);
   background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,253,61,1) 50%, rgba(0,255,0,1) 100%);
+  height: var(--x-large-space);
+  z-index: 9;
 }
 .absolute:after, .absolute:before, .relative:after, .relative:before, .current:after {
   position: absolute;
@@ -69,14 +69,38 @@
 .absolute:after {
   content: attr(data-max);
   right: 0;
-  border-right: 2px solid black;
+  border-right: 1px solid black;
 }
 .absolute:before {
   content: attr(data-min);
   left: 0;
-  border-left: 3px solid black;
+  border-left: 1px solid black;
 }
-.relative:after, .relative:before {
+.relative {
+  background: rgb(255,0,0);
+  background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,253,61,1) 50%, rgba(0,255,0,1) 100%);
+  left: var(--left);
+  width: var(--width) !important;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  box-sizing: border-box;
+  height: calc(var(--x-large-space) * 2);
+}
+.current {
+  height: calc(var(--x-large-space) * 2.5);
+  z-index: 99;
+}
+.relative:after {
+  /* content: attr(data-max); */
+  right: 0;
+  line-height: calc(var(--x-large-space) * 2.5);
+}
+.relative:before {
+  /* content: attr(data-min); */
+  left: 0;
+  line-height: calc(var(--x-large-space) * 2.5);
+}
+/*.relative:after, .relative:before {
   font-weight: normal;
   color: var(--darker-gray);
   line-height: 3.4rem;
@@ -91,10 +115,10 @@
   content: attr(data-min);
   left: var(--minpath);
   border-left: 2px solid var(--darker-gray);
-}
+}*/
 .current:after {
   content: attr(data-price);
-  border-left: 1px dashed blue;
+  border-left: 2px dashed blue;
   color: blue;
   left: var(--price);
   line-height: 9rem;
@@ -103,4 +127,11 @@
 }
 .data {
   margin-top: 1.8rem;
+}
+#currprice {
+  color: blue;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-color: blue;
+  text-decoration-thickness: 2px;
 }

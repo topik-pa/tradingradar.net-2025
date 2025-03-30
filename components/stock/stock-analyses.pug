@@ -42,14 +42,15 @@ section(id="stock-analyses")
       dd(class="small") #[span(id="volume")]
     div(id="sol-gradient" class="hide")
       h3 Posizionamento dei prezzi
+      div(class="data")
+        p Prezzi assoluti - MIN: #[span(id="absmin")]&nbsp;&dash;&nbsp;MAX: #[span(id="absmax")]
       div(class="widget")
         div(class="absolute")
         div(class="relative") 
         div(class="current")
       div(class="data")
-        p MAX (ass.): #[span(id="absmax")]&nbsp;&dash;&nbsp;MIN (ass.): #[span(id="absmin")]
-        p max (anno): #[span(id="currmax")]&nbsp;&dash;&nbsp;min (anno): #[span(id="currmin")]
-        p Prezzo corrente: #[span(id="currprice")]
+        p Prezzi anno corrente - MIN: #[span(id="currmin")]&nbsp;&dash;&nbsp;MAX: #[span(id="currmax")]
+        p Prezzo attuale: #[span(id="currprice")]
     a(href="#", title="Continua su portale di origine") -Continua su portale di origine-
 
   div(id="teleborsa", class="source rounded loading") 

@@ -155,15 +155,15 @@ function printSoldiOnLine () {
   $relative.dataset.min = min + '€'
 
   const $current = $wrap.querySelector('.current')
-  $current.dataset.price = PRICE + '€'
+  //$current.dataset.price = PRICE + '€'
 
   const step = ((MAX - MIN) / 100)
   const maxpath = (max - MIN) / step
   const minpath = (min - MIN) / step
   const price = (PRICE - MIN) / step
 
-  $relative.style.setProperty('--maxpath', maxpath + '%')
-  $relative.style.setProperty('--minpath', minpath + '%')
+  $relative.style.setProperty('--width', maxpath - minpath + '%')
+  $relative.style.setProperty('--left', minpath + '%')
   $current.style.setProperty('--price', price + '%')
 
   $solGradient.classList.remove('hide')
