@@ -19,6 +19,10 @@
   .general {
     display: flex;
     justify-content: space-between;
+    justify-content: start;
+    dl:first-child {
+      margin-right: var(--xx-large-space);
+    }
   }
 }
 
@@ -26,5 +30,8 @@
 @media screen and (max-width: 768px) {
   #stock-head .general {
     flex-direction: column;
+    dl:first-child {
+      margin-right: 0;
+    }
   }
 }
