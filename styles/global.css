@@ -104,6 +104,11 @@ ul li, ol li {
   color: var(--blue);
 }
 
+td[colspan] {
+  text-align: center;
+  font-style: italic;
+}
+
 .wrap {
   display: flex;
   justify-content: space-between;

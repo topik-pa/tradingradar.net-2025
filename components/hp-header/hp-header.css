@@ -46,14 +46,16 @@
       font-weight: 500;
       width: 45%;
     }
-    li::before {
+    a::before {
       content: '\27A4';
       color: var(--link);
-      width: var(--large-space);
-      height: var(--large-space);
+      display: inline-block;
+      transition: all .2s ease-in-out;
     }
-    li:hover::before {
+    a:hover::before {
       color: var(--red);
+      transform: rotate(90deg);
+      transform-origin: center;
     }
   }
 }

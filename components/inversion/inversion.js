@@ -5,6 +5,15 @@ function printData (stocks, target) {
   const $table = $root.querySelector(target)
   const $tbody = $table.querySelector('tbody')
   const $detection = $root.querySelector(target + ' ~ p.detection em')
+  if(stocks.length === 0) {
+    const $tr = document.createElement('tr')
+    const $td = document.createElement('td')
+    $td.innerText = 'Nessun risultato'
+    $td.setAttribute('colspan', 4)
+    $tr.appendChild($td)
+    $tbody.appendChild($tr)
+    return
+  }
   for (let i = 0; i < stocks.length; i++) {
     const stock = stocks[i]
     if (i === 0) $detection.innerText = new Date(stock.lastPrice.now).toLocaleString()

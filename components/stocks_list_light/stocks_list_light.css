@@ -12,6 +12,12 @@
     font-size: var(--font-size-big);
     font-weight: bold;
     margin: var(--x-small-space);
+    &.disabled {
+      opacity: .3;
+      cursor: default;
+      text-decoration: none;
+      pointer-events: none;
+    }
   }
 }
 
