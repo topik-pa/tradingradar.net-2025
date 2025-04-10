@@ -1,8 +1,3 @@
-.rankings {
-  border: 1px solid var(--darkest-gray);
-  box-sizing: border-box;
-}
-
 .rankings ul {
   display: flex;
   justify-content: space-around;

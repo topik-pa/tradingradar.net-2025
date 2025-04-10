@@ -9,6 +9,7 @@
 }
 #header a {
   color: var(--secondary);
+  text-decoration: none;
 }
 
 @media screen and (max-width: 768px) {

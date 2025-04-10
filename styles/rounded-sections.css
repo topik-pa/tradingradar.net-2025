@@ -1,0 +1,52 @@
+.rounded {
+  background-color: var(--white);
+  border-radius: var(--border-radius-big);
+  padding: var(--view-padding);
+}
+.rounded.zoom {
+  transition: all .2s ease-out;
+}
+.rounded.zoom:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 5px 20px 0px var(--darkest-gray);
+}
+.rounded > div, .rounded > section, .rounded dd {
+  margin-bottom: var(--xx-large-space);
+}
+.rounded h1, .rounded h2, .rounded h3 {
+  margin-top: 0;
+  margin-bottom: var(--x-large-space);
+}
+.rounded h4 {
+  margin-bottom: var(--normal-space);
+  font-size: var(--font-size-bigger);
+}
+.rounded .icon {
+  width: auto;
+  height: var(--x-large-space);
+  float: right;
+}
+.rounded .big {
+  font-size: var(--font-size-biggest);
+}
+.rounded .small {
+  font-size: var(--font-size-huge);
+  margin-left: var(--normal-space);
+  margin-top: var(--small-space);
+  font-style: italic;
+  line-height: 100%;
+}
+.rounded small {
+  color: var(--gray);
+}
+.rounded dt {
+  font-size: var(--font-size-big);
+  margin-bottom: var(--small-space);
+  letter-spacing: .1rem;
+}
+.rounded span {
+  font-weight: 500;
+}
+.rounded .more {
+  margin: var(--x-large-space) 0 0 0;
+}

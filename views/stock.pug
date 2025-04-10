@@ -18,14 +18,23 @@ block append meta
   script(src='/scripts/stock.js', type='module', defer)
 
 block main
-  include ../components/stock/stock-head.pug
-  include ../components/stock/stock-top-data.pug
-  include ../components/stock/stock-analyses.pug
-  include ../components/stock/stock-news.pug
+  div(class="content")
+    include ../components/stock/stock-head.pug
 
-  include ../components/stocks_list/stocks_list.pug 
+    include ../marketing/ava-banner/ava-banner.pug
+
+    include ../components/stock/stock-top-data.pug
+    include ../components/stock/stock-analyses.pug
+
+    include ../marketing/ava-banner/ava-banner2.pug
   
-  include ../components/shared/share/share.pug
+    include ../components/stock/stock-news.pug
+    //- include ../components/stocks_list/stocks_list.pug 
+    include ../components/shared/share/share.pug
+  section(class="column")
+    include ../components/shared/socials/socials.pug
+    include ../components/stocks_list_light/stocks_list_light.pug
+    include ../marketing/ava-banner/ava-banner3.pug
 
 block prepend outro
   include ../components/shared/disclaimer/disclaimer.pug

@@ -1,0 +1,9 @@
+- 
+  let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+if stocks
+  section(id="select_stock_light")
+    h2 Cerca il titolo
+    div(class="alphabet")
+      each letter in alphabet
+        a(href="/azioni/#" + letter, title="Titoli: " + letter) #{letter}

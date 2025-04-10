@@ -1,0 +1,28 @@
+#select_stock_light {
+  margin: var(--xx-large-space) 0;
+  padding: var(--xx-large-space) 0;
+  border-top: 1px solid var(--light-gray);
+  border-bottom: 1px solid var(--light-gray);
+}
+#select_stock_light .alphabet {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  a {
+    font-size: var(--font-size-big);
+    font-weight: bold;
+    margin: var(--x-small-space);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 414px) {
+
+}

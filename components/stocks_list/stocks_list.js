@@ -36,7 +36,8 @@ const stock_list = {
     $alphabet = $root.getElementsByClassName('alphabet')[0]
     $stocks = $root.getElementsByClassName('stocks')[0]
     activeLetters = new Set()
-    alphabetShowHideStocks()
+    const hash = window.location.hash.substring(1) || undefined
+    alphabetShowHideStocks(hash)
     manageAlphabetClicks()
   }
 }

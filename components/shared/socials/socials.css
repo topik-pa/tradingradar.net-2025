@@ -1,0 +1,31 @@
+#socials {
+  margin-bottom: var(--xx-large-space);  
+}
+
+#socials h2 {
+  margin-bottom: var(--x-large-space);
+}
+#socials li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--small-space) 0;
+}
+#socials img {
+  margin-bottom: var(--x-small-space);
+}
+
+#socials li::before {
+  width: var(--x-large-space);
+  height: var(--x-large-space);
+  margin: 0 0 var(--x-small-space) 0;
+}
+
+@media screen and (max-width: 768px) {
+    .socials {
+      flex-direction: column;
+      li {
+        width: 100%;
+      }
+    }
+}

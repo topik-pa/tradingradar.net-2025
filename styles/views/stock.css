@@ -1,6 +1,6 @@
 #stock {
   section {
-    margin: var(--large-space) 0;
+    margin-top: var(--view-padding);
   }
   .note {
     display: none;

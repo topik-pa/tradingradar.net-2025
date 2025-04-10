@@ -11,13 +11,16 @@
 @import "./responsive.css";
 @import "./tr-list.css";
 @import "./image-icons.css";
+@import "./rounded-sections.css";
 @import "./others.css";
 
 @import "/components/shared/header/header.css";
 @import "/components/shared/footer/footer.css";
+@import "/components/shared/socials/socials.css";
 @import "/components/shared/share/share.css";
 @import "/components/shared/header/main-menu/main-menu.css";
 @import "/components/shared/header/main-logo/main-logo.css";
+@import "/components/hp-hero/hp-hero.css";
 @import "/components/hp-header/hp-header.css";
 
 @import "/components/stock/stock-head.css";
@@ -25,10 +28,10 @@
 @import "/components/stock/stock-analyses.css";
 @import "/components/stock/stock-news.css";
 
-@import "/components/hp-signals/hp-signals.css";
 @import "/components/hp-signals/best-mf.css";
 @import "/components/hp-signals/next-dividend.css";
 @import "/components/stocks_list/stocks_list.css";
+@import "/components/stocks_list_light/stocks_list_light.css";
 @import "/components/perf-month/perf-month.css";
 @import "/components/perf-year/perf-year.css";
 @import "/components/trend/trend.css";

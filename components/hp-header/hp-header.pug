@@ -31,28 +31,66 @@
       href: 'https://www.repubblica.it/economia/affari-e-finanza/'
     }
   ]
-section(id="hp-header")
-  div(class="rounded")
-    h1 #{title}
-    p #{description}
-    p I dati forniti sono ottenuti #[em dai principali media online] del settore finanziario.
-    ul(class="sources")
-      each source in sources
-        li(class="img_icon " + source.id) #{source.name} 
-    h2(class="caption") Le nostre sorgenti di informazione
+  let sections = [
+    {
+      name: 'Titolo in evidenza',
+      id: 'hp-hero',
+    },
+    {
+      name: 'Migliore performance mensile',
+      id: 'extracts',
+    },
+    {
+      name: 'Peggiore performance mensile',
+      id: 'extracts',
+    },
+    {
+      name: 'Migliore Dividend yeld',
+      id: 'extracts',
+    },
+    {
+      name: 'Ultima comunicazione dividendo',
+      id: 'extracts',
+    },
+    {
+      name: 'I prossimi dividendi',
+      id: 'signals',
+    },
+    {
+      name: 'I migliori titoli per Milano Finanza',
+      id: 'signals',
+    },
+    {
+      name: 'Performance mensili',
+      id: 'perf-month',
+    },
+    {
+      name: 'Performance annuali',
+      id: 'perf-year',
+    },
+    {
+      name: 'Titoli in trendline',
+      id: 'trend',
+    },
+    {
+      name: 'Titoli in inversione di trend',
+      id: 'inversion',
+    },
+  ]
+div(id="hp-header")
+  section(class="rounded")
+      h1 #{title}
+      p #{description}
+      p I #[em dati forniti] sono ottenuti #[em dai principali media online] del settore finanziario.
+      ul(class="sources")
+        each source in sources
+          li(class="img_icon " + source.id) #{source.name} 
 
-  div(class="rounded")
-    h2 Seguici su Facebook e Telegram
-    p Segui i segnali direttamente sul tuo telefonino attraverso #[em i nostri canali social]: ogni giorno pubblichiamo i dati e i segnali più significativi della giornata!
-    ul(class="socials")
-      li
-        iframe(src='https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftradingradar&tabs=events&width=280&height=150&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=8622517134464699', style='border:none;overflow:hidden', scrolling='no', frameborder='0', allowfullscreen='true', allow='autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share' data-lazy="true")
-        a(href='https://www.facebook.com/tradingradar') #[i(class="icon-facebook")] Segui tradingradar.net su Facebook
-      li
-        //- script(async='', src='https://comments.app/js/widget.js?3', data-comments-app-website='aH4bYkmA', data-limit='5')
-        img(src="/assets/images/icons/telegram.webp", width="130", height="130", alt="Telegram icon")
-        a(href="https://t.me/tradingradarnet", title="Telegram", style="margin-top: 1.6rem;") #[i(class="icon-telegram")] Segui tradingradar.net su Telegram
-    h2(class="caption") I nostri social
+  section(class="rounded")
+      h2 I segnali di oggi: #[em(id="today")]
+      p I #[em titoli più interessanti di oggi] in base a differenti indicatori: analisi tecnica, giudizi e raccomandazioni, rapporto prezzo/dividendo (dividend yeld), comunicazione di stacco della cedola o caratteristiche del trend in atto.
+      ul(class="sections")
+        each section in sections
+          li 
+            a(href="#" + section.id)  #{section.name} 
     
-        
-  

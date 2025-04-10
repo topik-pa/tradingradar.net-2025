@@ -1,0 +1,32 @@
+#hp-hero > div > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#hp-hero .text {
+  width: 50%;
+}
+#hp-hero picture {
+  border: 1px solid var(--light-gray);
+}
+
+#hp-hero .continue {
+  font-weight: 500;
+  margin-top: var(--xx-large-space);
+  a {
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #hp-hero > div > div {
+    flex-direction: column;
+  }
+  #hp-hero img {
+    width: 100%;
+    height: auto;
+  }
+  #hp-hero .text {
+    width: 100%;
+  }
+}

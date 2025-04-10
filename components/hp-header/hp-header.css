@@ -2,47 +2,59 @@
   display: flex;
   justify-content: space-between;
   .rounded {
-    width: 100%;
+    width: 50%;
     &:first-child {
-      margin-right: calc(var(--view-padding) * 2);
+      margin-right: var(--view-padding);
     }
-  }
-  .sources, .socials {
-    display: flex;
-    justify-content: start;
-    flex-wrap: wrap;
-    margin-top: var(--large-space);
-    margin-bottom: 0;
   }
   ul {
     margin: 0;
     padding: 0;
   }
   li {
-    margin: 0;
+    list-style-type: none;
+  }
+  .sources {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 33.333%;
-    padding: var(--small-space) 0;
-    background-color: var(--lightest-gray);
-    border: 1px solid var(--white);
-    box-sizing: border-box;    
-    text-align: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    margin-top: var(--x-large-space);
+    li {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 33.333%;
+      padding: var(--small-space) 0;
+      background-color: var(--lightest-gray);
+      border: 1px solid var(--white);
+      box-sizing: border-box;    
+      text-align: center;
+    }
+    li::before {
+      width: var(--x-large-space);
+      height: var(--x-large-space);
+      margin: 0 0 var(--x-small-space) 0;
+    }
   }
-  li::before {
-    width: var(--x-large-space);
-    height: var(--x-large-space);
-    margin: 0 0 var(--x-small-space) 0;
-  }
-  .caption {
-    text-align: center;
-    padding: var(--small-space);
-    border-top: 1px solid var(--white);
-  }
-  .socials li {
-    width: 50%;
-    background-color: transparent;
+  
+  .sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    li {
+      font-weight: 500;
+      width: 45%;
+    }
+    li::before {
+      content: '\27A4';
+      color: var(--link);
+      width: var(--large-space);
+      height: var(--large-space);
+    }
+    li:hover::before {
+      color: var(--red);
+    }
   }
 }
 
@@ -50,13 +62,10 @@
   #hp-header {
     flex-direction: column;
     .rounded {
-      margin: var(--view-padding) 0!important;
+      margin: var(--view-padding) 0;
       width: inherit;
-    }
-    .socials {
-      flex-direction: column;
-      li {
-        width: 100%;
+      &:first-child {
+        margin-right: 0;
       }
     }
   }
