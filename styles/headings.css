@@ -19,7 +19,8 @@ h3 {
 }
 h4 {
   font-size: var(--font-size-big);
-  font-weight: bold;
+  margin-bottom: var(--normal-space);
+  font-weight: 400;
   letter-spacing: .1rem;
 }
 h5 {

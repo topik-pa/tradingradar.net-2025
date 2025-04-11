@@ -131,7 +131,8 @@ td[colspan] {
   text-align: center;
   margin: var(--xx-large-space) 0;
   img {
-    max-width: 100%;
+    width: 100%;
+    height: auto;
   }
 }
 
