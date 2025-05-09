@@ -45,6 +45,7 @@
     li {
       font-weight: 500;
       width: 45%;
+      font-style: italic;
     }
     a::before {
       content: '\27A4';

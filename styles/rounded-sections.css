@@ -13,6 +13,7 @@
 .rounded h4 {
   margin-bottom: var(--normal-space);
   font-size: var(--font-size-bigger);
+  font-weight: bold;
 }
 .rounded .icon {
   width: auto;
