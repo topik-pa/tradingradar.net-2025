@@ -3,7 +3,7 @@ const spotLayer = {
     console.log('dfdffdfd')
     const cookieName = 'tradingradarnet-ava-layer'
     const cookieDuration = 10
-    const cookieLayerWait = 12000
+    const cookieLayerWait = 15000
 
     const cookieLayerElement = document.querySelector('#spot_layer')
     const avaBannerCookieSet = cookieLayerElement.querySelector('#ava_banner_cookie_set')
