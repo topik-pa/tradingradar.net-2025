@@ -29,7 +29,7 @@
 
   /* TRANSPARENCIES */
   --transparent: .1;
-  --semi-transparent: .7;
+  --semi-transparent: .85;
   --wt: rgba(255, 255, 255, var(--transparent));
   --wst: rgba(255, 255, 255, var(--semi-transparent));
   --bt: rgba(0, 0, 0, var(--transparent));
@@ -82,4 +82,5 @@
   --modal: 999;
   --privacy: 9999;
   --gototop: 99999;
+  --spotLayer: 999999;
 }

@@ -27,6 +27,7 @@ html(lang="it")
       link(rel="dns-prefetch" href="https://static.xx.fbcdn.net/")
       link(rel="dns-prefetch" href="https://www.statcounter.com/")
       link(rel="dns-prefetch" href="https://c.statcounter.com/")
+      link(rel="dns-prefetch" href="https://tracking.avapartner.com/")
   body(id=id, class=className)
     include ../components/shared/header/header.pug
     block intro
@@ -35,6 +36,7 @@ html(lang="it")
     block outro
     include ../components/shared/footer/footer.pug
     include ../components/shared/cookie_layer/cookie_layer.pug
+    include ../components/shared/spot_layer/spot_layer.pug
     include ../components/shared/goto_top/goto_top.pug
     block viewscripts
     script(src='/scripts/scripts.js', type='module')
