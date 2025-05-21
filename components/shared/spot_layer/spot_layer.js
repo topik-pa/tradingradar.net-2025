@@ -3,7 +3,7 @@ const spotLayer = {
     console.log('dfdffdfd')
     const cookieName = 'tradingradarnet-ava-layer'
     const cookieDuration = 10
-    const cookieLayerWait = 15000
+    const cookieLayerWait = 20000
 
     const cookieLayerElement = document.querySelector('#spot_layer')
     const avaBannerCookieSet = cookieLayerElement.querySelector('#ava_banner_cookie_set')
@@ -29,7 +29,7 @@ const spotLayer = {
       document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/'
     }
     function startCountDownVisibility () {
-      let counter = 20
+      let counter = 25
       const $counter = document.querySelector('#counter')
       setInterval(() => {
         counter--

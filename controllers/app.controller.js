@@ -196,7 +196,7 @@ exports.stocksView = async (req, res) => {
 exports.targetPriceRaccView = async (req, res) => {
   res.render('tpr', {
     id: 'tpr',
-    title: 'Target Price e ultime raccomandazioni dalle Banche di Affari',
+    title: 'Target price e ultime raccomandazioni dalle Banche di Affari',
     description: 'I target price e le raccomandazioni operative delle principali banche di affari ordinati per data. Scopri gli ultimi giudizi e il prezzo obiettivo delle azioni di Borsa Italiana',
     //user: req.session.user,
     url: req.url
@@ -206,7 +206,7 @@ exports.targetPriceRaccView = async (req, res) => {
 exports.dividendsView = async (req, res) => {
   res.render('dividends', {
     id: 'dividendi',
-    title: 'Data e valore dei Dividendi di Borsa Italiana',
+    title: 'Data e valore dei dividendi di Borsa Italiana',
     description: 'Lista dei dividendi ordinata per valore in rapporto al prezzo e date di stacco della cedola delle azioni di Borsa Italiana. Scopri quali sono i dividendi più alti e le date di stacco delle principali azioni italiane',
     //user: req.session.user,
     url: req.url
@@ -288,8 +288,8 @@ exports.stockView = async (req, res) => {
   res.locals.stocks = stocks
   res.render('stock', {
     id: 'stock',
-    title: 'Azioni ' + name.toUpperCase() + ': analisi e segnali operativi in tempo reale',
-    description: 'Scopri l\'ANALISI TECNICA del titolo ' + name + ' inclusa RASSEGNA STAMPA, DIVIDENDO, PREZZO TARGET e GIUDIZI emessi dalle banche d\'affari e principali testate online.',
+    title: 'Azioni ' + name.toUpperCase() + ': analisi tecnica in tempo reale',
+    description: 'Scopri l\'analisi tecnica del titolo ' + name + ' con la rassegna stampa e le novità su dividendi, target price, e giudizi delle principali banche d\'affari',
     //user: req.session.user,
     url: req.url,
     name,
