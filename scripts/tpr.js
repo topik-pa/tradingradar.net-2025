@@ -11,6 +11,7 @@ function printData (stocks, target) {
   for (let i = 0; i < stocks.length; i++) {
     const stock = stocks[i]
     if (i === 0) $detection.innerText = new Date(stock.lastJudgment.now).toLocaleString()
+    if(!stock.lastJudgment.value[0]) continue
     const $tr = document.createElement('tr')
     const $td1 = document.createElement('td')
     const $a = document.createElement('a')

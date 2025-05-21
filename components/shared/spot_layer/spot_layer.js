@@ -1,6 +1,5 @@
 const spotLayer = {
   init: () => {
-    console.log('dfdffdfd')
     const cookieName = 'tradingradarnet-ava-layer'
     const cookieDuration = 10
     const cookieLayerWait = 20000

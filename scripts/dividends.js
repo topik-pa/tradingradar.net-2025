@@ -9,6 +9,9 @@ function printData (stocks, $ul, key) {
   for (let i = 0; i < stocks.length; i++) {
     const stock = stocks[i]
     if (i === 0) $detection.innerText = new Date(stock[key].now).toLocaleString()
+    if(
+      (!stock[key].value || stock[key].value === '0' || stock[key].value === '-')
+    ) continue
     const $li = document.createElement('li')
     const $a = document.createElement('a')
     $a.innerText = stock.name
