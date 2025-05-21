@@ -1,0 +1,24 @@
+section(class="column")
+  include ../socials/socials.pug
+  include ../../stocks_list_light/stocks_list_light.pug
+  include ../../../marketing/ava-banner/ava-banner3.pug
+  section(class="cherrypick best")
+    h2 Migliore performance mensile 
+    h3 
+      a(href="/analisi/mondo-tv?isin=IT0001447785", title="Analisi completa MONDO TV") MONDO TV
+    span +125.23% #[small (in data: 21/05/2025)]
+  section(class="cherrypick worst")
+    h2 Peggiore performance mensile 
+    h3 
+      a(href="/analisi/esprinet?isin=IT0003850929", title="Analisi completa Esprinet") Esprinet
+    span -13.68% #[small (in data: 21/05/2025)]
+  section(class="cherrypick nextd")
+    h2 Il prossimo dividendo
+    h3 
+      a(href="/analisi/the-italian-sea-group?isin=IT0005439085", title="Analisi completa The Italian Sea Group") The Italian Sea Group
+    span #[small in data] 26/05/25
+  section(class="cherrypick nextd")
+    h2 Migliore titolo secondo Milano Finanza
+    h3 
+      a(href="/analisi/banca-ifis?isin=IT0003188064", title="Analisi completa Banca Ifis") Banca Ifis
+    span(class="green") #[small Rank:] A-
