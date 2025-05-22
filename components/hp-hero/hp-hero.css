@@ -6,7 +6,11 @@
   max-width: 100%;
   height: auto;
 }
-
+#hp-hero span {
+  margin-bottom: var(--large-space);
+  color: var(--dark-gray);
+  display: block;
+}
 #hp-hero .continue {
   font-weight: 500;
   margin-top: var(--xx-large-space);

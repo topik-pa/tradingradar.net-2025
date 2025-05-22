@@ -27,5 +27,13 @@
       color: var(--dark-gray);
     }
   }
-  
+  .blogentry img {
+    width: 100%;
+    height: auto;
+  }
+  .blogentry span {
+    margin-bottom: var(--large-space);
+    color: var(--dark-gray);
+    display: block;
+  }
 }
