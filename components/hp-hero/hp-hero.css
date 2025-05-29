@@ -1,15 +1,21 @@
 #hp-hero h4 {
-  font-size: var(--font-size-big);
   margin-top: var(--large-space);
+  font-weight: normal;
+  font-size: var(--font-size-big);
 }
 #hp-hero img {
   max-width: 100%;
   height: auto;
 }
-#hp-hero span {
+#hp-hero .data {
   margin-bottom: var(--large-space);
   color: var(--dark-gray);
   display: block;
+}
+#hp-hero .nota {
+  margin-top: var(--large-space);
+  color: var(--gray);
+  font-style: italic;
 }
 #hp-hero .continue {
   font-weight: 500;

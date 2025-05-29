@@ -27,12 +27,15 @@
       color: var(--dark-gray);
     }
   }
+  .blogentry {
+    margin: var(--xx-large-space) 0;
+  }
   .blogentry img {
-    width: 100%;
+    width: 60%;
     height: auto;
   }
-  .blogentry span {
-    margin-bottom: var(--large-space);
+  .blogentry .data {
+    margin-bottom: var(--small-space);
     color: var(--dark-gray);
     display: block;
   }
