@@ -1,0 +1,17 @@
+#stock #follow-the-stock {
+  margin: var(--xx-large-space) 0;
+  border: 1px solid var(--blue);
+}
+
+#follow-the-stock a {
+  text-align: center;
+  display: block;
+  font-size: var(--font-size-bigger);
+  font-weight: bold;
+  margin: var(--x-large-space) 0;
+}
+
+
+@media screen and (max-width: 768px) {
+
+}
