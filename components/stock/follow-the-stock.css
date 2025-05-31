@@ -1,6 +1,10 @@
-#stock #follow-the-stock {
-  margin: var(--xx-large-space) 0;
+#follow-the-stock {
+  margin: var(--xx-large-space) 0!important;
   border: 1px solid var(--blue);
+}
+
+.column #follow-the-stock {
+  margin-top: 0!important;
 }
 
 #follow-the-stock a {
