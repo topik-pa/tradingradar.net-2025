@@ -291,7 +291,7 @@ exports.stockView = async (req, res) => {
     title: 'Azioni ' + name.toUpperCase() + ': analisi tecnica in tempo reale',
     description: 'Scopri l\'analisi tecnica del titolo ' + name + ' con la rassegna stampa e le novità su dividendi, target price, e giudizi delle principali banche d\'affari',
     //user: req.session.user,
-    url: req.url,
+    url: `/analisi/${encodeURI(name.toLowerCase().replace(/ /g, '-').replace(/&/g, 'and').replace(/'/g, '-'))}?isin=${req.query.isin}`,
     name,
     code
   })
