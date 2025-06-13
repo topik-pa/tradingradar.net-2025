@@ -19,7 +19,7 @@ body {
 }
 
 main {
-  padding: var(--view-padding);
+  padding: var(--small-space);
   padding-top: 0;
   flex: auto;
   line-height: 120%;
@@ -113,10 +113,10 @@ td[colspan] {
   display: flex;
   justify-content: space-between;
   &.wrap4 > section{
-    width: 22%;
+    width: 19%;
   }
   &.wrap2 > section{
-    width: 47%;
+    width: 44%;
   }
 }
 

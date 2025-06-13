@@ -2,6 +2,8 @@
   background-color: var(--white);
   border-radius: var(--border-radius-big);
   padding: var(--view-padding);
+  border: 1px solid var(--light-gray);
+  position: relative;
 }
 .rounded > div, .rounded > section, .rounded dd {
   margin-bottom: var(--xx-large-space);
@@ -16,9 +18,14 @@
   font-weight: bold;
 }
 .rounded .icon {
-  width: auto;
-  height: var(--x-large-space);
-  float: right;
+  width: var(--xx-large-space);
+  height: var(--xx-large-space);
+  position: absolute;
+  top: calc(-1 * var(--small-space));
+  right: calc(-1 * var(--small-space));
+  background: var(--white);
+  border-radius: 5px;
+  border: 1px solid var(--light-gray);
 }
 .rounded .big {
   font-size: var(--font-size-biggest);

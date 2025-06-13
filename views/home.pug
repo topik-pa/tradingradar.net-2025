@@ -18,7 +18,7 @@ block append meta
 
 block main
   div(class="content")
-    include ../components/hp-header/hp-header.pug
+    //- include ../components/hp-header/hp-header.pug
     div(id="extracts", class="wrap wrap4")
       include ../components/hp-signals/mounth-performance.pug
       include ../components/hp-signals/dividends.pug
@@ -26,20 +26,23 @@ block main
       include ../components/hp-signals/next-dividend.pug
       include ../components/hp-signals/best-mf.pug
 
-    include ../marketing/ava-banner/ava-banner.pug
+    //- include ../marketing/ava-banner/ava-banner.pug
 
-    include ../components/hp-hero/hp-hero.pug
+    //- include ../components/hp-hero/hp-hero.pug
 
     include ../components/perf-month/perf-month.pug
     include ../components/perf-year/perf-year.pug
 
-    include ../marketing/ava-banner/ava-banner2.pug
+    
     
     include ../components/trend/trend.pug
     include ../components/inversion/inversion.pug
     //- include ../components/hp-signals/hp-signals.pug
     //- include ../components/stocks_list/stocks_list.pug 
     include ../components/shared/share/share.pug
+
+    include ../marketing/ava-banner/ava-banner2.pug
+
   include ../components/shared/column/column.pug
 
 block prepend outro
