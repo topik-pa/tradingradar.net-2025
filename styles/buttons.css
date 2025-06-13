@@ -7,10 +7,10 @@
   padding: 0.7rem 2rem;
   color: var(--primary);
   cursor: pointer;
-  border: 1px solid var(--darker-gray);
+  border: 1px solid var(--primary);
 }
 .btn:hover {
-  filter: brightness(90%);
+  filter: brightness(150%);
 }
 
 .btn.secondary {
@@ -20,7 +20,7 @@
 
 .btn.tertiary {
   background: transparent;
-  color: var(--secondary);
+  color: var(--primary);
   border-color: var(--light-gray);
 }
 

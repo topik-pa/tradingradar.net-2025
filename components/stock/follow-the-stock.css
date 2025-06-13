@@ -1,18 +1,21 @@
 #follow-the-stock {
   margin: var(--xx-large-space) 0!important;
   border: 1px solid var(--blue);
+  background-color: var(--secondary);
+  color: var(--primary);
+  text-align: center;
 }
 
 .column #follow-the-stock {
   margin-top: 0!important;
 }
 
+#follow-the-stock h2 {
+  font-weight: 500;
+}
+
 #follow-the-stock a {
-  text-align: center;
-  display: block;
-  font-size: var(--font-size-bigger);
-  font-weight: bold;
-  margin: var(--x-large-space) 0;
+  margin: var(--large-space);
 }
 
 

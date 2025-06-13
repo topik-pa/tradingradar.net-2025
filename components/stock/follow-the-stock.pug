@@ -1,13 +1,17 @@
 section(id="follow-the-stock", class="rounded")
   if name
     div 
-      h2 Segui il titolo #[em #{name}] direttamente tramite la tua email
-      p Ricevi tutti gli aggiornamenti circa le azioni #[em #{name}] sulla tua email: #[em nessuna pubblicità, avviso scadenze ravvicinate, evidenziazione del cambio di valore e confronto con il con il dato precedente, la rassegna stampa più aggiornata e...] #[br]#[br]
-      p #[em Invia una richiesta alle seguente email] per ricevere subito i primi aggiornamenti sul tuo titolo preferito.
-      a(href="mailto:info@tradingradar.net?subject=Segui il titolo: " +  name + "&body=Vorrei maggiori informazioni su come seguire il titolo " + name + ' direttamente tramite la mia email.') info@tradingradar.net
+      h2 Il titolo azionario #[em #{name.toUpperCase()}] direttamente SULLA TUA EMAIL!
+      p Ricevi tutti gli aggiornamenti circa le azioni #[em #{name}] sulla tua email.
+      p Richiedi l'iscrizione al servizio #[em tramite Patreon] oppure effettua una richiesta diretta #[em tramite la tua email].
+      div(class="ctas")
+        a(class="btn", href="mailto:info@tradingradar.net?subject=Segui il titolo: " +  name + "&body=Vorrei maggiori informazioni su come seguire il titolo " + name + ' direttamente tramite la mia email.', title="Richiedi iscrizione direttamente tramite email") Mi iscrivo tramite richiesta email
+        a(class="btn tertiary", href="https://patreon.com/tradingradarnet?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink", title="Richiedi iscrizione tramite Patreon") Mi iscrivo tramite Patreon
   else 
-    div 
-      h2 Segui il tuo titolo direttamente tramite la tua email
-      p Ricevi tutti gli aggiornamenti circa le tue azioni preferite sulla tua email: #[em nessuna pubblicità, avviso scadenze ravvicinate, evidenziazione del cambio di valore e confronto con il con il dato precedente, la rassegna stampa più aggiornata e...] #[br]#[br]
-      p #[em Invia una richiesta alle seguente email] per ricevere subito i primi aggiornamenti.
-      a(href="mailto:info@tradingradar.net?subject=Segui il titolo&body=Vorrei maggiori informazioni su come seguire il titolo [AGGIUNGERE NOME TITOLO] direttamente tramite la mia email.") info@tradingradar.net
+    div
+      h2 SEGUI IL TITOLO! #[br]Le analisi del tuo titolo azionario direttamente SULLA TUA EMAIL!
+      p Ricevi quotidianamente gli aggiornamenti circa le tue azioni preferite sulla tua email.
+      p Richiedi l'iscrizione al servizio #[em tramite Patreon] oppure effettua una richiesta diretta #[em tramite la tua email].
+      div(class="ctas")
+        a(class="btn", href="mailto:info@tradingradar.net?subject=Segui il titolo&body=Vorrei maggiori informazioni su come seguire il titolo [AGGIUNGERE NOME TITOLO] direttamente tramite la mia email.", title="Richiedi iscrizione direttamente tramite email") Mi iscrivo tramite richiesta email
+        a(class="btn tertiary", href="https://patreon.com/tradingradarnet?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink", title="Richiedi iscrizione tramite Patreon") Mi iscrivo tramite Patreon
