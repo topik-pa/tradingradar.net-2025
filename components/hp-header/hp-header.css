@@ -1,12 +1,4 @@
 #hp-header {
-  display: flex;
-  justify-content: space-between;
-  .rounded {
-    width: 50%;
-    &:first-child {
-      margin-right: var(--view-padding);
-    }
-  }
   ul {
     margin: 0;
     padding: 0;
@@ -37,39 +29,8 @@
       margin: 0 0 var(--x-small-space) 0;
     }
   }
-  
-  .sections {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    li {
-      font-weight: 500;
-      width: 45%;
-      font-style: italic;
-    }
-    a::before {
-      content: '\27A4';
-      color: var(--link);
-      display: inline-block;
-      transition: all .2s ease-in-out;
-    }
-    a:hover::before {
-      color: var(--red);
-      transform: rotate(90deg);
-      transform-origin: center;
-    }
-  }
 }
 
 @media screen and (max-width: 768px) {
-  #hp-header {
-    flex-direction: column;
-    .rounded {
-      margin: var(--view-padding) 0;
-      width: inherit;
-      &:first-child {
-        margin-right: 0;
-      }
-    }
-  }
+
 }

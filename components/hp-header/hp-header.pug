@@ -80,17 +80,9 @@
 div(id="hp-header")
   section(class="rounded")
       h1 #{title}
-      p #{description}
+      h2 #{description}
+      p !{proj_description}
       p I #[em dati forniti] sono ottenuti #[em dai principali media online] del settore finanziario.
       ul(class="sources")
         each source in sources
           li(class="img_icon " + source.id) #{source.name} 
-
-  section(class="rounded")
-      h2 I segnali di oggi: #[em(id="today")]
-      p I #[em titoli più interessanti di oggi] in base a differenti indicatori: analisi tecnica, giudizi e raccomandazioni, rapporto prezzo/dividendo (dividend yeld), comunicazione di stacco della cedola o caratteristiche del trend in atto.
-      ul(class="sections")
-        each section in sections
-          li 
-            a(href="#" + section.id)  #{section.name} 
-    
