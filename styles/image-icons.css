@@ -27,3 +27,9 @@
 .repubblica::before {
   background-image: url('/assets/images/sources/repubblica-aff-e-fin-logo.png');
 }
+.patreon::before {
+  background-image: url('/assets/images/icons/patreon-logo.webp');
+}
+.email::before {
+  background-image: url('/assets/images/icons/email.webp');
+}

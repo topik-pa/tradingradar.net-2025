@@ -18,6 +18,12 @@
   margin: var(--large-space);
 }
 
+#follow-the-stock .patreon::before, #follow-the-stock .email::before {
+  width: var(--x-large-space);
+  height: var(--x-large-space);
+  margin-right: var(--small-space);
+}
+
 
 @media screen and (max-width: 768px) {
 
