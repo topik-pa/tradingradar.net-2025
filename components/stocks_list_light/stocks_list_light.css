@@ -22,11 +22,19 @@
 }
 
 @media screen and (max-width: 1024px) {
-
+  #select_stock_light .alphabet {
+    a {
+      margin: var(--normal-space);
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
-
+  #select_stock_light .alphabet {
+    a {
+      margin: var(--large-space);
+    }
+  }
 }
 
 @media screen and (max-width: 414px) {
