@@ -288,8 +288,8 @@ exports.stockView = async (req, res) => {
   res.locals.stocks = stocks
   res.render('stock', {
     id: 'stock',
-    title: name.toUpperCase() + ' - tutto e subito! Analisi tecnica, giudizi, dividendi e target price',
-    description: 'Tutto in una pagina! ' + 'Analisi tecnica in tempo reale del titolo ' + name + ' con rassegna stampa, valore dei dividendi, i target price e i giudizi delle principali banche d\'affari',
+    title: 'Tutto su ' + name.toUpperCase() + ': analisi, rassegna stampa e giudizi',
+    description: 'Analisi tecnica in tempo reale del titolo ' + name.toUpperCase() + ' con rassegna stampa, valore dei dividendi, target price e i giudizi delle principali banche d\'affari',
     //user: req.session.user,
     url: `/analisi/${encodeURI(name.toLowerCase().replace(/ /g, '-').replace(/&/g, 'and').replace(/'/g, '-'))}?isin=${req.query.isin}`,
     name,
