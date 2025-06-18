@@ -13,6 +13,10 @@
 #follow-the-stock h2 {
   font-weight: 500;
 }
+#follow-the-stock h3 {
+  margin-top: var(--x-large-space);
+  margin-bottom: 0;
+}
 
 #follow-the-stock a {
   margin: var(--large-space);
@@ -22,6 +26,16 @@
   width: var(--x-large-space);
   height: var(--x-large-space);
   margin-right: var(--small-space);
+}
+
+#follow-the-stock ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-style: italic;
+}
+#follow-the-stock li {
+  margin: var(--x-small-space) 0;
 }
 
 
