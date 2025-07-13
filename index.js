@@ -37,7 +37,7 @@ function shouldCompress (req, res) {
 
 // Set custom headers
 app.use(function (req, res, next) {
-  // res.setHeader('Strict-Transport-Security', 'max-age=31536000')
+  res.setHeader('Strict-Transport-Security', 'max-age=31536000')
   res.setHeader('Upgrade-insecure-requests', '1')
   // eslint-disable-next-line max-len
   res.setHeader('Content-Security-Policy', 'default-src \'none\'; script-src https://connect.facebook.net/ https://www.statcounter.com/ \'self\' \'unsafe-inline\'; style-src \'self\' \'unsafe-inline\'; img-src \'self\' https://c.statcounter.com/ https://tracking.avapartner.com https://apvids.s3.eu-west-1.amazonaws.com data:; object-src \'none\'; frame-src https://c.statcounter.com/ https://www.facebook.com/ https://web.facebook.com/ \'self\'; form-action \'self\'; font-src \'self\'; media-src \'self\'; connect-src https://c.statcounter.com/ \'self\'; frame-ancestors \'none\'; base-uri \'none\'')
