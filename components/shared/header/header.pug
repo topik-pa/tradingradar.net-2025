@@ -4,6 +4,17 @@
 //-     a(href="/logout") Logout 
 //- else 
 //-   header Hello!
+aside#helpme
+  div
+    em tradingradar.net ha bisogno di te!
+    p Non ho i fondi necessari per coprire le spese di gestione per l'intero mese: ecco perchè #[em il portale web diventa inaccessibile verso metà mese]. 
+    p #[em Sostieni il progetto tradingradar.net con una libera donazione]! 
+  div 
+    form(action='https://www.paypal.com/donate', method='post', target='_top')
+      input(type='hidden', name='hosted_button_id', value='KXPEP2FFGC86S')
+      input(type='image', src='https://www.paypalobjects.com/it_IT/IT/i/btn/btn_donate_LG.gif', border='0', name='submit', title='PayPal - The safer, easier way to pay online!', alt='Fai una donazione con il pulsante PayPal')
+      img(alt='', border='0', src='https://www.paypal.com/it_IT/i/scr/pixel.gif', width='1', height='1')
+
 header(id="header")
   //- div 
   //-   if user
